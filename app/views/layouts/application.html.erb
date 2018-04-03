@@ -1,14 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="zxx" class="no-js">
   <head>
-    <title>Pytdating</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>PYT</title>
+  <%= favicon_link_tag('favicon-32x32.png')%>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <div>
+        <header class="default-header">
+          <div class="container">
+            <div class="header-wrap">
+              <div class="header-top d-flex justify-content-between align-items-center">
+              <div class="logo">
+               <a href="index.html"><%= image_tag('pytlogo.png')%></a> 
+              </div>
+              <div class = 'login'>
+                <% if current_user %>
+                Signed in as <strong><%= current_user.name %></strong>!
+                <%= link_to "Sign out", signout_path, id: "sign_out", class:'text-white' %>
+                 <% else %>
+                <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", class:'text-white' %>
+                <% end %>
+               </div>
+               <% if false %>
+                <div class="main-menubar d-flex align-items-center">
+                  <nav class="hide">
+                    <a href="index.html">Home</a>
+                    <a href="generic.html">Generic</a>
+                    <a href="elements.html">Elements</a>
+                  </nav>
+                  <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- End Header Area -->
+        <!-- Start Banner Area -->
+        <div>
+        <%= yield %>
+        </div>
+        <!-- Strat Footer Area -->
+        <footer class="section-gap">
+        </footer>
+        <!-- End Footer Area -->
   </body>
 </html>
