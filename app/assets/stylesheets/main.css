@@ -17,14 +17,13 @@ body{
   height: 80px;
 }
 .intro-button{
+  margin:20px;
   display:flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
 }
-.intro-button p {
-  margin-top: 10px;
-  
-}
+
 .button-container{
   display:flex;
   flex-direction: row;
@@ -35,11 +34,12 @@ body{
 .login{
   color:white;
 }
+
 #home-button{
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  color:white !important; 
   /* color:teal; */
   /* margin-left:0; */
-  width:80% !important;
 }
 ::-moz-selection {
   /* Code for Firefox */
@@ -1977,12 +1977,14 @@ nav a:hover {
 }
 
 .primary-btn {
+  margin-top:20px;
   line-height: 40px;
   padding: 0 30px;
   border-radius: 20px;
-  background: transparent;
-  border: 1px solid #eee;
-  color: teal;
+  background: teal;
+  border: 1px solid teal;
+  color: #fff;
+  /* background: transparent; */
   display: inline-block;
   font-weight: 500;
   position: relative;
@@ -2003,7 +2005,7 @@ nav a:hover {
 
 .primary-btn:hover {
   background: teal;
-  border: 1px solid teal;
+  border: 1px solid white;
   color: #fff;
 }
 
