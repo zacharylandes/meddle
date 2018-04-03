@@ -1,15 +1,15 @@
 FactoryBot.define do
   factory :trait do
-    user nil
-    height 1
+    user 1
+    height 70
     smoker 1
     alcohol 1
-    ethnicity "MyString"
-    education "MyString"
-    body_type 1
+    ethnicity "unknown"
+    education "Baccalaureate or higher"
+    body_type 0
     occupation "MyString"
-    zip 1
-    religion "MyString"
+    zip 80210
+    religion "Some Religion"
     religiosity 1
     political_leaning 1
     politicalness 1
@@ -18,6 +18,6 @@ FactoryBot.define do
     has_pets false
     orientation 1
     gender 1
-    other "MyText"
+    other "Some other preference that they really need to say"
   end
 end
