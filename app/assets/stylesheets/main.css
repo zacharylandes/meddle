@@ -4,7 +4,7 @@
 /* Mobile Layout: 320px */
 /* Wide Mobile Layout: 480px */
 /* =================================== */
-/*  Basic Style 
+/*  Basic Style
 /* =================================== */
 .dash{
   height: 200px;
@@ -28,7 +28,7 @@ body{
   display:flex;
   flex-direction: row;
   justify-content: space-between;
-  
+
 }
 
 .login{
@@ -37,7 +37,7 @@ body{
 
 #home-button{
   /* margin-top: 10px; */
-  color:white !important; 
+  color:white !important;
   /* color:teal; */
   /* margin-left:0; */
 }
@@ -154,7 +154,7 @@ a, a:focus, a:hover {
 
 h1, h2, h3,
 h4, h5, h6 {
-  
+
   font-family: 'Montserrat', sans-serif;
   color: #222222;
   line-height: 1.2em !important;
