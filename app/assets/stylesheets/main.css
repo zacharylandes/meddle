@@ -6,7 +6,10 @@
 /* =================================== */
 /*  Basic Style 
 /* =================================== */
-
+.dash{
+  height: 200px;
+  color:black;
+}
 body{
   font-family: 'Montserrat', sans-serif;
 }
@@ -16,12 +19,17 @@ body{
 .intro-button{
   display:flex;
   flex-direction: column;
-  justify-content: ;
+  justify-content: flex-start;
+}
+.intro-button p {
+  margin-top: 10px;
+  
 }
 .button-container{
   display:flex;
   flex-direction: row;
   justify-content: space-between;
+  
 }
 
 .login{
@@ -1870,12 +1878,15 @@ h1, h2, h3, h4, h5, h6 {
   right: 20px;
 }
 
+.slogan{
+  margin: 20px;
+}
 body {
   position: relative;
 }
 
 .default-header {
-  padding: 25px 0;
+  padding: 10px 0;
   background-color: teal;
   position: absolute;
   top: 0;
