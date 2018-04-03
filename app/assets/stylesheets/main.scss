@@ -1,3 +1,4 @@
+<<<<<<< HEAD:app/assets/stylesheets/main.scss
 
 <<<<<<< HEAD
 /*--------------------------- Color variations ----------------------*/
@@ -22,6 +23,16 @@ $grey:  #EAEAEA;
 
 
 
+=======
+/*--------------------------- Color variations ----------------------*/
+/* Medium Layout: 1280px */
+/* Tablet Layout: 768px */
+/* Mobile Layout: 320px */
+/* Wide Mobile Layout: 480px */
+/* =================================== */
+/*  Basic Style
+/* =================================== */
+>>>>>>> landing page stuff:app/assets/stylesheets/main.css
 .dash{
   height: 200px;
   color:black;
@@ -188,6 +199,7 @@ body{
   flex-direction: row;
   justify-content: space-between;
 
+<<<<<<< HEAD:app/assets/stylesheets/main.scss
 }
 
 .line1 {
@@ -200,12 +212,15 @@ body{
       rotate(27deg); 
   position: absolute;
   /* top: -20px; */
+=======
+>>>>>>> landing page stuff:app/assets/stylesheets/main.css
 }
 
 .login{
   color:white;
 }
 #home-button{
+<<<<<<< HEAD:app/assets/stylesheets/main.scss
   font-size: 1.4em;
   background-color:$teal;
   color:white;
@@ -214,6 +229,12 @@ body{
 #home-button:hover{
   background-color:white; 
   color:$teal; 
+=======
+  /* margin-top: 10px; */
+  color:white !important;
+  /* color:teal; */
+  /* margin-left:0; */
+>>>>>>> landing page stuff:app/assets/stylesheets/main.css
 }
 ::-moz-selection {
   /* Code for Firefox */
