@@ -1,13 +1,13 @@
 FactoryBot.define do
   factory :mate_preference do
     user nil
-    min_height 1
-    max_height 1
+    min_height 60
+    max_height 70
     smoker 1
     alcohol 1
-    ethnicity "MyString"
+    ethnicity "unknown"
     education false
-    body_type "MyString"
+    body_type "curvy"
     zip_radius 1
     religion "MyString"
     religiosity 1
