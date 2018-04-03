@@ -6,14 +6,41 @@
 /* =================================== */
 /*  Basic Style 
 /* =================================== */
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+.logo img{
+  height: 80px;
+}
+.intro-button{
+  display:flex;
+  flex-direction: column;
+  justify-content: ;
+}
+.button-container{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.login{
+  color:white;
+}
+#home-button{
+  margin-top: 10px;
+  /* color:teal; */
+  /* margin-left:0; */
+  width:80% !important;
+}
 ::-moz-selection {
   /* Code for Firefox */
-  background-color: #f5204b;
+  background-color: teal;
   color: #fff;
 }
 
 ::selection {
-  background-color: #f5204b;
+  background-color: teal;
   color: #fff;
 }
 
@@ -51,7 +78,7 @@
 
 body {
   color: #777777;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   font-size: 14px;
   font-weight: 300;
   line-height: 1.5em;
@@ -119,7 +146,8 @@ a, a:focus, a:hover {
 
 h1, h2, h3,
 h4, h5, h6 {
-  font-family: "Poppins", sans-serif;
+  
+  font-family: 'Montserrat', sans-serif;
   color: #222222;
   line-height: 1.2em !important;
   margin-bottom: 0;
@@ -131,7 +159,8 @@ h4, h5, h6 {
 .h4, .h5, .h6 {
   margin-bottom: 0;
   margin-top: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+
   font-weight: 600;
   color: #222222;
 }
@@ -751,7 +780,7 @@ td, th {
 }
 
 b, i, sup, sub, u, del {
-  color: #f5204b;
+  color: teal;
 }
 
 h1 {
@@ -886,25 +915,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .genric-btn.primary {
   color: #fff;
-  background: #f5204b;
+  background: teal;
   border: 1px solid transparent;
 }
 
 .genric-btn.primary:hover {
-  color: #f5204b;
-  border: 1px solid #f5204b;
+  color: teal;
+  border: 1px solid teal;
   background: #fff;
 }
 
 .genric-btn.primary-border {
-  color: #f5204b;
-  border: 1px solid #f5204b;
+  color: teal;
+  border: 1px solid teal;
   background: #fff;
 }
 
 .genric-btn.primary-border:hover {
   color: #fff;
-  background: #f5204b;
+  background: teal;
   border: 1px solid transparent;
 }
 
@@ -1040,7 +1069,7 @@ h1, h2, h3, h4, h5, h6 {
 .generic-blockquote {
   padding: 30px 50px 30px 30px;
   background: #f9f9ff;
-  border-left: 2px solid #f5204b;
+  border-left: 2px solid teal;
 }
 
 .progress-table-wrap {
@@ -1164,7 +1193,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   width: 14px;
   height: 14px;
-  border: 3px solid #f5204b;
+  border: 3px solid teal;
   background: #fff;
   top: 4px;
   left: 0;
@@ -1177,7 +1206,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .ordered-list li {
   list-style-type: decimal-leading-zero;
-  color: #f5204b;
+  color: teal;
   font-weight: 500;
   line-height: 1.82em !important;
 }
@@ -1190,7 +1219,7 @@ h1, h2, h3, h4, h5, h6 {
 .ordered-list-alpha li {
   margin-left: 30px;
   list-style-type: lower-alpha;
-  color: #f5204b;
+  color: teal;
   font-weight: 500;
   line-height: 1.82em !important;
 }
@@ -1203,7 +1232,7 @@ h1, h2, h3, h4, h5, h6 {
 .ordered-list-roman li {
   margin-left: 30px;
   list-style-type: lower-roman;
-  color: #f5204b;
+  color: teal;
   font-weight: 500;
   line-height: 1.82em !important;
 }
@@ -1275,7 +1304,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .single-input-primary:focus {
   outline: none;
-  border: 1px solid #f5204b;
+  border: 1px solid teal;
 }
 
 .single-input-accent {
@@ -1336,7 +1365,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #f5204b;
+  background: teal;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
@@ -1419,7 +1448,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .primary-switch input:checked + label:before {
-  background: #f5204b;
+  background: teal;
 }
 
 .confirm-switch {
@@ -1768,12 +1797,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .default-select .nice-select .list .option.selected {
-  color: #f5204b;
+  color: teal;
   background: transparent;
 }
 
 .default-select .nice-select .list .option:hover {
-  color: #f5204b;
+  color: teal;
   background: transparent;
 }
 
@@ -1823,12 +1852,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .form-select .nice-select .list .option.selected {
-  color: #f5204b;
+  color: teal;
   background: transparent;
 }
 
 .form-select .nice-select .list .option:hover {
-  color: #f5204b;
+  color: teal;
   background: transparent;
 }
 
@@ -1847,6 +1876,7 @@ body {
 
 .default-header {
   padding: 25px 0;
+  background-color: teal;
   position: absolute;
   top: 0;
   left: 0;
@@ -1885,7 +1915,7 @@ nav {
     text-align: right;
     padding: 20px 0;
     z-index: 5;
-    background: #f5204b;
+    background: teal;
   }
 }
 
@@ -1941,7 +1971,7 @@ nav a:hover {
   border-radius: 20px;
   background: transparent;
   border: 1px solid #eee;
-  color: #f5204b;
+  color: teal;
   display: inline-block;
   font-weight: 500;
   position: relative;
@@ -1961,8 +1991,8 @@ nav a:hover {
 }
 
 .primary-btn:hover {
-  background: #f5204b;
-  border: 1px solid #f5204b;
+  background: teal;
+  border: 1px solid teal;
   color: #fff;
 }
 
@@ -2012,7 +2042,7 @@ nav a:hover {
 }
 
 .generic-banner {
-  background: #f5204b;
+  background: teal;
 }
 
 .generic-banner .height {
@@ -2081,7 +2111,7 @@ nav a:hover {
 }
 
 .carousel-area {
-  background: url(../img/c-bg.jpg) no-repeat center center/cover;
+  background-color:#152137;
 }
 
 .carousel-area .overlay-bg {
@@ -2107,7 +2137,7 @@ nav a:hover {
   font-size: 36px;
   line-height: 1.25em;
   margin-bottom: 20px;
-  color: #f5204b;
+  color: teal;
 }
 
 @media (max-width: 767px) {
@@ -2160,8 +2190,8 @@ nav a:hover {
 }
 
 .carousel-area .carousel-trigger .next-trigger:hover, .carousel-area .carousel-trigger .prev-trigger:hover {
-  background: #f5204b;
-  border: 1px solid #f5204b;
+  background: teal;
+  border: 1px solid teal;
 }
 
 .carousel-area .carousel-trigger .next-trigger:hover span, .carousel-area .carousel-trigger .prev-trigger:hover span {
@@ -2209,7 +2239,7 @@ nav a:hover {
 .single-service .icon span {
   margin: auto;
   font-size: 36px;
-  color: #f5204b;
+  color: teal;
   font-weight: 600;
 }
 
@@ -2247,7 +2277,7 @@ nav a:hover {
 .service-area-2 .single-service .icon span {
   margin: auto;
   font-size: 36px;
-  color: #f5204b;
+  color: teal;
   font-weight: 600;
 }
 
@@ -2363,7 +2393,7 @@ nav a:hover {
 }
 
 .single-address:hover .icon {
-  background: #f5204b;
+  background: teal;
 }
 
 .single-address:hover .icon span {
@@ -2484,7 +2514,7 @@ nav a:hover {
 }
 
 .subscription .info.error {
-  color: #f5204b;
+  color: teal;
 }
 
 footer {
@@ -2504,7 +2534,7 @@ footer .footer-nav li a {
 }
 
 footer .footer-nav li a:hover {
-  color: #f5204b;
+  color: teal;
 }
 
 .instafeed {
@@ -2537,15 +2567,15 @@ footer .footer-nav li a:hover {
 }
 
 .footer-bottom .footer-text i {
-  color: #f5204b;
+  color: teal;
 }
 
 .footer-bottom .footer-text a {
-  color: #f5204b;
+  color: teal;
 }
 
 .footer-bottom .footer-text a:hover {
-  color: #f5204b;
+  color: teal;
 }
 
 @media (max-width: 767px) {
@@ -2572,7 +2602,7 @@ footer .footer-nav li a:hover {
 }
 
 .footer-social a:hover {
-  background: #f5204b;
+  background: teal;
 }
 
 .about-generic-area {
