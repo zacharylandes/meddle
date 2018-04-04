@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
-  has_and_belongs_to_many :dater_backers
+  has_many :daters, class_name: "DaterBacker", foreign_key: :dater_id
+  has_many :backers, class_name: "DaterBacker", foreign_key: :backer_id
   has_many :mate_preferences
   has_many :traits
   has_many :comments, through: :dater_backer
