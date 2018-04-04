@@ -16,13 +16,19 @@ class Seed
   end
 
    def create_daters
+    dater_1 = User.create!(provider: "google_oauth2", uid: "12345", name: "Susie", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Bobby", l_name:"Smith", email: email1@email.com, image1: nil, image2: nil)
 
+    dater_2 = User.create!(provider: "google_oauth2", uid: "12345", name: "Susie", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Bobby", l_name:"Smith", email: email2@email.com, image1: nil, image2: nil)
+
+    dater_3 = User.create!(provider: "google_oauth2", uid: "12345", name: "Susie", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Bobby", l_name:"Smith", email: email3@email.com, image1: nil, image2: nil)
+
+    dater_4 = User.create!(provider: "google_oauth2", uid: "12345", name: "Susie", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Bobby", l_name:"Smith", email: email4@email.com, image1: nil, image2: nil)
 
    end
 
    def create_backers
-
-   end 
+     backer =
+   end
 
 
 
