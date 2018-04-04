@@ -1,6 +1,6 @@
 class MatePreference < ApplicationRecord
   belongs_to :user
-<<<<<<< HEAD
+
 
 enum smoker: [ :never, :socially, :smoker], _prefix: true
 enum alcohol: [:never, :socially, :drinker ], _prefix: true, _prefix: true
@@ -13,6 +13,4 @@ enum orientation: [:straight, :queer], _prefix: true
 enum gender: [:male, :female, :non_binary], _prefix: true
 
 
-=======
->>>>>>> 550c753ee7adf8164217688ff9be2a2a467d7de5
 end

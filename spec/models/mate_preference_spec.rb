@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe MatePreference, type: :model do
-<<<<<<< HEAD
+
   context "with valid values" do
     it "creates a mate_preference instance" do
       dater = create(:user)
       mate_trait = create(:mate_preference, user: dater)
       expect(mate_trait.user.id).to eq(dater.id)
-
       expect(mate_trait.min_height).to eq(60)
       expect(mate_trait.max_height).to eq(70)
       expect(mate_trait.smoker).to eq("socially")
@@ -31,7 +30,4 @@ RSpec.describe MatePreference, type: :model do
   end
 
 
-=======
-  pending "add some examples to (or delete) #{__FILE__}"
->>>>>>> 550c753ee7adf8164217688ff9be2a2a467d7de5
 end

@@ -10,24 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 20180404173931) do
-=======
-ActiveRecord::Schema.define(version: 20180403211015) do
->>>>>>> 550c753ee7adf8164217688ff9be2a2a467d7de5
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
+
   create_table "backer_evals", force: :cascade do |t|
     t.text "q_1"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-=======
->>>>>>> 550c753ee7adf8164217688ff9be2a2a467d7de5
+
   create_table "comments", force: :cascade do |t|
     t.bigint "dater_backer_id"
     t.text "comment"

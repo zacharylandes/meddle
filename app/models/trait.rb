@@ -1,7 +1,7 @@
 class Trait < ApplicationRecord
   belongs_to :user
 
-<<<<<<< HEAD
+
   enum body_type: [:any, :athletic, :average, :beefy, :curvy, :extra_curvy, :large, :slender], _prefix: true
   enum smoker: [:never, :socially, :smoker], _prefix: true
   enum alcohol: [:never, :socially, :drinker], _prefix: true
@@ -12,7 +12,4 @@ class Trait < ApplicationRecord
   enum gender: [:male, :female, :non_binary], _prefix: true
 
 
-=======
->>>>>>> 550c753ee7adf8164217688ff9be2a2a467d7de5
-  
 end

@@ -1,4 +1,4 @@
-<<<<<<< HEAD:app/assets/stylesheets/main.css
+
 /*--------------------------- Color variations ----------------------*/
 /* Medium Layout: 1280px */
 /* Tablet Layout: 768px */
@@ -7,7 +7,7 @@
 /* =================================== */
 /*  Basic Style
 /* =================================== */
-=======
+
 
 $teal:#51A1A1;
 $darkBlue: #085465;
@@ -15,7 +15,6 @@ $red: #DD3F4A;
 $grey:  #D3D6D6;
 
 
->>>>>>> 550c753ee7adf8164217688ff9be2a2a467d7de5:app/assets/stylesheets/main.scss
 .dash{
   height: 200px;
   color:black;
@@ -1990,13 +1989,10 @@ body {
 
 .default-header {
   padding: 10px 0;
-<<<<<<< HEAD:app/assets/stylesheets/main.css
   background-color: teal;
   /* position: absolute; */
-=======
   background-color: $teal;
   border-bottom: 3px solid $red;
->>>>>>> 550c753ee7adf8164217688ff9be2a2a467d7de5:app/assets/stylesheets/main.scss
   top: 0;
   left: 0;
   width: 100%;
