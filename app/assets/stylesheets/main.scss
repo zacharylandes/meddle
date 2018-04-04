@@ -1,23 +1,53 @@
 
-$teal:#51A1A1;
+$teal:#258A8A;
 $darkBlue: #085465;
-$red: #DD3F4A;
-$grey:  #D3D6D6;
+$red: #dd3f4a;
+$grey:  #EAEAEA;
+
+/* CSS used here will be applied after bootstrap.css */
+
 
 
 .dash{
   height: 200px;
   color:black;
 }
-#card-button{
+.card-button, #dash-side-button{
   color:$teal;
 }
 
-#card-button:hover{
+.dash-card-container{
+  width:80%;
+}
+.find-new-backer, .input-field{
+  margin-top:40px;
+  border-radius:10px;
+}
+
+#header-title {
+  color:$darkBlue;
+}
+
+.card-button:hover,#dash-side-button:hover{
   color:white;
 }
+#dash-side-button{
+  font-size:1em;
+}
+
+.find-new-backer{
+  display:none;
+}
+.backer-search-form{
+  display:block
+}
+
 #main-nav{
-  border-bottom: 2px solid $teal;
+  border-bottom: 2px solid $darkBlue;
+}
+
+
+#active{
 }
 body{
   font-family: 'Montserrat', sans-serif;
@@ -25,14 +55,34 @@ body{
 #tab2{
   background-color:$darkBlue;
 }
+
 #tab1{
   background-color:$teal;
 }
+.dater-card{
+  width:12em;
+  margin:20px;
+  height:20em;
+}
+.overlay h1{
+  font-size: 4em;
+  color:$teal;
+  margin: 5% 10% 0 15%;
+}
+
+.show-the-daters-backers{
+  display: none;
+}
+
+.show-the-daters-backersAdd{
+  display: inline;
+  margin: 20px;
+}
 
 #dash-dater-img{
-  width:200px;
+  width:60%;
+  height: 18%;
   margin: 20px 0px;
-  height:200px;
   border-radius:50%;
 }
 .dash-body-tab-backer{
@@ -46,7 +96,6 @@ body{
   background-color:$teal;
 }
 .dater-tab-container{
-  width: 80%;
   margin-top:20px;
   display:flex;
   flex-direction:row;
@@ -115,7 +164,11 @@ body{
   justify-content: space-between;
   align-items: center;
 }
-
+#backer-sign-up {
+  color: $teal;
+  padding:10%;
+  border-radius: 20px;
+}
 .button-container{
   display:flex;
   flex-direction: row;
@@ -123,15 +176,30 @@ body{
 
 }
 
+.line1 {
+  width: 100%px;
+  height: 20px;
+  border-bottom: 1px solid red;
+  -webkit-transform:
+      translateY(-20px)
+      translateX(5px)
+      rotate(27deg); 
+  position: absolute;
+  /* top: -20px; */
+}
+
 .login{
   color:white;
 }
-
 #home-button{
-  /* margin-top: 10px; */
-  color:white !important;
-  /* color:teal; */
-  /* margin-left:0; */
+  font-size: 1.4em;
+  background-color:$teal;
+  color:white;
+}
+
+#home-button:hover{
+  background-color:white; 
+  color:$teal; 
 }
 ::-moz-selection {
   /* Code for Firefox */
@@ -1971,7 +2039,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slogan{
-  margin: 20px;
+  color:$teal;
+  font-size:1.5em;
+  margin: 2% 10% 0 15%;
 }
 body {
   position: relative;
@@ -2001,7 +2071,6 @@ body {
 }
 
 nav {
-  margin-right: 70px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;

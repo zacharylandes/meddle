@@ -1,0 +1,12 @@
+<div class="find-new-backer" >
+<%= form_tag({controller: "search", action: "index"}, method: "get") do %>
+    <%= text_field_tag :email, params[:email], placeholder: "Email" , class: 'input-field' %>
+    <%= submit_tag "Search", :name => nil, class: 'input-field' %>
+<% end %>
+
+<%= form_tag(:method => "get", id: "search-form") do %>
+    <%= text_field_tag :f_name, params[:f_name], placeholder: "First Name", class: 'input-field' %>
+    <%= text_field_tag :l_name, params[:l_name], placeholder: "Last Name", class: 'input-field'  %>
+    <%= submit_tag "Search", :name => nil, class: 'input-field' %>
+<% end %>
+</div>

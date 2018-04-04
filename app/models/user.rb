@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_many :mate_preferences
   has_many :traits
   has_many :comments, through: :dater_backer
-  # has_many :backer_evals, through: :dater_backer
 
 
     def self.from_omniauth(auth)
