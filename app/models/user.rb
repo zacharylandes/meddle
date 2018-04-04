@@ -1,9 +1,16 @@
 class User < ApplicationRecord
 
+<<<<<<< HEAD
 has_many :daters
 has_many :backers
 has_many :dater_backers, through: :daters
 has_many :dater_backers, through: :backers
+=======
+  has_and_belongs_to_many :dater_backers
+  has_many :mate_preferences
+  has_many :traits
+  has_many :comments, through: :dater_backer
+>>>>>>> jquery for dater
 
 
   def self.from_omniauth(auth)

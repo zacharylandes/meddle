@@ -1,6 +1,17 @@
 
 $(document).ready(function(){
-	"use strict";
+    "use strict";
+    
+
+    $('#pool-button').click(function(){
+        $('.show-the-daters-backers').toggleClass('show-the-daters-backersAdd')
+    })
+
+    $('#invite-backer-button').click(function(){
+        $('.find-new-backer').toggleClass('backer-search-form')
+    })
+
+    
 
 	var window_width 	 = $(window).width(),
 	window_height 		 = window.innerHeight,
@@ -84,4 +95,9 @@ $(document).ready(function(){
             });
         });
     });
+
+
+
+
  });
+
