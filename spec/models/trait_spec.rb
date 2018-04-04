@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Trait, type: :model do
+<<<<<<< HEAD
 
   context "with valid values" do
     it "creates a trait instance" do
@@ -33,4 +34,7 @@ RSpec.describe Trait, type: :model do
 
 #Sad path? handle wrong datatypes on feature tests?
 
+=======
+  pending "add some examples to (or delete) #{__FILE__}"
+>>>>>>> 550c753ee7adf8164217688ff9be2a2a467d7de5
 end

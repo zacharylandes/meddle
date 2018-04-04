@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe MatePreference, type: :model do
+<<<<<<< HEAD
   context "with valid values" do
     it "creates a mate_preference instance" do
       dater = create(:user)
@@ -30,4 +31,7 @@ RSpec.describe MatePreference, type: :model do
   end
 
 
+=======
+  pending "add some examples to (or delete) #{__FILE__}"
+>>>>>>> 550c753ee7adf8164217688ff9be2a2a467d7de5
 end

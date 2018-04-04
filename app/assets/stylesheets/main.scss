@@ -1,3 +1,4 @@
+<<<<<<< HEAD:app/assets/stylesheets/main.css
 /*--------------------------- Color variations ----------------------*/
 /* Medium Layout: 1280px */
 /* Tablet Layout: 768px */
@@ -6,12 +7,114 @@
 /* =================================== */
 /*  Basic Style
 /* =================================== */
+=======
+
+$teal:#51A1A1;
+$darkBlue: #085465;
+$red: #DD3F4A;
+$grey:  #D3D6D6;
+
+
+>>>>>>> 550c753ee7adf8164217688ff9be2a2a467d7de5:app/assets/stylesheets/main.scss
 .dash{
   height: 200px;
   color:black;
 }
+#card-button{
+  color:$teal;
+}
+
+#card-button:hover{
+  color:white;
+}
+#main-nav{
+  border-bottom: 2px solid $teal;
+}
 body{
   font-family: 'Montserrat', sans-serif;
+}
+#tab2{
+  background-color:$darkBlue;
+}
+#tab1{
+  background-color:$teal;
+}
+
+#dash-dater-img{
+  width:200px;
+  margin: 20px 0px;
+  height:200px;
+  border-radius:50%;
+}
+.dash-body-tab-backer{
+  height:700px;
+  width:80%;
+  background-color:$darkBlue;
+}
+.dash-body-tab{
+  height:700px;
+  width:80%;
+  background-color:$teal;
+}
+.dater-tab-container{
+  width: 80%;
+  margin-top:20px;
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items:flex-start
+}
+.dater-tab a{
+  margin:5px;
+}
+.dater-tab:hover{
+  background-color:$darkBlue;
+  color:white;
+  border:2px solid $darkBlue;
+}
+.dater-tab{
+  display:flex;
+  justify-content: center;
+  color:white;
+  padding:auto;
+  margin:0px 1px;
+  border-radius: 10% 10% 0% 0% ;
+  width: 100px;
+  height: 30px;
+  background-color:$teal;
+}
+#dash-side-btn:hover{
+  border-bottom: 2px solid $darkBlue;
+  border-top: 2px solid $darkBlue;
+}
+#dash-side-btn{
+  margin:10px 0px;
+  color:$darkBlue;
+  width:100%;
+  padding:10px;
+  border-bottom: 2px solid $teal;
+  border-top: 2px solid $teal;
+  background-color: white;
+}
+.dashboard-container{
+  display: flex;
+  flex-direction: row;
+}
+.dash-body{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:78%;
+  height:800px;
+}
+.dash-side{
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items:center;
+  width: 15%;
+  height:800px;
+  border-right: 3px solid $teal;
 }
 .logo img{
   height: 80px;
@@ -43,12 +146,12 @@ body{
 }
 ::-moz-selection {
   /* Code for Firefox */
-  background-color: teal;
+  background-color: $teal;
   color: #fff;
 }
 
 ::selection {
-  background-color: teal;
+  background-color:$teal;
   color: #fff;
 }
 
@@ -788,7 +891,7 @@ td, th {
 }
 
 b, i, sup, sub, u, del {
-  color: teal;
+  color:$teal;
 }
 
 h1 {
@@ -923,25 +1026,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .genric-btn.primary {
   color: #fff;
-  background: teal;
+  background: $teal;
   border: 1px solid transparent;
 }
 
 .genric-btn.primary:hover {
-  color: teal;
-  border: 1px solid teal;
+  color: $teal;
+  border: 1px solid $teal;
   background: #fff;
 }
 
 .genric-btn.primary-border {
-  color: teal;
-  border: 1px solid teal;
+  color: $teal;
+  border: 1px solid $teal;
   background: #fff;
 }
 
 .genric-btn.primary-border:hover {
   color: #fff;
-  background: teal;
+  background: $teal;
   border: 1px solid transparent;
 }
 
@@ -1077,7 +1180,7 @@ h1, h2, h3, h4, h5, h6 {
 .generic-blockquote {
   padding: 30px 50px 30px 30px;
   background: #f9f9ff;
-  border-left: 2px solid teal;
+  border-left: 2px solid $teal;
 }
 
 .progress-table-wrap {
@@ -1201,7 +1304,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   width: 14px;
   height: 14px;
-  border: 3px solid teal;
+  border: 3px solid $teal;
   background: #fff;
   top: 4px;
   left: 0;
@@ -1214,7 +1317,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .ordered-list li {
   list-style-type: decimal-leading-zero;
-  color: teal;
+  color: $teal;
   font-weight: 500;
   line-height: 1.82em !important;
 }
@@ -1227,7 +1330,7 @@ h1, h2, h3, h4, h5, h6 {
 .ordered-list-alpha li {
   margin-left: 30px;
   list-style-type: lower-alpha;
-  color: teal;
+  color: $teal;
   font-weight: 500;
   line-height: 1.82em !important;
 }
@@ -1240,7 +1343,7 @@ h1, h2, h3, h4, h5, h6 {
 .ordered-list-roman li {
   margin-left: 30px;
   list-style-type: lower-roman;
-  color: teal;
+  color: $teal;
   font-weight: 500;
   line-height: 1.82em !important;
 }
@@ -1312,7 +1415,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .single-input-primary:focus {
   outline: none;
-  border: 1px solid teal;
+  border: 1px solid $teal;
 }
 
 .single-input-accent {
@@ -1373,7 +1476,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: teal;
+  background: $teal;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
@@ -1456,7 +1559,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .primary-switch input:checked + label:before {
-  background: teal;
+  background: $teal;
 }
 
 .confirm-switch {
@@ -1805,12 +1908,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .default-select .nice-select .list .option.selected {
-  color: teal;
+  color: $teal;
   background: transparent;
 }
 
 .default-select .nice-select .list .option:hover {
-  color: teal;
+  color: $teal;
   background: transparent;
 }
 
@@ -1860,12 +1963,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .form-select .nice-select .list .option.selected {
-  color: teal;
+  color: $teal;
   background: transparent;
 }
 
 .form-select .nice-select .list .option:hover {
-  color: teal;
+  color: $teal;
   background: transparent;
 }
 
@@ -1887,8 +1990,13 @@ body {
 
 .default-header {
   padding: 10px 0;
+<<<<<<< HEAD:app/assets/stylesheets/main.css
   background-color: teal;
   /* position: absolute; */
+=======
+  background-color: $teal;
+  border-bottom: 3px solid $red;
+>>>>>>> 550c753ee7adf8164217688ff9be2a2a467d7de5:app/assets/stylesheets/main.scss
   top: 0;
   left: 0;
   width: 100%;
@@ -1926,7 +2034,7 @@ nav {
     text-align: right;
     padding: 20px 0;
     z-index: 5;
-    background: teal;
+    background: $teal;
   }
 }
 
@@ -1981,10 +2089,8 @@ nav a:hover {
   line-height: 40px;
   padding: 0 30px;
   border-radius: 20px;
-  background: teal;
-  border: 1px solid teal;
-  color: #fff;
-  /* background: transparent; */
+  border: 1px solid $teal;
+  color: $teal;
   display: inline-block;
   font-weight: 500;
   position: relative;
@@ -2004,9 +2110,7 @@ nav a:hover {
 }
 
 .primary-btn:hover {
-  background: teal;
-  border: 1px solid white;
-  color: #fff;
+  background: $teal;
 }
 
 .banner-area {
@@ -2028,10 +2132,16 @@ nav a:hover {
   font-weight: 600;
   line-height: 1.2em;
   margin-bottom: 20px;
-  color: teal;
+  color: $teal;
 }
 
 @media (max-width: 767px) {
+  .dash-side{
+    width:100%
+  }
+  .dash-body{
+    display:none;
+  }
   .banner-content h1 {
     font-size: 40px;
   }
@@ -2055,7 +2165,7 @@ nav a:hover {
 }
 
 .generic-banner {
-  background: teal;
+  background: $teal;
 }
 
 .generic-banner .height {
@@ -2150,7 +2260,7 @@ nav a:hover {
   font-size: 36px;
   line-height: 1.25em;
   margin-bottom: 20px;
-  color: teal;
+  color: $teal;
 }
 
 @media (max-width: 767px) {
@@ -2203,8 +2313,8 @@ nav a:hover {
 }
 
 .carousel-area .carousel-trigger .next-trigger:hover, .carousel-area .carousel-trigger .prev-trigger:hover {
-  background: teal;
-  border: 1px solid teal;
+  background: $teal;
+  border: 1px solid $teal;
 }
 
 .carousel-area .carousel-trigger .next-trigger:hover span, .carousel-area .carousel-trigger .prev-trigger:hover span {
@@ -2252,7 +2362,7 @@ nav a:hover {
 .single-service .icon span {
   margin: auto;
   font-size: 36px;
-  color: teal;
+  color: $teal;
   font-weight: 600;
 }
 
@@ -2290,7 +2400,7 @@ nav a:hover {
 .service-area-2 .single-service .icon span {
   margin: auto;
   font-size: 36px;
-  color: teal;
+  color: $teal;
   font-weight: 600;
 }
 
@@ -2406,7 +2516,7 @@ nav a:hover {
 }
 
 .single-address:hover .icon {
-  background: teal;
+  background: $teal;
 }
 
 .single-address:hover .icon span {
@@ -2527,10 +2637,11 @@ nav a:hover {
 }
 
 .subscription .info.error {
-  color: teal;
+  color: $teal;
 }
 
 footer {
+  bottom:0;
   background: #222222;
 }
 
@@ -2547,7 +2658,7 @@ footer .footer-nav li a {
 }
 
 footer .footer-nav li a:hover {
-  color: teal;
+  color: $teal;
 }
 
 .instafeed {
@@ -2580,15 +2691,15 @@ footer .footer-nav li a:hover {
 }
 
 .footer-bottom .footer-text i {
-  color: teal;
+  color: $teal;
 }
 
 .footer-bottom .footer-text a {
-  color: teal;
+  color: $teal;
 }
 
 .footer-bottom .footer-text a:hover {
-  color: teal;
+  color: $teal;
 }
 
 @media (max-width: 767px) {
@@ -2615,7 +2726,7 @@ footer .footer-nav li a:hover {
 }
 
 .footer-social a:hover {
-  background: teal;
+  background: $teal;
 }
 
 .about-generic-area {
