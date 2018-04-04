@@ -32,11 +32,15 @@ class User < ApplicationRecord
 
 
   def backers
-    User.find_by_sql(["select dater_backers.backer_id, users.* from dater_backers inner join users on dater_backers.backer_id = users.id where dater_id = ?", curent_user.id])
+    User.find_by_sql(["SELECT dater_backers.backer_id, users.* FROM dater_backers INNER JOIN users ON dater_backers.backer_id = users.id WHERE dater_id = ?", curent_user.id])
+  end
+
+  def daters
+    User.find_by_sql(["SELECT dater_backers.dater_id, users.* FROM dater_backers INNER JOIN users ON dater_backers.dater_id = users.id WHERE backer_id = ?", current_user.id])
   end
 
   def pool
-    User.find_by_sql(["select pools.match_id, users.* from pools inner join users on pools.match_id = users.id where dater_id = ?", 16])
+    User.find_by_sql(["SELECT pools.match_id, users.* FROM pools INNER JOIN users ON pools.match_id = users.id WHERE dater_id = ?", current_user.id])
   end
 
 
