@@ -10,28 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180403223346) do
-=======
-
-ActiveRecord::Schema.define(version: 20180404173931) do
-
->>>>>>> updated with figaro and google keys
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-=======
 
   create_table "backer_evals", force: :cascade do |t|
     t.text "q_1"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "dater_backer_id"
+    t.index ["dater_backer_id"], name: "index_backer_evals_on_dater_backer_id"
   end
 
 
->>>>>>> updated with figaro and google keys
   create_table "comments", force: :cascade do |t|
     t.bigint "dater_backer_id"
     t.text "comment"
@@ -70,6 +63,13 @@ ActiveRecord::Schema.define(version: 20180404173931) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_mate_preferences_on_user_id"
+  end
+
+  create_table "pools", force: :cascade do |t|
+    t.integer "dater_id"
+    t.integer "match_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "traits", force: :cascade do |t|
