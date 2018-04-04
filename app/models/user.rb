@@ -1,8 +1,13 @@
 class User < ApplicationRecord
 
 
-  has_many :daters, class_name: "DaterBacker", foreign_key: :dater_id
-  has_many :backers, class_name: "DaterBacker", foreign_key: :backer_id
+  has_many :dater_backers
+  has_many :daters, through: :dater_backers, class_name: "User"
+  has_many :backers, through: :dater_backers, class_name: "User"
+
+  has_many :pools
+  has_many :daters, through: :pools, class_name: "User"
+  has_many :matches, through: :pools, class_name: "User"
   has_many :mate_preferences, dependent: :destroy
   has_many :traits, dependent: :destroy
   has_many :comments, through: :dater_backer, dependent: :destroy
@@ -11,18 +16,29 @@ class User < ApplicationRecord
 
 
 
-    def self.from_omniauth(auth)
-        where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
-          user.provider = auth.provider
-          user.uid = auth.uid
-          user.name = auth.info.name
-          user.f_name = auth.info.first_name
-          user.l_name = auth.info.last_name
-          user.email = auth.info.email
-          user.oauth_token = auth.credentials.token
-          user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-          user.save!
-        end
-      end
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.info.name
+      user.f_name = auth.info.first_name
+      user.l_name = auth.info.last_name
+      user.email = auth.info.email
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.save!
+    end
+  end
+
+
+  def backers
+    User.find_by_sql(["select dater_backers.backer_id, users.* from dater_backers inner join users on dater_backers.backer_id = users.id where dater_id = ?", curent_user.id])
+  end
+
+  def pool
+    User.find_by_sql(["select pools.match_id, users.* from pools inner join users on pools.match_id = users.id where dater_id = ?", 16])
+  end
+
+
 
 end
