@@ -25,7 +25,9 @@ require 'capybara/rails'
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
+
 ActiveRecord::Migration.maintain_test_schema!
+DatabaseCleaner.strategy = :truncation
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
@@ -51,19 +53,15 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 
-  # Filter lines from Rails gems in backtraces.
-  config.filter_rails_from_backtrace!
-   # Configure Factory Bot, factory_bot_rails
-   config.include FactoryBot::Syntax::Methods
+ # Configure Factory Bot, factory_bot_rails
+  config.include FactoryBot::Syntax::Methods
 
-   config.before(:each) do
-     DatabaseCleaner.clean
-   end
-   config.after(:each) do
-     DatabaseCleaner.clean
-   end
-   # arbitrary gems may also be filtered via:
-   # config.filter_gems_from_backtrace("gem name")
+  config.before(:each) do
+    DatabaseCleaner.clean
+  end
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
