@@ -4,6 +4,9 @@ class DaterBacker < ApplicationRecord
 
   has_many :comments
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> updated with figaro and google keys
 end

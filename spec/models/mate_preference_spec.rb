@@ -1,7 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe MatePreference, type: :model do
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> updated with figaro and google keys
+>>>>>>> updated with figaro and google keys
   context "with valid values" do
     it "creates a mate_preference instance" do
       dater = create(:user)

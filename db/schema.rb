@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180405223757) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20180403223346) do
+=======
+
+ActiveRecord::Schema.define(version: 20180404173931) do
+
+>>>>>>> updated with figaro and google keys
+>>>>>>> updated with figaro and google keys
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "backer_evals", force: :cascade do |t|
     t.string "q_1"
     t.bigint "backer_id"
@@ -34,6 +45,19 @@ ActiveRecord::Schema.define(version: 20180405223757) do
     t.index ["user_id"], name: "index_backers_on_user_id"
   end
 
+=======
+<<<<<<< HEAD
+=======
+
+  create_table "backer_evals", force: :cascade do |t|
+    t.text "q_1"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+
+>>>>>>> updated with figaro and google keys
+>>>>>>> updated with figaro and google keys
   create_table "comments", force: :cascade do |t|
     t.text "comment"
     t.datetime "created_at", null: false
