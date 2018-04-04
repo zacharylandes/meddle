@@ -1,7 +1,19 @@
-<div class ='dater-tab-container'>
-    <%= link_to 'Dater',dashboard_path(current_user, tab:'dater'), id: "tab2",class:'dater-tab' %>
-    <%= link_to 'Backer',dashboard_path(current_user, tab:'backer'), id:"tab1",class:'dater-tab' %>
+
+<div class = "dater-tab-container">
+    <ul class="nav nav-tabs">
+    <li class="nav-item">
+     <%= link_to 'Dater', dashboard_path(current_user, tab:'dater'), class:'nav-link'%>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="#">Backer</a>
+    </li>
+    </ul>
 </div>
-<div class= "dash-body-tab-backer">
-backer
-</div>
+
+<div class="card">
+    <div class="card-body">
+    <h5 class="card-title">Backer</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a class="primary-btn" id="card-button">Go somewhere</a>
+    </div> 
+</div>  

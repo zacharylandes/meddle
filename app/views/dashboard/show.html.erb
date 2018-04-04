@@ -1,16 +1,24 @@
+
+
+
 <div class = 'dashboard-container'> 
     <div class='dash-side'>
-    <%= image_tag('blackwhite.jpg', id:'dash-dater-img')%>
-    <%= link_to 'Profile',user_path(current_user), id:"dash-side-btn" %>
-    <%= link_to 'Gallery',user_path(current_user), id:"dash-side-btn" %>
-    <%= link_to 'Messages',user_path(current_user), id:"dash-side-btn" %>
+         <%= image_tag('blackwhite.jpg', id:'dash-dater-img')%>
+         <%= link_to 'Profile',user_path(current_user), id:"card-button", class:"primary-btn"  %>
+         <%= link_to 'Gallery',user_path(current_user), id:"card-button", class:"primary-btn"%>
+        <%= link_to 'Messages',user_path(current_user), id:"card-button", class:"primary-btn" %>
     </div>  
+
     <div class ='dash-body'>
-    <% if params['tab']="dater"%>
-        <%=render 'dater_tab'%>
-    <% elsif params['tab']='backer' %>
-        <%=render 'backer_tab'%>
-      </div>
-    <% end %>
+        <div class = 'dash-card-container'>
+        <% if params['tab'] = 'backer' && params['tab'] != 'dater' %>
+            <%= render 'backer_tab' %> 
+            <%print 'params',params%>
+         <% else %>
+            <%= render 'dater_tab'%>
+         <% end %>
+         </div>
+        </div>
+        </div>
     </div>
 </div>
