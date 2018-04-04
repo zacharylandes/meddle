@@ -4,7 +4,10 @@ class DaterBacker < ApplicationRecord
   belongs_to :backer, class_name: "User"
 
   has_many :comments
-  # has_many :backer_evals
+  has_many :backer_evals
+
+  validates_presence_of :dater_id
+  validates_presence_of :backer_id
 
 end
 
