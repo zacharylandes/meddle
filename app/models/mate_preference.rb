@@ -3,7 +3,7 @@ class MatePreference < ApplicationRecord
 
 
 enum smoker: [ :never, :socially, :smoker], _prefix: true
-enum alcohol: [:never, :socially, :drinker ], _prefix: true, _prefix: true
+enum alcohol: [:never, :socially, :drinker ], _prefix: true
 enum body_type: [:any, :athletic, :average, :beefy, :curvy, :extra_curvy, :large, :slender], _prefix: true # Currently Schema is set to string. May need to change to array.
 # religiosity -- just self rate 1-3, where 0 is no pref
 # politicalness -- just self rate 1-3, where 0 is no pref

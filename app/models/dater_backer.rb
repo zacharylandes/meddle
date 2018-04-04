@@ -9,5 +9,6 @@ class DaterBacker < ApplicationRecord
 
   validates_presence_of :dater_id
   validates_presence_of :backer_id
+  validates_presence_of :relationship
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404192439) do
+ActiveRecord::Schema.define(version: 20180404203440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20180404192439) do
     t.text "q_1"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "dater_backer_id"
+    t.index ["dater_backer_id"], name: "index_backer_evals_on_dater_backer_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -59,6 +61,13 @@ ActiveRecord::Schema.define(version: 20180404192439) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_mate_preferences_on_user_id"
+  end
+
+  create_table "pools", force: :cascade do |t|
+    t.integer "dater_id"
+    t.integer "match_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "traits", force: :cascade do |t|
