@@ -1,5 +1,9 @@
 FactoryBot.define do
   factory :mate_preference do
+<<<<<<< HEAD
+=======
+
+>>>>>>> updated with figaro and google keys
     user 1
     min_height 60
     max_height 70

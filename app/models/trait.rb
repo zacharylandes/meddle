@@ -9,4 +9,6 @@ class Trait < ApplicationRecord
   enum has_pets: [ :none, :dog, :cat, :other, :allergeric], _prefix: true
   enum orientation: [:straight, :queer], _prefix: true
   enum gender: [:male, :female, :non_binary], _prefix: true
+
+
 end
