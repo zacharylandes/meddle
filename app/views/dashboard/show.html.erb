@@ -1,1 +1,16 @@
-<div>Dashbaord  </div>
+<div class = 'dashboard-container'> 
+    <div class='dash-side'>
+    <%= image_tag('blackwhite.jpg', id:'dash-dater-img')%>
+    <%= link_to 'Profile',user_path(current_user), id:"dash-side-btn" %>
+    <%= link_to 'Gallery',user_path(current_user), id:"dash-side-btn" %>
+    <%= link_to 'Messages',user_path(current_user), id:"dash-side-btn" %>
+    </div>  
+    <div class ='dash-body'>
+    <% if params['tab']="dater"%>
+        <%=render 'dater_tab'%>
+    <% elsif params['tab']='backer' %>
+        <%=render 'backer_tab'%>
+      </div>
+    <% end %>
+    </div>
+</div>

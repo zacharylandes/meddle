@@ -1,17 +1,102 @@
-/*--------------------------- Color variations ----------------------*/
-/* Medium Layout: 1280px */
-/* Tablet Layout: 768px */
-/* Mobile Layout: 320px */
-/* Wide Mobile Layout: 480px */
-/* =================================== */
-/*  Basic Style
-/* =================================== */
+
+$teal: teal;
+$darkBlue: #085465;
+$red: #DD3F4A;
+$grey:  #D3D6D6;
+
+
 .dash{
   height: 200px;
   color:black;
 }
 body{
   font-family: 'Montserrat', sans-serif;
+}
+#tab2{
+  background-color:$darkBlue;
+}
+#tab1{
+  background-color:$teal;
+}
+
+/* da */
+#dash-dater-img{
+  width:200px;
+  margin: 20px 0px;
+  height:200px;
+  border-radius:50%;
+}
+.dash-body-tab-backer{
+  height:700px;
+  width:80%;
+  background-color:$darkBlue;
+}
+.dash-body-tab{
+  height:700px;
+  width:80%;
+  background-color:$teal;
+}
+.dater-tab-container{
+  width: 80%;
+  margin-top:20px;
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items:flex-start
+}
+.dater-tab a{
+  margin:5px;
+}
+.dater-tab:hover{
+  background-color:$darkBlue;
+  color:white;
+  border:2px solid $darkBlue;
+}
+.dater-tab{
+  display:flex;
+  justify-content: center;
+  color:white;
+  padding:auto;
+  margin:0px 1px;
+  border-radius: 10% 10% 0% 0% ;
+  width: 100px;
+  height: 30px;
+  background-color:$teal;
+}
+#dash-side-btn:hover{
+  border:1px solid white;
+
+}
+#dash-side-btn{
+  margin:10px 0px;
+  box-shadow: 0px 2px 2px black;
+  color:white;
+  width:100%;
+  padding:20px;
+  background-color: $darkBlue;
+}
+.dashboard-container{
+  display: flex;
+  flex-direction: row;
+}
+.dash-body{
+  display:flex;
+  flex-direction:column;
+  /* justify-content: space-between; */
+  align-items:center;
+  background-color: $grey;
+  width:78%;
+  height:800px;
+}
+.dash-side{
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items:center;
+  background-color: teal;
+  width: 22%;
+  height:800px;
+  border-right: 3px solid $darkBlue;
 }
 .logo img{
   height: 80px;
@@ -43,7 +128,7 @@ body{
 }
 ::-moz-selection {
   /* Code for Firefox */
-  background-color: teal;
+  background-color: $teal;
   color: #fff;
 }
 
@@ -1888,7 +1973,7 @@ body {
 .default-header {
   padding: 10px 0;
   background-color: teal;
-  /* position: absolute; */
+  border-bottom: 3px solid $red;
   top: 0;
   left: 0;
   width: 100%;
@@ -2032,6 +2117,12 @@ nav a:hover {
 }
 
 @media (max-width: 767px) {
+  .dash-side{
+    width:100%
+  }
+  .dash-body{
+    display:none;
+  }
   .banner-content h1 {
     font-size: 40px;
   }
@@ -2531,6 +2622,7 @@ nav a:hover {
 }
 
 footer {
+  bottom:0;
   background: #222222;
 }
 
