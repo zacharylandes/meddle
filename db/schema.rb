@@ -13,6 +13,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180405223757) do
 =======
 <<<<<<< HEAD
@@ -29,6 +30,9 @@ ActiveRecord::Schema.define(version: 20180403223346) do
 =======
 ActiveRecord::Schema.define(version: 20180404203440) do
 >>>>>>> pulling db
+=======
+ActiveRecord::Schema.define(version: 20180405021011) do
+>>>>>>> message play
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,6 +121,60 @@ ActiveRecord::Schema.define(version: 20180404203440) do
     t.index ["dater_id"], name: "index_matches_on_dater_id"
   end
 
+  create_table "mailboxer_conversation_opt_outs", id: :serial, force: :cascade do |t|
+    t.string "unsubscriber_type"
+    t.integer "unsubscriber_id"
+    t.integer "conversation_id"
+    t.index ["conversation_id"], name: "index_mailboxer_conversation_opt_outs_on_conversation_id"
+    t.index ["unsubscriber_id", "unsubscriber_type"], name: "index_mailboxer_conversation_opt_outs_on_unsubscriber_id_type"
+  end
+
+  create_table "mailboxer_conversations", id: :serial, force: :cascade do |t|
+    t.string "subject", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mailboxer_notifications", id: :serial, force: :cascade do |t|
+    t.string "type"
+    t.text "body"
+    t.string "subject", default: ""
+    t.string "sender_type"
+    t.integer "sender_id"
+    t.integer "conversation_id"
+    t.boolean "draft", default: false
+    t.string "notification_code"
+    t.string "notified_object_type"
+    t.integer "notified_object_id"
+    t.string "attachment"
+    t.datetime "updated_at", null: false
+    t.datetime "created_at", null: false
+    t.boolean "global", default: false
+    t.datetime "expires"
+    t.index ["conversation_id"], name: "index_mailboxer_notifications_on_conversation_id"
+    t.index ["notified_object_id", "notified_object_type"], name: "index_mailboxer_notifications_on_notified_object_id_and_type"
+    t.index ["notified_object_type", "notified_object_id"], name: "mailboxer_notifications_notified_object"
+    t.index ["sender_id", "sender_type"], name: "index_mailboxer_notifications_on_sender_id_and_sender_type"
+    t.index ["type"], name: "index_mailboxer_notifications_on_type"
+  end
+
+  create_table "mailboxer_receipts", id: :serial, force: :cascade do |t|
+    t.string "receiver_type"
+    t.integer "receiver_id"
+    t.integer "notification_id", null: false
+    t.boolean "is_read", default: false
+    t.boolean "trashed", default: false
+    t.boolean "deleted", default: false
+    t.string "mailbox_type", limit: 25
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_delivered", default: false
+    t.string "delivery_method"
+    t.string "message_id"
+    t.index ["notification_id"], name: "index_mailboxer_receipts_on_notification_id"
+    t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
+  end
+
   create_table "mate_preferences", force: :cascade do |t|
     t.bigint "dater_id"
     t.integer "min_height"
@@ -194,6 +252,7 @@ ActiveRecord::Schema.define(version: 20180404203440) do
 >>>>>>> pulling db
   end
 
+<<<<<<< HEAD
   add_foreign_key "backer_evals", "backers"
   add_foreign_key "backer_evals", "daters"
   add_foreign_key "backers", "users"
@@ -205,4 +264,12 @@ ActiveRecord::Schema.define(version: 20180404203440) do
   add_foreign_key "matches", "daters"
   add_foreign_key "mate_preferences", "daters"
   add_foreign_key "traits", "daters"
+=======
+  add_foreign_key "comments", "dater_backers"
+  add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
+  add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
+  add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
+  add_foreign_key "mate_preferences", "users"
+  add_foreign_key "traits", "users"
+>>>>>>> message play
 end

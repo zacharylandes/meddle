@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :search, only: [:index]
 
   root to: "homes#show"
+  resources :conversations do
+    resources :messages
+   end
 
   resources :dashboard 
   

@@ -1,28 +1,12 @@
 class User < ApplicationRecord
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 has_many :daters
 has_many :backers
 has_many :dater_backers, through: :daters
 has_many :dater_backers, through: :backers
-=======
-  has_and_belongs_to_many :dater_backers
-  has_many :mate_preferences
-  has_many :traits
-  has_many :comments, through: :dater_backer
->>>>>>> jquery for dater
-=======
 
-  has_many :daters, class_name: "DaterBacker", foreign_key: :dater_id
-  has_many :backers, class_name: "DaterBacker", foreign_key: :backer_id
-  has_many :mate_preferences, dependent: :destroy
-  has_many :traits, dependent: :destroy
-  has_many :comments, through: :dater_backer, dependent: :destroy
-  has_many :backer_evals, through: :dater_backer, dependent: :destroy
+acts_as_messageable
 
-
->>>>>>> updated with figaro and google keys
 
 
   def self.from_omniauth(auth)
