@@ -10,17 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404203440) do
+ActiveRecord::Schema.define(version: 20180405201606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "backer_evals", force: :cascade do |t|
-    t.text "q_1"
+    t.bigint "dater_backer_id"
+    t.string "q_1"
+    t.index ["dater_backer_id"], name: "index_backer_evals_on_dater_backer_id"
+  end
+
+  create_table "backers", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "f_name"
+    t.string "l_name"
+    t.string "image_1"
+    t.string "image_2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "dater_backer_id"
-    t.index ["dater_backer_id"], name: "index_backer_evals_on_dater_backer_id"
+    t.index ["user_id"], name: "index_backers_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -32,15 +41,34 @@ ActiveRecord::Schema.define(version: 20180404203440) do
   end
 
   create_table "dater_backers", force: :cascade do |t|
-    t.integer "dater_id"
-    t.integer "backer_id"
+    t.bigint "dater_id"
+    t.bigint "backer_id"
     t.string "relationship"
+    t.index ["backer_id"], name: "index_dater_backers_on_backer_id"
+    t.index ["dater_id"], name: "index_dater_backers_on_dater_id"
+  end
+
+  create_table "daters", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "f_name"
+    t.string "l_name"
+    t.string "image_1"
+    t.string "image_2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_daters_on_user_id"
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.bigint "dater_id"
+    t.integer "match_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dater_id"], name: "index_matches_on_dater_id"
   end
 
   create_table "mate_preferences", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "dater_id"
     t.integer "min_height"
     t.integer "max_height"
     t.integer "smoker"
@@ -60,18 +88,11 @@ ActiveRecord::Schema.define(version: 20180404203440) do
     t.integer "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_mate_preferences_on_user_id"
-  end
-
-  create_table "pools", force: :cascade do |t|
-    t.integer "dater_id"
-    t.integer "match_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["dater_id"], name: "index_mate_preferences_on_dater_id"
   end
 
   create_table "traits", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "dater_id"
     t.integer "height"
     t.integer "smoker"
     t.integer "alcohol"
@@ -92,25 +113,29 @@ ActiveRecord::Schema.define(version: 20180404203440) do
     t.text "other"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_traits_on_user_id"
+    t.index ["dater_id"], name: "index_traits_on_dater_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
-    t.string "name"
+    t.string "auth_name"
+    t.string "email"
+    t.string "f_name"
+    t.string "l_name"
     t.string "oauth_token"
     t.datetime "oauth_expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "email"
-    t.string "image1"
-    t.string "image2"
-    t.string "f_name"
-    t.string "l_name"
   end
 
+  add_foreign_key "backer_evals", "dater_backers"
+  add_foreign_key "backers", "users"
   add_foreign_key "comments", "dater_backers"
-  add_foreign_key "mate_preferences", "users"
-  add_foreign_key "traits", "users"
+  add_foreign_key "dater_backers", "backers"
+  add_foreign_key "dater_backers", "daters"
+  add_foreign_key "daters", "users"
+  add_foreign_key "matches", "daters"
+  add_foreign_key "mate_preferences", "daters"
+  add_foreign_key "traits", "daters"
 end

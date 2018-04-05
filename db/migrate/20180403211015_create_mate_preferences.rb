@@ -1,7 +1,7 @@
 class CreateMatePreferences < ActiveRecord::Migration[5.1]
   def change
     create_table :mate_preferences do |t|
-      t.references :user, foreign_key: true
+      t.references :dater, foreign_key: true
       t.integer :min_height
       t.integer :max_height
       t.integer :smoker

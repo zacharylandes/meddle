@@ -1,5 +1,5 @@
 class Trait < ApplicationRecord
-  belongs_to :user
+  belongs_to :dater
 
 
   enum body_type: [:any, :athletic, :average, :beefy, :curvy, :extra_curvy, :large, :slender], _prefix: true

@@ -1,7 +1,7 @@
 class CreateTraits < ActiveRecord::Migration[5.1]
   def change
     create_table :traits do |t|
-      t.references :user, foreign_key: true
+      t.references :dater, foreign_key: true
       t.integer :height
       t.integer :smoker
       t.integer :alcohol

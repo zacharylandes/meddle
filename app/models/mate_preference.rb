@@ -1,5 +1,5 @@
 class MatePreference < ApplicationRecord
-  belongs_to :user
+  belongs_to :dater
 
 
 enum smoker: [ :never, :socially, :smoker], _prefix: true
