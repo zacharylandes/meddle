@@ -10,36 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180405223757) do
-=======
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180403223346) do
-=======
-
-ActiveRecord::Schema.define(version: 20180404173931) do
-
->>>>>>> updated with figaro and google keys
->>>>>>> updated with figaro and google keys
-=======
-ActiveRecord::Schema.define(version: 20180403223346) do
->>>>>>> Adds models, extra columns, and seed data. Not all relationships working as anticipated
-=======
-ActiveRecord::Schema.define(version: 20180404203440) do
->>>>>>> pulling db
-=======
-ActiveRecord::Schema.define(version: 20180405021011) do
->>>>>>> message play
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   create_table "backer_evals", force: :cascade do |t|
     t.string "q_1"
     t.bigint "backer_id"
@@ -59,31 +34,6 @@ ActiveRecord::Schema.define(version: 20180405021011) do
     t.index ["user_id"], name: "index_backers_on_user_id"
   end
 
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> Adds models, extra columns, and seed data. Not all relationships working as anticipated
-
-=======
->>>>>>> pulling db
-  create_table "backer_evals", force: :cascade do |t|
-    t.text "q_1"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "dater_backer_id"
-    t.index ["dater_backer_id"], name: "index_backer_evals_on_dater_backer_id"
-  end
-
-<<<<<<< HEAD
-
-<<<<<<< HEAD
->>>>>>> updated with figaro and google keys
->>>>>>> updated with figaro and google keys
-=======
->>>>>>> Adds models, extra columns, and seed data. Not all relationships working as anticipated
-=======
->>>>>>> pulling db
   create_table "comments", force: :cascade do |t|
     t.text "comment"
     t.datetime "created_at", null: false
@@ -111,14 +61,6 @@ ActiveRecord::Schema.define(version: 20180405021011) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_daters_on_user_id"
-  end
-
-  create_table "matches", force: :cascade do |t|
-    t.bigint "dater_id"
-    t.integer "match_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["dater_id"], name: "index_matches_on_dater_id"
   end
 
   create_table "mailboxer_conversation_opt_outs", id: :serial, force: :cascade do |t|
@@ -175,6 +117,14 @@ ActiveRecord::Schema.define(version: 20180405021011) do
     t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
   end
 
+  create_table "matches", force: :cascade do |t|
+    t.bigint "dater_id"
+    t.integer "match_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dater_id"], name: "index_matches_on_dater_id"
+  end
+
   create_table "mate_preferences", force: :cascade do |t|
     t.bigint "dater_id"
     t.integer "min_height"
@@ -197,13 +147,6 @@ ActiveRecord::Schema.define(version: 20180405021011) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["dater_id"], name: "index_mate_preferences_on_dater_id"
-  end
-
-  create_table "pools", force: :cascade do |t|
-    t.integer "dater_id"
-    t.integer "match_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "traits", force: :cascade do |t|
@@ -242,17 +185,8 @@ ActiveRecord::Schema.define(version: 20180405021011) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
-=======
-    t.string "email"
-    t.string "image1"
-    t.string "image2"
-    t.string "f_name"
-    t.string "l_name"
->>>>>>> pulling db
   end
 
-<<<<<<< HEAD
   add_foreign_key "backer_evals", "backers"
   add_foreign_key "backer_evals", "daters"
   add_foreign_key "backers", "users"
@@ -261,15 +195,10 @@ ActiveRecord::Schema.define(version: 20180405021011) do
   add_foreign_key "dater_backers", "backers"
   add_foreign_key "dater_backers", "daters"
   add_foreign_key "daters", "users"
-  add_foreign_key "matches", "daters"
-  add_foreign_key "mate_preferences", "daters"
-  add_foreign_key "traits", "daters"
-=======
-  add_foreign_key "comments", "dater_backers"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
-  add_foreign_key "mate_preferences", "users"
-  add_foreign_key "traits", "users"
->>>>>>> message play
+  add_foreign_key "matches", "daters"
+  add_foreign_key "mate_preferences", "daters"
+  add_foreign_key "traits", "daters"
 end

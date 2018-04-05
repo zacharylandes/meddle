@@ -8,6 +8,7 @@ $(document).ready(function(){
     })
 
     $('#invite-backer-button').click(function(){
+        
         $('.find-new-backer').toggleClass('backer-search-form')
     })
 
