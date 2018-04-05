@@ -1,17 +1,26 @@
 
 <div>Dashbaord  </div>
 
-
-
 <div class = 'dashboard-container'>
+<<<<<<< HEAD
     <div class='dash-side'>
          <%= image_tag('blackwhite.jpg', id:'dash-dater-img')%>
          <%= link_to 'Profile',user_path(current_user), id:"card-button", class:"primary-btn"  %>
          <%= link_to 'Gallery',user_path(current_user), id:"card-button", class:"primary-btn"%>
         <%= link_to 'Messages',user_path(current_user), id:"card-button", class:"primary-btn" %>
     </div>
+=======
+    <div class="card col-md-2 dash-side " >
+    <%= image_tag('blackwhite.jpg', id:'dash-dater-img')%>
+    <div class="card-body ">
+        <%= link_to 'Profile',user_path(current_user), class:"primary-btn btn-md"  %>
+        <%= link_to 'Gallery',user_path(current_user), class:"primary-btn btn-md"%>
+         <%= link_to 'Messages',user_path(current_user), class:"primary-btn btn-md" %>
+    </div>
+  </div>
+>>>>>>> updating db
 
-    <div class ='dash-body'>
+    <div class ='col-md-offset-1 col-md-10'>
         <div class = 'dash-card-container'>
         <% if params['tab'] = 'backer' && params['tab'] != 'dater' %>
             <%= render 'backer_tab' %>
@@ -23,3 +32,5 @@
         </div>
     </div>
 </div>
+</div>
+

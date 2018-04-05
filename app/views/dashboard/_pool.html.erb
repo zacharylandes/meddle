@@ -1,6 +1,6 @@
 <div class="show-the-daters-backers" >
     <div class="card dater-card">
-        <%= image_tag('blackwhite.jpg', class:'card-img-top')%>
+        <%= link_to image_tag('blackwhite.jpg', class:'card-img-top'), user_path(current_user)%>
         <div class="card-body" id="card-body">
             <h5 class="card-title" id="card-body">Joe Joes</h5>
         </div>
