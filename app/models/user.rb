@@ -17,11 +17,10 @@ has_many :dater_backers, through: :backers
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
+      Dater.create!(user_id: user.id, f_name: user.f_name, l_name: user.l_name)
+      Backer.create!(user_id: user.id, f_name: user.f_name, l_name: user.l_name)
     end
   end
-
-  def self.make_profiles
-    Dater.create!()
 
 
 end
