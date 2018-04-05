@@ -1,17 +1,18 @@
 class User < ApplicationRecord
 
 
-  has_many :dater_backers
+  has_many :dater_backers, dependent: :destroy
   has_many :daters, through: :dater_backers, class_name: "User"
   has_many :backers, through: :dater_backers, class_name: "User"
 
-  has_many :pools
+  has_many :pools, dependent: :destroy
   has_many :daters, through: :pools, class_name: "User"
   has_many :matches, through: :pools, class_name: "User"
   has_many :mate_preferences, dependent: :destroy
   has_many :traits, dependent: :destroy
-  has_many :comments, through: :dater_backer, dependent: :destroy
-  has_many :backer_evals, through: :dater_backer, dependent: :destroy
+
+  has_many :comments, through: :dater_backers, dependent: :destroy
+  has_many :backer_evals, through: :dater_backers, dependent: :destroy
 
 
 
@@ -32,7 +33,7 @@ class User < ApplicationRecord
 
 
   def backers
-    User.find_by_sql(["SELECT dater_backers.backer_id, users.* FROM dater_backers INNER JOIN users ON dater_backers.backer_id = users.id WHERE dater_id = ?", curent_user.id])
+    User.find_by_sql(["SELECT dater_backers.backer_id, users.* FROM dater_backers INNER JOIN users ON dater_backers.backer_id = users.id WHERE dater_id = ?", 16])
   end
 
   def daters
@@ -40,7 +41,11 @@ class User < ApplicationRecord
   end
 
   def pool
-    User.find_by_sql(["SELECT pools.match_id, users.* FROM pools INNER JOIN users ON pools.match_id = users.id WHERE dater_id = ?", current_user.id])
+    User.find_by_sql(["SELECT pools.match_id, users.* FROM pools INNER JOIN users ON pools.match_id = users.id WHERE dater_id = ?", 16])
+  end
+
+  def comments
+    Comment.find_by_sql([" SELECT comments.* FROM comments INNER JOIN dater_backers ON comments.dater_backer_id = dater_backers.id WHERE (dater_backers.dater_id = ? OR dater_backers.backer_id = ?)", 16, 16])
   end
 
 
