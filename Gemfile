@@ -19,6 +19,14 @@ gem 'faraday'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem "jquery-slick-rails"
+gem 'carrierwave-aws'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'mailboxer'
+gem 'will_paginate', '~> 3.1.0'
+
+
+gem 'aws-sdk-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

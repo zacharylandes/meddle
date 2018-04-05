@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+  acts_as_messageable
 
   has_many :daters, class_name: "DaterBacker", foreign_key: :dater_id
   has_many :backers, class_name: "DaterBacker", foreign_key: :backer_id

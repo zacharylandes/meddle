@@ -11,7 +11,7 @@
 <div class = "dater-tab-container">
     <ul class="nav nav-tabs">
     <li class="nav-item">
-    <a class="nav-link active" id="active"> Dater</a>
+    <a class="nav-link active" id="active"> Daters here</a>
     </li>
     <li class="nav-item">
         <%= link_to 'Backer',dashboard_path(current_user, tab:'backer'), class:'nav-link',id:"not-active" %>
@@ -21,7 +21,7 @@
 
 <div class="card" id="dater-card-container" >
     <div class="card-body">
-        <h5 class="card-title">Dater</h5>
+        <h5 class="card-title">Daters Here</h5>
         <a class ="primary-btn card-button" id="pool-button"> Your pool</a>
         <a class ="primary-btn card-button" id="invite-backer-button"> Add a Backer</a>
         <%= render 'pool'%>
