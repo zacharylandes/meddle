@@ -12,6 +12,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180405223757) do
 =======
 <<<<<<< HEAD
@@ -25,10 +26,14 @@ ActiveRecord::Schema.define(version: 20180404173931) do
 =======
 ActiveRecord::Schema.define(version: 20180403223346) do
 >>>>>>> Adds models, extra columns, and seed data. Not all relationships working as anticipated
+=======
+ActiveRecord::Schema.define(version: 20180404203440) do
+>>>>>>> pulling db
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   create_table "backer_evals", force: :cascade do |t|
@@ -56,6 +61,8 @@ ActiveRecord::Schema.define(version: 20180403223346) do
 =======
 >>>>>>> Adds models, extra columns, and seed data. Not all relationships working as anticipated
 
+=======
+>>>>>>> pulling db
   create_table "backer_evals", force: :cascade do |t|
     t.text "q_1"
     t.datetime "created_at", null: false
@@ -64,12 +71,15 @@ ActiveRecord::Schema.define(version: 20180403223346) do
     t.index ["dater_backer_id"], name: "index_backer_evals_on_dater_backer_id"
   end
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 >>>>>>> updated with figaro and google keys
 >>>>>>> updated with figaro and google keys
 =======
 >>>>>>> Adds models, extra columns, and seed data. Not all relationships working as anticipated
+=======
+>>>>>>> pulling db
   create_table "comments", force: :cascade do |t|
     t.text "comment"
     t.datetime "created_at", null: false
@@ -174,6 +184,14 @@ ActiveRecord::Schema.define(version: 20180403223346) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
+=======
+    t.string "email"
+    t.string "image1"
+    t.string "image2"
+    t.string "f_name"
+    t.string "l_name"
+>>>>>>> pulling db
   end
 
   add_foreign_key "backer_evals", "backers"

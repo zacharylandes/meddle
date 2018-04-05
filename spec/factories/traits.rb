@@ -1,13 +1,6 @@
 FactoryBot.define do
   factory :trait do
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> updated with figaro and google keys
->>>>>>> updated with figaro and google keys
     user 1
     height 70
     smoker 1
@@ -27,13 +20,6 @@ FactoryBot.define do
     orientation 1
     gender 2
     other "Some other preference that they really need to say"
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> updated with figaro and google keys
->>>>>>> updated with figaro and google keys
   end
 end
