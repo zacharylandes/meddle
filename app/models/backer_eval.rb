@@ -1,4 +1,5 @@
 class BackerEval < ApplicationRecord
-  belongs_to :dater_backer
+  belongs_to :dater
+  belongs_to :backer
 
 end

@@ -1,5 +1,6 @@
 class Comment < ApplicationRecord
-  belongs_to :dater_backer
+  belongs_to :dater
+  belongs_to :backer
 
   validates_presence_of :comment
 

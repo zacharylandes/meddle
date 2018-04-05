@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180405201606) do
+ActiveRecord::Schema.define(version: 20180405223757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "backer_evals", force: :cascade do |t|
-    t.bigint "dater_backer_id"
     t.string "q_1"
-    t.index ["dater_backer_id"], name: "index_backer_evals_on_dater_backer_id"
+    t.bigint "backer_id"
+    t.bigint "dater_id"
+    t.index ["backer_id"], name: "index_backer_evals_on_backer_id"
+    t.index ["dater_id"], name: "index_backer_evals_on_dater_id"
   end
 
   create_table "backers", force: :cascade do |t|
@@ -33,11 +35,13 @@ ActiveRecord::Schema.define(version: 20180405201606) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.bigint "dater_backer_id"
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["dater_backer_id"], name: "index_comments_on_dater_backer_id"
+    t.bigint "backer_id"
+    t.bigint "dater_id"
+    t.index ["backer_id"], name: "index_comments_on_backer_id"
+    t.index ["dater_id"], name: "index_comments_on_dater_id"
   end
 
   create_table "dater_backers", force: :cascade do |t|
@@ -129,9 +133,11 @@ ActiveRecord::Schema.define(version: 20180405201606) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "backer_evals", "dater_backers"
+  add_foreign_key "backer_evals", "backers"
+  add_foreign_key "backer_evals", "daters"
   add_foreign_key "backers", "users"
-  add_foreign_key "comments", "dater_backers"
+  add_foreign_key "comments", "backers"
+  add_foreign_key "comments", "daters"
   add_foreign_key "dater_backers", "backers"
   add_foreign_key "dater_backers", "daters"
   add_foreign_key "daters", "users"

@@ -1,7 +1,9 @@
 class DaterBacker < ApplicationRecord
-  has_many :backers
-  has_many :daters
+  belongs_to :backer
+  belongs_to :dater
+
+  has_many :comments
 
 
-  
+
 end
