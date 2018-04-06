@@ -1,7 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe DaterBacker, type: :model do
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> updated with figaro and google keys
+>>>>>>> updated with figaro and google keys
   context "with valid info" do
     it "creates a dater_backer" do
       dater = create(:user)
@@ -13,5 +20,12 @@ RSpec.describe DaterBacker, type: :model do
       expect(dater_backer.backer).to eq(backer)
     end
   end
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> updated with figaro and google keys
+>>>>>>> updated with figaro and google keys
 end

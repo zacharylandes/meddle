@@ -70,9 +70,6 @@ class Seed
 
   end
 
-
-
-
 end
 
 Seed.run

@@ -33,5 +33,12 @@ RSpec.describe Trait, type: :model do
 
 #Sad path? handle wrong datatypes on feature tests?
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> updated with figaro and google keys
+>>>>>>> updated with figaro and google keys
 end

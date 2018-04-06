@@ -5,6 +5,9 @@ has_many :backers
 has_many :dater_backers, through: :daters
 has_many :dater_backers, through: :backers
 
+acts_as_messageable
+
+
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
