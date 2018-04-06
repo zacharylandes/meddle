@@ -1,16 +1,16 @@
 <div class="show-the-daters-backers" >
-    <div class="card dater-card">
-        <%= link_to image_tag('blackwhite.jpg', class:'card-img-top'), user_path(current_user)%>
-        <div class="card-body" id="card-body">
-            <h5 class="card-title" id="card-body">Joe Joes</h5>
+    <% current_dater.pool.each do |match| %>
+        <div class="card dater-card">
+                <%= link_to image_tag('blackwhite.jpg', class:'card-img-top'), user_path(match[0].id)%>
+                <div class="card-body" id="card-body">
+                    <h5 class="card-title" id="card-body"><%= match[0].f_name %></h5>
+                </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><%= match[0].l_name %></li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
         </div>
-        <ul class="list-group list-group-flush">
-        <li class="list-group-item">Denver, CO </li>
-        <li class="list-group-item"> Straight</li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
-    </div>
+    <% end %>
 </div>

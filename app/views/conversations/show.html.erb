@@ -1,12 +1,10 @@
 
   
-  <h3> Your conversation with <%=  User.find(@conversation.receipts.where.not(receiver_id:current_user.id).first.receiver_id).name%></h3>
+  <h3> Your conversation with <%=  User.find(@conversation.receipts.where.not(receiver_id: current_user.id).first.receiver_id).f_name%></h3>
     <div class =  "convo-container">
       <div class = 'message-list'>
-        <% if @ride %>
-        <h4><%= link_to '< Back to the ride',ride_path(@ride) %></h4>
-        <% end %>
-        <h4><%= link_to '< Back to your profile',user_path(current_user) %></h4>
+
+        <h4><%= link_to '< Back to your profile',dashboard_path(current_user) %></h4>
         <h1><%= @conversation.subject %></h1>
             <% @conversation.receipts.where(receiver_id:current_user.id).each do |receipt| %>
                 <div class = 'message-body'>
