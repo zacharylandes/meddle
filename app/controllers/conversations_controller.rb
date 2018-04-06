@@ -17,10 +17,12 @@ class ConversationsController < ApplicationController
   
     def show
       @conversation = current_user.mailbox.conversations.find(params[:id])
-      if params['ride']
-        @ride = Ride.find(params['ride'])
-      end
+        receiver = current_user.mailbox.conversations.find(params[:id]).receipts.where.not(receiver_id: current_user.id).first.receiver_id 
+      @conversations = current_user.mailbox.receipts.select  do |receipt|
+          receipt.conversation.receipts.find_by(receiver_id: receiver)
+        end
     end
+    
   
   end
   

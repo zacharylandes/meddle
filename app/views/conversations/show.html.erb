@@ -3,40 +3,40 @@
 <%= render 'dashboard/dash_side'%>
   
 
+<div class ='col-md-offset-1 col-md-10'>
+<div class = 'message-show-container'>
+<div class="card-header">
+<div>
 
-<div class="card">
-  <div class="card-header">
-    <% @conversation.receipts.where(receiver_id:current_user.id).each do |receipt| %>
-   
-  </div>
-  <div class="card-body">
+<%@conversations.each do |receipt| %>
+  <div class="card" id="message-card">
+    <div class="card-header">
     <h5 class="card-title"> <%= receipt.message.subject %></h5>
-x             
-      <p class="card-text"> <%= receipt.message.body %></p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <div class="card-body">
+        <p class="card-text"> <%= receipt.message.body %></p>
+    </div>
+    <p><%= button_to 'Delete', conversation_message_path(params[:id],receipt), method: :delete, class:'primary-btn btn' %>  </p>
   </div>
-</div>
-
-
+<% end %>
+     
+  </div>
 <div id = "convo-container">
-<h4> Your conversation with <%=  User.find(@conversation.receipts.where.not(receiver_id: current_user.id).first.receiver_id).f_name%></h4>
-      <div id = 'message-list'>
-                <div class = 'message-body'>
-                   <h4></h4>
-                    <p><%= button_to 'Delete', conversation_message_path(@conversation,receipt), method: :delete %>  </p>
-                </div>
-            <% end %>
+      <div class="card" id="message-card">
+      <div class="card-header">
+      <h5 class="card-title">  New Message </h5>
       </div>
-      <div class = 'new-message'>
-        <h3>New Message</h3>
         <%= form_tag conversation_messages_path(@conversation) ,method: :post do  %>
-          <p><%= label_tag :subject %></p>
+      <div class="card-body">
+          <p class="card-text"><%= label_tag :subject %></p>
           <p><%= text_field_tag :subject,nil, class:'input-search' %></p>
           <p><%= label_tag :body %></p>
           <p><%= text_area_tag :body %></p>
-          <p><%= submit_tag "Send Message" %></p>
-        <% end %>
+          <p><%= submit_tag "Send Message", class: "primary-btn btn-md" %></p>
+      <% end %>
       </div>
     </div>
-  
+    </div>
+    
+    </div>
   
