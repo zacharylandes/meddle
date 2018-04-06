@@ -161,11 +161,22 @@ body{
   // height:800px;
 }
 
+#message-card{
+  margin-top:5%;
+  width:15%;
+}
+.message-show-container{
+  margin-top:2%;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-around;
+}
+
 .match-preferences{
   display:none
 }
 
-#convo-container, #message-list{
+#convo-container{
   display:flex;
   flex-direction: column;
   justify-content: space-around;
@@ -2095,7 +2106,6 @@ body {
   padding-top:20px;
   display:flex;
   flex-direction: column;
-  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-start;
   height: 400px;
