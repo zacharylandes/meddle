@@ -3,8 +3,7 @@
 <div class = 'dashboard-container'>
     <div class="card col-md-2 dash-side " id='profile-side' >
         <%= image_tag('blackwhite.jpg', id:'dash-dater-img')%>
-        <h4>Joe</h4>
-        <h4>Jones</h4>
+        <h4><%= @user.f_name %></h4>
         <p >With supporting text below as a natural lead-in to additional content.</p>
     </div>
 
@@ -20,14 +19,14 @@
         </div>
         <div class="card profile-card">
             <div class="card-header">
-                What Joe's backers say about them
+                What <%@user.f_name%>'s backers say about them
             </div>
             <div class="card-body">
                 <h5 class="card-title">He's good guy</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             </div>
         </div>
-        <%= link_to 'Send Message', new_conversation_path(recipient: User.third), class:"primary-btn btn-md" %>
+        <%= link_to 'Send Message', new_conversation_path(recipient: @user), class:"primary-btn btn-md" %>
      </div>
      
 </div>

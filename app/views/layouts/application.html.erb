@@ -11,48 +11,32 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="main-nav">
-    <a class="navbar-brand" id='header-title'>PYT Dating</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-        <%=link_to 'Your Profile', dashboard_path(current_user), class: 'nav-link'%>
-        </li>
-      </ul>
+      <a class="navbar-brand" id='header-title'>PYT Dating</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+          <%if current_user%>
+          <%=link_to 'Your Profile', dashboard_path(current_user), class: 'nav-link'%>
+          <%end%>
+          </li>
+        </ul>
+      </div>
+      <div class = 'login'>
+        <% if current_user %>
+        Signed in as <strong><%= current_user.f_name %></strong>!
+        <%= link_to "Sign out", signout_path, id: "sign_out", class:'text-white' %>
+        <% else %>
+        <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", class:'text-white' %>
+        <% end %>
+      </div>
+    </nav>
+    <div class = 'main'>
+      <%= yield %>
     </div>
-
-    <div class = 'login'>
-    <% if current_user %>
-    Signed in as <strong><%= current_user.f_name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out", class:'text-white' %>
-     <% else %>
-    <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", class:'text-white' %>
-    <% end %>
-   </div>
-   <% if false %>
-    <div class="main-menubar d-flex align-items-center">
-      <nav class="hide">
-        <a href="index.html">Home</a>
-        <a href="generic.html">Generic</a>
-        <a href="elements.html">Elements</a>
-      </nav>
-      <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
-    </div>
-    <% end %>
-
-  </nav>
-    <div>
-
-        <!-- End Header Area -->
-        <!-- Start Banner Area -->
-        <div>
-        <%= yield %>
-        </div>
-        <!-- Strat Footer Area -->
-        <footer class="section-gap">
-        </footer>
-        <!-- End Footer Area -->
+    <footer id="footer">
+    </footer>
   </body>
 </html>

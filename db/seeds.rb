@@ -13,27 +13,27 @@ class Seed
 
   def run
 
-    user_1 = User.create!(provider: "google_oauth2", uid: "12345", auth_name: "Susie", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Susie", l_name:"Smith", email: "email1@email.com")
+    user_1 = User.create!( id: 100, provider: "google_oauth2", uid: "12345", auth_name: "Susie", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Susie", l_name:"Smith", email: "email1@email.com")
     dater_1 = Dater.create!(id: user_1.id, user_id: user_1.id,f_name: user_1.f_name, l_name: user_1.l_name)
     backer_1 = Backer.create!(id: user_1.id, user_id: user_1.id, f_name: user_1.f_name, l_name: user_1.l_name)
 
 
-    user_2 = User.create!(provider: "google_oauth2", uid: "123456", auth_name: "Bobby", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Bobby", l_name:"Johnson", email: "email2@email.com")
+    user_2 = User.create!( id: 200, provider: "google_oauth2", uid: "123456", auth_name: "Bobby", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Bobby", l_name:"Johnson", email: "email2@email.com")
     dater_2 = Dater.create!(id: user_2.id, user_id: user_2.id,f_name: user_2.f_name, l_name: user_2.l_name)
     backer_2 = Backer.create!(id: user_2.id, user_id: user_2.id, f_name: user_2.f_name, l_name: user_2.l_name)
 
 
-    user_3 = User.create!(provider: "google_oauth2", uid: "123457", auth_name: "Billy", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Billy", l_name:"Hall", email: "email3@email.com")
+    user_3 = User.create!( id: 300, provider: "google_oauth2", uid: "123457", auth_name: "Billy", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Billy", l_name:"Hall", email: "email3@email.com")
     dater_3 = Dater.create!(id: user_3.id, user_id: user_3.id,f_name: user_3.f_name, l_name: user_3.l_name)
     backer_3 = Backer.create!(id: user_3.id, user_id: user_3.id, f_name: user_3.f_name, l_name: user_3.l_name)
 
 
-    user_4 = User.create!(provider: "google_oauth2", uid: "123458", auth_name: "Molly", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Molly", l_name:"Miller", email: "email4@email.com")
+    user_4 = User.create!( id: 400, provider: "google_oauth2", uid: "123458", auth_name: "Molly", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Molly", l_name:"Miller", email: "email4@email.com")
     dater_4 = Dater.create!(id: user_4.id, user_id: user_4.id,f_name: user_4.f_name, l_name: user_4.l_name)
     backer_4 = Backer.create!(id: user_4.id, user_id: user_4.id, f_name: user_4.f_name, l_name: user_4.l_name)
 
 
-    user_5 = User.create!(provider: "google_oauth2", uid: "123459", auth_name: "Mr.Match", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Mister", l_name:"Match", email: "email4@email.com")
+    user_5 = User.create!( id: 500, provider: "google_oauth2", uid: "123459", auth_name: "Mr.Match", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Mister", l_name:"Match", email: "email4@email.com")
     dater_5 = Dater.create!(id: user_5.id, user_id: user_5.id,f_name: user_5.f_name, l_name: user_5.l_name)
     backer_5 = Backer.create!(id: user_5.id, user_id: user_5.id, f_name: user_5.f_name, l_name: user_5.l_name)
 
@@ -44,10 +44,6 @@ class Seed
     dater_1.backers << backer_4
     dater_2.backers << backer_3
     dater_2.backers << backer_4
-
-    # db_1 = DaterBacker.create( dater_id: dater_1.id, backer_id: backer_1.id, relationship: "friend")
-    # db_2 = DaterBacker.create( dater_id: dater_1.id, backer_id: backer_2.id, relationship: "cousin")
-    # db_3 = DaterBacker.create( dater_id: dater_1.id, backer_id: backer_3.id, relationship: "friend")
 
 
     comment_1 = Comment.create!(dater_id: dater_1.id, backer_id: backer_1.id, comment: "this is from the first backer")

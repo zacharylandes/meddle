@@ -20,10 +20,18 @@ acts_as_messageable
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
-      Dater.create!(id: user.id, user_id: user.id,f_name: user.f_name, l_name: user.l_name)
-      Backer.create!(id: user.id, user_id: user.id, f_name: user.f_name, l_name: user.l_name)
+      Dater.find_or_create_by(id: user.id, user_id: user.id,f_name: user.f_name, l_name: user.l_name)
+      Backer.find_or_create_by(id: user.id, user_id: user.id, f_name: user.f_name, l_name: user.l_name)
     end
   end
+
+  def mailboxer_email(object)
+    #Check if an email should be sent for that object
+    #if true
+      return email
+    #if false
+    #return nil
+    end
 
 
 end

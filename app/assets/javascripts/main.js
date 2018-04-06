@@ -8,7 +8,6 @@ $(document).ready(function(){
     })
 
     $('#invite-backer-button').click(function(){
-        
         $('.find-new-backer').toggleClass('backer-search-form')
     })
 
@@ -19,8 +18,6 @@ $(document).ready(function(){
         $('.find-new-backer').toggleClass('backer-search-form')
     })
 
-    show-match-preferences
-    
 
 	var window_width 	 = $(window).width(),
 	window_height 		 = window.innerHeight,

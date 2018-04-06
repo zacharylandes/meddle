@@ -7,7 +7,10 @@ class Dater < ApplicationRecord
   has_many :traits
   has_many :backer_evals
 
-
-
+def pool
+  matches.map do |match|
+      Dater.where(id: match.match_id)
+  end  
+end
 
 end
