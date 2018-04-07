@@ -1,8 +1,8 @@
 <div class="find-new-backer" >
 <%= form_tag({controller: "search", action: "index"}, method: "get") do %>
     <div class="input-group mb-3">
-     <%= email_field_tag :f_name, params[:f_name], placeholder: "Email", class: 'form-control' %>
-     <div class="input-group-append">
+     <%= email_field_tag :email, params[:email], placeholder: "Email", class: 'form-control' %>
+    <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="button">Search</button>
     </div>
     </div>
