@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'messages' do
-  it 'can create a message from user  show' do
+  it 'can delete a message' do
 
     user_1 = create(:user)
     user_2 = create(:user)
