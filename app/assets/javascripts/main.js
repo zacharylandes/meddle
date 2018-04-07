@@ -21,21 +21,67 @@ $(document).ready(function(){
     $('#find-backer-by-email').click(function(event) {
       event.preventDefault()
       let email = event.target.offsetParent.childNodes[1].value
-      console.log(email)
-      //ok, I have the data from the input.  Now I have to search the db for the email address, post the new connection, and populate the the on-page backer list.
-      fetch(`localhost:3000/api/v1/users?email=${email}`)
-      .then((response) => response.json())
-      .then((parsed) => console.log("THIS IS THE PARSED DATA FROM THE FETCH CALL", parsed))
-        if (parsed === )
-      .catch()
 
+      fetch(`http://localhost:3000/api/v1/users?email=${email}`)
+      .then((response) => response.json())
+      .then((parsed) => {
+        if (parsed === null) {
+          $(".find-new-backer").append(
+            `<div class="alert alert-warning" role="alert" id="backer-not-found-alert">
+              <h4 class="alert-heading">Oh Snap!</h4>
+                <p>That person isn't signed up. Send them an invite!</p>
+                <a class ="primary-btn card-button" id="invite-backer-button"> Invite "${email}"! </a>
+             </div>`)
+          $("#backer-not-found-alert").delay( 3000 ).fadeOut( 300 )
+        }
+        else {
+          $(".find-new-backer").append(
+             `<div class="alert alert-success" role="alert" id="backer-invited-alert">
+                <h4 class="alert-heading">${parsed.f_name} ${parsed.l_name} was added as a backer!</h4>
+              </div>`)
+          $("#backer-invited-alert").delay( 1500 ).fadeOut( 300 )
+        }
+      })
+      .catch()
       }
     )
+
+
+    $("#invite-backer-button").click()
+    //send invite, hide or destroy th appended thingy.
+
     $('#find-backer-by-name').click(function(event) {
       event.preventDefault()
       let first = event.target.offsetParent.childNodes[1].value
       let last =  event.target.offsetParent.childNodes[3].value
-      console.log(first, last)
+
+            fetch(`http://localhost:3000/api/v1/users?f_name=${first}&l_name=${last}`)
+            .then((response) => response.json())
+            .then((parsed) => {
+              console.log("THIS IS THE PARSED RESPONSE", parsed)
+              if (parsed === null) {
+                // CAN'T FIND BY FIRST AND LAST NAME
+                $(".find-new-backer").append(
+                  `<div class="alert alert-warning" role="alert" id="backer-not-found-alert">
+                    <h4 class="alert-heading">Oh Snap!</h4>
+                      <p>That person isn't signed up. Send them an invite!</p>
+                      // NEED ANOTHER FORM TO TAKE IN AN EMAIL ADDRESS, OR FADE OUT AND APPEND A NEW FIELD BELOW
+                      <a class ="primary-btn card-button" id="invite-backer-button"> Invite "${first}"! </a>
+                   </div>`)
+                $("#backer-not-found-alert").delay( 3000 ).fadeOut( 300 )
+                $(".find-new-backer").append("invite fields")
+              }
+              else {
+                //FOUND AT LEAST ONE PERSON BY THAT NAME. PRESENT NAME AND IMAGES FOR USER TO SELECT.
+                $(".find-new-backer").append(
+                   `<div class="alert alert-success" role="alert" id="backer-invited-alert">
+                      <h4 class="alert-heading"> Which ${first.toUpperCase()} ${last.toUpperCase()} is your Framily Member?</h4>
+                    </div>`)
+                $("#backer-invited-alert").delay( 1500 ).fadeOut( 300 )
+                $(".find-new-backer").append("cards")
+              }
+            })
+            .catch()
     })
 
 	var window_width 	 = $(window).width(),
