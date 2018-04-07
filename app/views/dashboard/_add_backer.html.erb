@@ -1,4 +1,6 @@
 <div class="find-new-backer" >
+  
+
 <%= form_tag({controller: "search", action: "index"}, method: "get") do %>
     <div class="input-group mb-3">
      <%= email_field_tag :email, params[:email], placeholder: "Email", class: 'form-control' %>
@@ -17,4 +19,6 @@
         </div>
     </div>
     <% end %>
+
+
 </div>
