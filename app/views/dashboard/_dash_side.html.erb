@@ -3,7 +3,7 @@
   <%= image_tag('blackwhite.jpg', id:'dash-dater-img')%>
   <div class="card-body ">
       <%= link_to 'Profile',user_path(current_user), class:"primary-btn btn-md"  %>
-      <%= link_to 'Gallery',user_path(current_user), class:"primary-btn btn-md"%>
+      <%= link_to 'Gallery', users_path, class:"primary-btn btn-md"%>
       <%= link_to 'Messages',conversations_path, class:"primary-btn btn-md" %>
   </div>
 </div>

@@ -34,12 +34,21 @@ $grey:  #D3D6D6;
   justify-content: flex-start;
   align-items: center;
 }
+#gallery-cards-container{
+  display: flex;
+  flex-direction:row;
+  align-items: flex-start;
+  
+}
+#gallery-container{
+  margin:20px;
+}
 #dater-tab-body{
   display: flex;
   flex-direction:row;
-  justify-content: flex-start;
   align-items: flex-start;
 }
+
 .card-button, #dash-side-button{
   color:$teal;
 }
