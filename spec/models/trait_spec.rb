@@ -32,13 +32,4 @@ RSpec.describe Trait, type: :model do
   # test that I can do user.smoker?
 
 #Sad path? handle wrong datatypes on feature tests?
-
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> updated with figaro and google keys
->>>>>>> updated with figaro and google keys
 end

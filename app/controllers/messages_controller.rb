@@ -11,7 +11,8 @@ class MessagesController < ApplicationController
       if message.destroy
         flash[:notice] = 'successfully deleted'
         redirect_to conversations_path
-      end
+
+     end
     end
 
   private
