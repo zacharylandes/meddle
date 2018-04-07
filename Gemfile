@@ -20,6 +20,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'mailboxer'
 gem 'will_paginate', '~> 3.1.0'
+gem "active_model_serializers"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

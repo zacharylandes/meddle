@@ -15,11 +15,15 @@
 <div class="card " id="" >
     <div class="card-body" id="dater-tab-body">
         <h5 class="card-title">Daters Here</h5>
-        <a class ="primary-btn btn-md card-button" id="pool-button"> Your pool</a>
-        <a class ="primary-btn btn-md card-button" id="invite-backer-button"> Add a Backer</a>
+        <a class ="primary-btn card-button" id="pool-button"> Your pool</a>
+        <a class ="primary-btn card-button" id="list-backer-button"> Your Backers </a>
+        <!-- HIDE THIS^ IF NO BACKERS? -->
+        <a class ="primary-btn card-button" id="invite-backer-button"> Add a Backer</a>
         <a class ="primary-btn card-button" id="show-match-preferences"> Your Match Preferences</a>
-        </div> 
+        </div>
         <%= render 'pool'%>
+        <%= render 'list_backer'%>
         <%= render 'add_backer'%>
         <%= render 'match_preferences'%>
-</div> 
+        </div>
+</div>

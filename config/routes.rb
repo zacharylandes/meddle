@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
 
+      resources :users, only: [:index, :show]
+
       resources :daters, only: [:index, :show]
       namespace :daters do
         get "/:id/backers", to: "backers#index"
@@ -31,7 +33,7 @@ Rails.application.routes.draw do
       namespace :backers do
         get "/:id/daters", to: "daters#index"
       end
-      
+
     end
   end
 
