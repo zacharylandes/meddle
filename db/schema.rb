@@ -20,9 +20,7 @@ ActiveRecord::Schema.define(version: 20180407203603) do
     t.string "q_1"
     t.bigint "backer_id"
     t.bigint "dater_id"
-    t.bigint "dater_backer_id"
     t.index ["backer_id"], name: "index_backer_evals_on_backer_id"
-    t.index ["dater_backer_id"], name: "index_backer_evals_on_dater_backer_id"
     t.index ["dater_id"], name: "index_backer_evals_on_dater_id"
   end
 
@@ -188,6 +186,7 @@ ActiveRecord::Schema.define(version: 20180407203603) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   add_foreign_key "backer_evals", "backers"

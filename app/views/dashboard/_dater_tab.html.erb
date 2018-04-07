@@ -10,16 +10,17 @@
         <%= link_to 'Backer', dashboard_path(current_user, tab:'backer'), class:'nav-link',id:"not-active" %>
     </li>
     </ul>
-</div>
 
-<div class="card" id="dater-card-container" >
-    <div class="card-body">
+</div>
+<div class="card " id="" >
+    <div class="card-body" id="dater-tab-body">
         <h5 class="card-title">Daters Here</h5>
         <a class ="primary-btn card-button" id="pool-button"> Your pool</a>
         <a class ="primary-btn card-button" id="list-backer-button"> Your Backers </a>
         <!-- HIDE THIS^ IF NO BACKERS? -->
         <a class ="primary-btn card-button" id="invite-backer-button"> Add a Backer</a>
         <a class ="primary-btn card-button" id="show-match-preferences"> Your Match Preferences</a>
+        </div>
         <%= render 'pool'%>
         <%= render 'list_backer'%>
         <%= render 'add_backer'%>

@@ -27,7 +27,7 @@ $(document).ready(function(){
       .then((response) => response.json())
       .then((parsed) => console.log(parsed))
       .catch()
-      
+
       }
     )
     $('#find-backer-by-name').click(function(event) {

@@ -28,6 +28,30 @@ $grey:  #D3D6D6;
   height: 200px;
   color:black;
 }
+.card-body{
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: center;
+}
+#gallery-cards-container{
+  display: flex;
+  flex-direction:row;
+  align-items: flex-start;
+  
+}
+#gallery-container{
+  margin:20px;
+}
+#dater-tab-body{
+  display: flex;
+  flex-direction:row;
+  align-items: flex-start;
+}
+
+.col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8{
+  padding:0;
+}
 .card-button, #dash-side-button{
   color:$teal;
 }
@@ -66,6 +90,7 @@ $grey:  #D3D6D6;
 }
 body{
   font-family: 'Montserrat', sans-serif;
+  color:white;
 }
 #tab2{
   background-color:$darkBlue;
@@ -90,7 +115,9 @@ body{
 }
 
 .show-the-daters-backersAdd{
-  display: inline;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   margin: 20px;
 }
 
@@ -149,6 +176,9 @@ body{
   border-top: 2px solid $teal;
   background-color: white;
 }
+.user-container{
+  margin:5%;
+}
 .dashboard-container{
   display: flex;
   flex-direction: row;
@@ -157,18 +187,42 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
-  // width:78%;
-  // height:800px;
+
+}
+.side-navatar img{
+  width:100%;
+  border-radius: 100%;
+}
+.side-navatar{
+  margin-top:4%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#delete-message{
+  margin:10px;
+}
+
+#message-card{
+  margin:1%;
+
+}
+.message-show-container{
+  margin-top:2%;
+  display:flex;
+  flex-direction:row;
+  justify-content:  flex-start;
 }
 
 .match-preferences{
   display:none
 }
 
-#convo-container, #message-list{
+#convo-container{
   display:flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .profile-card{
@@ -329,7 +383,9 @@ a, a:focus, a:hover {
   text-decoration: none;
   outline: 0;
 }
-
+.card-header{
+  width:100%;
+}
 .card-panel {
   margin: 0;
   padding: 60px;
@@ -2090,13 +2146,15 @@ body {
   height: 100px;
 }
 
+#message-list{
+  margin-top:20px;
+}
+
 #message-list-container{
   margin-top:20px;
   padding-top:20px;
   display:flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-between;
   align-items: flex-start;
   height: 400px;
 }
