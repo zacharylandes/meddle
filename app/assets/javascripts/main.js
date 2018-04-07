@@ -25,7 +25,8 @@ $(document).ready(function(){
       //ok, I have the data from the input.  Now I have to search the db for the email address, post the new connection, and populate the the on-page backer list.
       fetch(`localhost:3000/api/v1/users?email=${email}`)
       .then((response) => response.json())
-      .then((parsed) => console.log(parsed))
+      .then((parsed) => console.log("THIS IS THE PARSED DATA FROM THE FETCH CALL", parsed))
+        if (parsed === )
       .catch()
 
       }
