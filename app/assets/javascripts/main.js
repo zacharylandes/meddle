@@ -18,7 +18,18 @@ $(document).ready(function(){
         $('.find-new-backer').toggleClass('backer-search-form')
     })
 
-    $().click
+    $('#find-backer-by-email').click(function(event) {
+      event.preventDefault()
+      let email = event.target.offsetParent.childNodes[1].value
+      console.log(email)
+      }
+    )
+    $('#find-backer-by-name').click(function(event) {
+      event.preventDefault()
+      let first = event.target.offsetParent.childNodes[1].value
+      let last =  event.target.offsetParent.childNodes[3].value
+      console.log(first, last)
+    })
 
 	var window_width 	 = $(window).width(),
 	window_height 		 = window.innerHeight,
