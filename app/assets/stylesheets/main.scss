@@ -28,6 +28,18 @@ $grey:  #D3D6D6;
   height: 200px;
   color:black;
 }
+.card-body{
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: center;
+}
+#dater-tab-body{
+  display: flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 .card-button, #dash-side-button{
   color:$teal;
 }
@@ -66,6 +78,7 @@ $grey:  #D3D6D6;
 }
 body{
   font-family: 'Montserrat', sans-serif;
+  color:white;
 }
 #tab2{
   background-color:$darkBlue;
@@ -90,7 +103,9 @@ body{
 }
 
 .show-the-daters-backersAdd{
-  display: inline;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   margin: 20px;
 }
 
@@ -162,14 +177,19 @@ body{
 }
 
 #message-card{
-  margin-top:5%;
+  margin:1%;
   width:15%;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+
 }
 .message-show-container{
   margin-top:2%;
   display:flex;
-  flex-direction:column;
-  justify-content: space-around;
+  flex-direction:row;
+  justify-content:  flex-start;
 }
 
 .match-preferences{
@@ -179,7 +199,7 @@ body{
 #convo-container{
   display:flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .profile-card{
@@ -2101,12 +2121,15 @@ body {
   height: 100px;
 }
 
+#message-list{
+  margin-top:20px;
+}
+
 #message-list-container{
   margin-top:20px;
   padding-top:20px;
   display:flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-start;
   height: 400px;
 }
