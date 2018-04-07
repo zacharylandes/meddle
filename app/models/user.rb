@@ -1,5 +1,8 @@
 class User < ApplicationRecord
-
+  attr_accessor :image
+  mount_uploader :image, ImageUploader,
+  
+ :mount_on => :image
 has_many :daters
 has_many :backers
 has_many :dater_backers, through: :daters

@@ -1,15 +1,13 @@
 
 <%=render 'dash_side'%>
 <div class = 'dashboard-container col-md-offset-1 col-md-10'>
-    <div class ='col-md-offset-1 col-md-10'>
-        <div class = 'dash-card-container'>
+        <div class = ''>
         <% if params['tab'] = 'backer' && params['tab'] != 'dater' %>
             <%= render 'backer_tab' %>
             <%print 'params',params%>
          <% else %>
             <%= render 'dater_tab'%>
          <% end %>
-         </div>
      </div>
 </div>
 

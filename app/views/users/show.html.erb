@@ -1,33 +1,10 @@
 
 
-<div class = 'dashboard-container'>
-    <div class="card col-md-2 dash-side " id='profile-side' >
-        <%= image_tag('blackwhite.jpg', id:'dash-dater-img')%>
-        <h4><%= @user.f_name %></h4>
-        <p >With supporting text below as a natural lead-in to additional content.</p>
-    </div>
 
-    <div class ='col-md-offset-1 col-md-10'>
-        <div class="card profile-card">
-            <div class="card-header">
-                About
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">I'm just a good guy</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            </div>
-        </div>
-        <div class="card profile-card">
-            <div class="card-header">
-                What <%@user.f_name%>'s backers say about them
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">He's good guy</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            </div>
-        </div>
-        <%= link_to 'Send Message', new_conversation_path(recipient: @user), class:"primary-btn btn-md" %>
+        <%if @user.id == current_user.id%>
+            <%=render 'current_user_show'%>
+        <%else%>
+             <%=render 'visitor_user_show'%>
+        <%end%>
      </div>
-     
-</div>
 
