@@ -22,6 +22,12 @@ $(document).ready(function(){
       event.preventDefault()
       let email = event.target.offsetParent.childNodes[1].value
       console.log(email)
+      //ok, I have the data from the input.  Now I have to search the db for the email address, post the new connection, and populate the the on-page backer list.
+      fetch(`localhost:3000/api/v1/users?email=${email}`)
+      .then((response) => response.json())
+      .then((parsed) => console.log(parsed))
+      .catch()
+      
       }
     )
     $('#find-backer-by-name').click(function(event) {

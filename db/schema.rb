@@ -10,23 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180405223757) do
+ActiveRecord::Schema.define(version: 20180407203603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "citext"
 
   create_table "backer_evals", force: :cascade do |t|
     t.string "q_1"
     t.bigint "backer_id"
     t.bigint "dater_id"
+    t.bigint "dater_backer_id"
     t.index ["backer_id"], name: "index_backer_evals_on_backer_id"
+    t.index ["dater_backer_id"], name: "index_backer_evals_on_dater_backer_id"
     t.index ["dater_id"], name: "index_backer_evals_on_dater_id"
   end
 
   create_table "backers", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "f_name"
-    t.string "l_name"
+    t.citext "f_name"
+    t.citext "l_name"
     t.string "image_1"
     t.string "image_2"
     t.datetime "created_at", null: false
@@ -54,8 +57,8 @@ ActiveRecord::Schema.define(version: 20180405223757) do
 
   create_table "daters", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "f_name"
-    t.string "l_name"
+    t.citext "f_name"
+    t.citext "l_name"
     t.string "image_1"
     t.string "image_2"
     t.datetime "created_at", null: false
@@ -178,9 +181,9 @@ ActiveRecord::Schema.define(version: 20180405223757) do
     t.string "provider"
     t.string "uid"
     t.string "auth_name"
-    t.string "email"
-    t.string "f_name"
-    t.string "l_name"
+    t.citext "email"
+    t.citext "f_name"
+    t.citext "l_name"
     t.string "oauth_token"
     t.datetime "oauth_expires_at"
     t.datetime "created_at", null: false
