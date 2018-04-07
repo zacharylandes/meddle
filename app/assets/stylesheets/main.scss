@@ -49,6 +49,9 @@ $grey:  #D3D6D6;
   align-items: flex-start;
 }
 
+.col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8{
+  padding:0;
+}
 .card-button, #dash-side-button{
   color:$teal;
 }
@@ -173,6 +176,9 @@ body{
   border-top: 2px solid $teal;
   background-color: white;
 }
+.user-container{
+  margin:5%;
+}
 .dashboard-container{
   display: flex;
   flex-direction: row;
@@ -181,17 +187,25 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
-  // width:78%;
-  // height:800px;
+
+}
+.side-navatar img{
+  width:100%;
+  border-radius: 100%;
+}
+.side-navatar{
+  margin-top:4%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#delete-message{
+  margin:10px;
 }
 
 #message-card{
   margin:1%;
-  width:15%;
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: center;
 
 }
 .message-show-container{
@@ -369,7 +383,9 @@ a, a:focus, a:hover {
   text-decoration: none;
   outline: 0;
 }
-
+.card-header{
+  width:100%;
+}
 .card-panel {
   margin: 0;
   padding: 60px;

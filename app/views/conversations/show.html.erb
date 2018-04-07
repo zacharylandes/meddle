@@ -10,28 +10,26 @@
       <div class="card-header">
       <h6 class="card-title"> <%= receipt.message.subject %></h6>
       </div>
-      <div class="card-body">
+      <div class="card-body"id="message-card">
           <p class="card-text"> <%= receipt.message.body %></p>
       </div>
-      <p><%= button_to 'Delete', conversation_message_path(params[:id],receipt), method: :delete, class:'primary-btn btn' %>  </p>
+      <p><%= button_to 'Delete', conversation_message_path(params[:id],receipt), method: :delete, class:'primary-btn btn', id:'delete-message' %>  </p>
     </div>
   <% end %>
       
     </div>
-  <div id = "convo-container">
-    <div class="card" id="message-card">
+    <div class="card  col-md-3" id="">
     <div class="card-header">
       <h6 class="card-title">  New Message </h6>
     </div>
     <%= form_tag conversation_messages_path(@conversation) ,method: :post do  %>
-      <div class="card-body">
+      <div class="card-body ">
           <p class="card-text"><%= label_tag :subject %></p>
           <p><%= text_field_tag :subject,nil, class:'form-control' %></p>
           <p><%= label_tag :body %></p>
           <p><%= text_area_tag :body,nil, class:'form-control' %></p>
           <p><%= submit_tag "Send Message", class: "primary-btn btn-md" %></p>
       <% end %>
-    </div>
     </div>
   </div>    
 </div>

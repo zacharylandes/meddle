@@ -1,18 +1,17 @@
 
 <%= render 'dashboard/dash_side'%>
 
-
 <div class="  col-md-8 card" id="gallery-container">
   <h5 class="card-header">All Daters</h5>
     <div id='gallery-cards-container'>
-      <% @daters.each do |user| %>
+      <% @daters.each do |dater| %>
           <div class="card dater-card">
-                  <%= link_to image_tag('blackwhite.jpg', class:'card-img-top'), user_path(user.id)%>
+                  <%= link_to image_tag('blackwhite.jpg', class:'card-img-top'), user_path(dater.id)%>
                   <div class="card-body" id="card-body">
-                      <h5 class="card-title" id="card-body"><%= user.f_name %></h5>
+                      <h5 class="card-title" id="card-body"><%= dater.f_name %></h5>
                   </div>
                   <ul class="list-group list-group-flush">
-                      <li class="list-group-item"><%= user.l_name %></li>
+                      <li class="list-group-item"><%= dater.l_name %></li>
                   </ul>
                   <div class="card-body">
                       <a href="#" class="card-link">Another link</a>
