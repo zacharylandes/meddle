@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resource :homes, only: [:show]
   resources :search, only: [:index]
+  resource :mate_preference, only: [:update]
 
   root to: "homes#show"
 
