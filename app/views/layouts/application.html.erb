@@ -9,37 +9,39 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="main-nav">
-      <div class = 'logo-div'>
-        <%= image_tag('pytlogo')%>
+  <div class = 'layer'>
+  </div>
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" id="main-nav">
+        <div class = 'logo-div'>
+          <%= image_tag('pytlogo')%>
+          </div>
+        <a class="navbar-brand" id='header-title'>PYT Dating</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+            <%if current_user%>
+            <%=link_to 'Your Dashboard', dashboard_path(current_user), class: 'nav-link'%>
+            <%end%>
+            </li>
+          </ul>
         </div>
-      <a class="navbar-brand" id='header-title'>PYT Dating</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-          <%if current_user%>
-          <%=link_to 'Your Dashboard', dashboard_path(current_user), class: 'nav-link'%>
-          <%end%>
-          </li>
-        </ul>
+        <div class = 'login'>
+          <% if current_user %>
+          Signed in as <strong><%= current_user.f_name %></strong>!
+          <%= link_to "Sign out", signout_path, id: "sign_out", class:'' %>
+          <% else %>
+          <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", class:'' %>
+          <% end %>
+        </div>
+      </nav>
+      <div class = 'main'>
+        <%= yield %>
       </div>
-      <div class = 'login'>
-        <% if current_user %>
-        Signed in as <strong><%= current_user.f_name %></strong>!
-        <%= link_to "Sign out", signout_path, id: "sign_out", class:'' %>
-        <% else %>
-        <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", class:'' %>
-        <% end %>
-      </div>
-    </nav>
-    <div class = 'main'>
-      <%= yield %>
-    </div>
-    <footer id="footer">
-    </footer>
-  </body>
+      <footer id="footer">
+      </footer>
+    </body>
 </html>
