@@ -5,9 +5,12 @@ class Api::V1::Daters::BackersController < ApplicationController
     render json: Dater.find(params[:id]).backers
   end
 
-  def update
-    binding.pry
-    current_dater.backers << Backer.find(params[:id])
+  def create
+    # binding.pry
+    dater = Dater.find(params[:id])
+    dater.backers << Backer.find(params[:backer_id])
+    redirect_to '/dashboard'
+
   end
 
 #don't need a show, just make a call to the actual backers endpoint if needed
@@ -15,5 +18,8 @@ class Api::V1::Daters::BackersController < ApplicationController
 
   private
 
+    def food_params
+      params.require(:backer).permit(:id)
+    end
 
 end

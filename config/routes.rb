@@ -27,6 +27,8 @@ Rails.application.routes.draw do
       resources :daters, only: [:index, :show]
       namespace :daters do
         get "/:id/backers", to: "backers#index"
+        get "/:id/backers/:backer_id", to: "backers#create"
+        # post "/meals/:meal_id/foods/:id", to: "meals#create", as: :meal_foods
       end
 
       resources :backers, only: [:index, :show]

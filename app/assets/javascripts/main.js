@@ -41,7 +41,7 @@ $(document).ready(function(){
           let currentUser = document.location.pathname.substr(11)
           console.log(parsed.id)
           console.log(currentUser)
-          fetch(`http://localhost:3000/api/v1/daters/${currentUser}/backers`, postDaterBacker(backerId))
+          fetch(`http://localhost:3000/api/v1/daters/${currentUser}/backers/${backerId}`)
           .then((response) => console.log(response))
 
           $(".find-new-backer").append(
@@ -55,11 +55,11 @@ $(document).ready(function(){
       }
     )
 
-    const postDaterBacker = (backerId) => {
+    const postDaterBacker = () => {
       return {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(backerId)
+        headers: {'Content-Type': 'application/json'}
+
       }
     }
 
