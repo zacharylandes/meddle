@@ -17,18 +17,36 @@ $(document).ready(function(){
     $('#card-button').click(function(){
         $('.find-new-backer').toggleClass('backer-search-form')
     })
+    $('#edit-about-button').click(function(){
+        event.preventDefault()
+        $('.about-you').toggleClass('edit-profile-show')
+    })
 
     $('#edit-profile-button').click(function(){
         event.preventDefault()
+        $('.edit-traits').css('display','none')
+        $('.edit-mate-preference-show').css('display','none')
+
         $('.edit-profile').removeClass('edit-mate-preference-show')
         $('.edit-profile').toggleClass('edit-profile-show')
     })
     $('#edit-mate-button').click(function(){
         event.preventDefault()
+        $('.edit-traits').css('display','none')
         $('.edit-profile').removeClass('edit-profile-show')
         $('.edit-mate-preference').toggleClass('edit-mate-preference-show')
     })
 
+
+    $('#exampleModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('New message to ' + recipient)
+        modal.find('.modal-body input').val(recipient)
+      })
     
 
 

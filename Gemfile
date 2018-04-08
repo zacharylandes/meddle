@@ -16,6 +16,8 @@ gem 'faraday'
 gem 'sass-rails', '~> 5.0'
 gem "jquery-slick-rails"
 gem 'carrierwave-aws'
+gem 'bootstrap-modal-rails'
+
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'mailboxer'
