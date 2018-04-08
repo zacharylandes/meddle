@@ -23,6 +23,9 @@ gem 'mini_magick'
 gem 'mailboxer'
 gem 'will_paginate', '~> 3.1.0'
 gem "active_model_serializers"
+gem 'redis'
+gem 'sidekiq'
+
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -37,6 +40,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'capybara'
   gem 'launchy'
+  gem "letter_opener"
   gem 'database_cleaner'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

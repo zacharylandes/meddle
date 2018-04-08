@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Hi, <%= "FIND AND INTERPOLATE INVITEE'S NAME HERE" %>!</h3>
+    <p>
+      <%= @user.name.capitalize%> would like you to be their "FRamily Member" on PYTDating.com.
+      
+      PYT Dating (Petition Your Tribe Dating) is an online dating service with twist!  Instead of browsing through potential matches on your own, your Tribe fills out information about you and suggests matches for you to check out.
+
+      Do you really want <%= @user.name.capitalize%> to be alone forever? We didn't think so. Follow this link to sign up and connect: <%= /link/has-params-to-pass-to-google-and-back/so-that-the-relationship-is-set-up-as-soon-as-they-login %>.
+    </p>
+    <br>
+    <p>Happy Meddling!</p>
+    <br>
+    <h3>Petition Your Tribe  |  Promote Your Tribe  |  Protect Your Tribe</h3>
+  </body>
+</html>
