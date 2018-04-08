@@ -1,12 +1,5 @@
 class User < ApplicationRecord
   attr_accessor :image
-<<<<<<< HEAD
-  mount_uploader :image, ImageUploader, :mount_on => :image
-  has_many :daters
-  has_many :backers
-  has_many :dater_backers, through: :daters
-  has_many :dater_backers, through: :backers
-=======
   mount_uploader :image, ImageUploader,
   
  :mount_on => :image
@@ -15,7 +8,6 @@ has_many :backers
 has_many :dater_backers, through: :daters
 has_many :dater_backers, through: :backers
 has_one :mate_preference
->>>>>>> mostly finished with mate preferences
 
   acts_as_messageable
 
