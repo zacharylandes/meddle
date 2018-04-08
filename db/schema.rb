@@ -129,23 +129,23 @@ ActiveRecord::Schema.define(version: 20180407203603) do
 
   create_table "mate_preferences", force: :cascade do |t|
     t.bigint "dater_id"
-    t.integer "min_height"
-    t.integer "max_height"
-    t.integer "smoker"
-    t.integer "alcohol"
-    t.string "ethnicity"
-    t.boolean "education"
-    t.string "body_type"
-    t.integer "zip_radius"
-    t.integer "religion"
-    t.integer "religiosity"
-    t.integer "political_leaning"
-    t.integer "politicalness"
-    t.boolean "has_kids"
-    t.integer "wants_kids"
-    t.integer "has_pets"
-    t.integer "orientation"
-    t.integer "gender"
+    t.integer "min_height", default: 0
+    t.integer "max_height", default: 0
+    t.integer "smoker", default: 0
+    t.integer "alcohol", default: 0
+    t.integer "ethnicity", default: 0
+    t.boolean "education", default: false
+    t.integer "body_type", default: 0
+    t.integer "zip_radius", default: 0
+    t.integer "religion", default: 0
+    t.integer "religiosity", default: 0
+    t.integer "political_leaning", default: 0
+    t.integer "politicalness", default: 0
+    t.boolean "has_kids", default: false
+    t.integer "wants_kids", default: 0
+    t.boolean "has_pets", default: false
+    t.integer "orientation", default: 0
+    t.integer "gender", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["dater_id"], name: "index_mate_preferences_on_dater_id"

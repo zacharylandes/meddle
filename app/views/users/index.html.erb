@@ -6,7 +6,9 @@
     <div id='gallery-cards-container'>
       <% @daters.each do |dater| %>
           <div class="card dater-card">
-                  <%= link_to image_tag('blackwhite.jpg', class:'card-img-top'), user_path(dater.id)%>
+          <% if current_user.image %>
+               <%= link_to image_tag(dater.user.image.url, class:'card-img-top'), user_path(dater.id) %>
+          <% end %>    
                   <div class="card-body" id="card-body">
                       <h5 class="card-title" id="card-body"><%= dater.f_name %></h5>
                   </div>

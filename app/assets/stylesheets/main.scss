@@ -112,10 +112,36 @@ body{
   color:$teal;
   margin: 5% 10% 0 15%;
 }
+.q_1_modal{
+
+  position: absolute;
+  z-index: 3000; 
+  padding:20px;
+  border-radius:20px;
+  display: none;
+  background-color: white;
+  z-index:1000;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin:auto;
+}
 
 .show-the-daters-backers, .edit-profile, .edit-mate-preference, .about-you{
   display: none;
 }
+
+.layer {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  display:none;
+  top: 0;
+  z-index:1000;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .edit-mate-preference-show,.edit-profile-show{
   display:block;
   flex-direction: column;

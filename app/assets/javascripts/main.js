@@ -121,6 +121,12 @@ $(document).ready(function(){
             <h4 class="alert-heading"> Backer Added!</h4>
           </div>`).delay( 1500 ).fadeOut( 300 )
       })
+    $('#answer-questions').click(function(){
+        event.preventDefault()
+        $('.layer').css('display',"block")
+        $('.q_1_modal').css('display',"block")
+    })
+
     $('#edit-profile-button').click(function(){
         event.preventDefault()
         $('.edit-traits').css('display','none')
@@ -129,13 +135,13 @@ $(document).ready(function(){
         $('.edit-profile').removeClass('edit-mate-preference-show')
         $('.edit-profile').toggleClass('edit-profile-show')
     })
+
     $('#edit-mate-button').click(function(){
         event.preventDefault()
         $('.edit-traits').css('display','none')
         $('.edit-profile').removeClass('edit-profile-show')
         $('.edit-mate-preference').toggleClass('edit-mate-preference-show')
     })
-
 
     $('#exampleModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
