@@ -85,6 +85,9 @@ $grey:  #D3D6D6;
 #main-nav{
   border-bottom: 2px solid $darkBlue;
 }
+.main{
+  height:100%;
+}
 
 #active{
 }
@@ -178,6 +181,15 @@ body{
 }
 .user-container{
   margin:5%;
+
+}
+#number-input{
+  width:35px;
+}
+.height{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .dashboard-container{
   display: flex;
@@ -187,7 +199,9 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
-
+}
+.logo-div img{
+  width:50px;
 }
 .side-navatar img{
   width:100%;
