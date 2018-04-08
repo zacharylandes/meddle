@@ -108,19 +108,16 @@ $(document).ready(function(){
 
     $('.find-new-backer').on("click", '#connect-user-as-backer', function(event) {
       event.preventDefault()
-      console.log("I GOT CLICKED!")
-      console.log(event)
-      // let backerId = "FIND SOME WAY TO PULL THIS FROM THE CARD"
-      // let currentUser = document.location.pathname.substr(11)
-      // fetch(`http://localhost:3000/api/v1/daters/${currentUser}/backers/${backerId}`)
-      // .then(response =>
-      // $(".find-new-backer").append(`
-      //   <div class="alert alert-success" role="alert" id="backer-invited-alert">
-      //       <h4 class="alert-heading"> FIRST LAST was added as a backer!</h4>
-      //     </div>`).delay( 1500 ).fadeOut( 300 )
-      // )
-      // .catch(error => console.error(error))
-  })
+      let backerId = event.currentTarget.attributes[2].nodeValue
+      let currentUser = document.location.pathname.substr(11)
+      fetch(`http://localhost:3000/api/v1/daters/${currentUser}/backers/${backerId}`)
+      .catch(error => console.error(error))
+
+        $(".find-new-backer").append(`
+          <div class="alert alert-success" role="alert" id="backer-invited-alert">
+            <h4 class="alert-heading"> Backer Added!</h4>
+          </div>`).delay( 1500 ).fadeOut( 300 )
+      })
 
 
 	var window_width 	 = $(window).width(),
