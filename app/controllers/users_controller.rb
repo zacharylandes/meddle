@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @dater = @user.daters.first
   end
 
 

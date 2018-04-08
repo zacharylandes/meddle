@@ -6,6 +6,7 @@ class Dater < ApplicationRecord
   has_many :comments
   has_many :traits
   has_many :backer_evals
+  has_one :mate_preference
 
 def pool
   matches.map do |match|
