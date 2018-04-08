@@ -37,15 +37,13 @@ has_one :mate_preference
       Dater.find_or_create_by(id: user.id, user_id: user.id,f_name: user.f_name, l_name: user.l_name)
       MatePreference.find_or_create_by(dater_id:user.id)
       Backer.find_or_create_by(id: user.id, user_id: user.id, f_name: user.f_name, l_name: user.l_name)
+      Trait.find_or_create_by(dater_id:user.id)
     end
   end
 
   def mailboxer_email(object)
-    #Check if an email should be sent for that object
-    #if true
       return email
-    #if false
-    #return nil
+
     end
 
 
