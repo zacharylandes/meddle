@@ -66,18 +66,17 @@ $(document).ready(function(){
             fetch(`http://localhost:3000/api/v1/users?f_name=${first}&l_name=${last}`)
             .then((response) => response.json())
             .then((parsedBackers) => {
-
-              if (parsedBackers === null) {
+              console.log(parsedBackers)
+              if (parsedBackers.length === 0) {
                 // CAN'T FIND BY FIRST AND LAST NAME
                 $(".find-new-backer").append(
                   `<div class="alert alert-warning" role="alert" id="backer-not-found-alert">
                     <h4 class="alert-heading">Oh Snap!</h4>
                       <p>That person isn't signed up. Send them an invite!</p>
-                      // NEED ANOTHER FORM TO TAKE IN AN EMAIL ADDRESS, OR FADE OUT AND APPEND A NEW FIELD BELOW
                       <a class ="primary-btn card-button" id="invite-backer-button"> Invite "${first}"! </a>
                    </div>`)
                 $("#backer-not-found-alert").delay( 3000 ).fadeOut( 300 )
-                $(".find-new-backer").append("invite fields")
+                $(".find-new-backer").append("line 80 -- append an invite form here")
               }
 
               else {
