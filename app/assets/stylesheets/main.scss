@@ -113,8 +113,12 @@ body{
   margin: 5% 10% 0 15%;
 }
 
-.show-the-daters-backers{
+.show-the-daters-backers, .edit-profile, .edit-mate-preference{
   display: none;
+}
+.edit-mate-preference-show,.edit-profile-show{
+  display:block;
+  flex-direction: column;
 }
 
 .show-the-daters-backersAdd{
