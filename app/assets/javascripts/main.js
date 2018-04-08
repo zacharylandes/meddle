@@ -117,6 +117,18 @@ $(document).ready(function(){
             <h4 class="alert-heading"> Backer Added!</h4>
           </div>`).delay( 1500 ).fadeOut( 300 )
       })
+    $('#edit-profile-button').click(function(){
+        event.preventDefault()
+        $('.edit-profile').removeClass('edit-mate-preference-show')
+        $('.edit-profile').toggleClass('edit-profile-show')
+    })
+    $('#edit-mate-button').click(function(){
+        event.preventDefault()
+        $('.edit-profile').removeClass('edit-profile-show')
+        $('.edit-mate-preference').toggleClass('edit-mate-preference-show')
+    })
+
+    
 
 
 	var window_width 	 = $(window).width(),
