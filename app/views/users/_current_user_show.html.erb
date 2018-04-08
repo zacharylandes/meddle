@@ -9,8 +9,6 @@
       <%= link_to 'Profile',user_path(current_user), class:"primary-btn btn-md"  %>
       <%= link_to 'Gallery', users_path, class:"primary-btn btn-md"%>
       <%= link_to 'Messages',conversations_path, class:"primary-btn btn-md" %>
-    <p>Your Mate Preferences</p>
-    <p> <%= current_dater.mate_preference.smoker%></p>
   </div>
 </div>
 <div class = 'user-container'>
@@ -29,6 +27,8 @@
         <% end %>
         </div>
     </div>
+        <%= render 'q_1_modal'%>
+    
     <div class="card profile-card">
         <div class="card-header">
             What your backers say about you
@@ -40,6 +40,7 @@
     </div>
       <%= link_to 'Edit your profile',nil, class:"primary-btn btn-md", id:"edit-profile-button" %>
       <%= link_to 'Edit your mate preference',nil, class:"primary-btn btn-md",id:"edit-mate-button"  %>
+      <%= link_to 'Answer Questions',nil, class:"primary-btn btn-md",id:"answer-questions"  %>
     
     <div class = 'edit-profile-container'>
         <div class="card profile-card edit-profile">
@@ -57,7 +58,7 @@
         <% end %>
         </div>
         <%= render 'edit_mate_prefs'%>
-        <%= render 'edit_traits'%>
+        <%= render 'edit_traits'%>        
         </div>
     </div>
 </div>

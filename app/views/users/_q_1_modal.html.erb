@@ -1,0 +1,7 @@
+<div class = 'col-md-offset-4 col-md-4 q_1_modal'>
+    <%= form_for @dater.trait do |f| %>
+        <p>  <%= f.label :What_is_you_favorite_food_processor?, class:'form-control'%></p>
+        <p>  <%= f.text_area :other, class:'form-control'%></p>
+        <p>  <%= f.submit "Update" , class: "primary-btn btn-md" %></p>
+    <% end %>
+</div>
