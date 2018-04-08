@@ -18,6 +18,19 @@ $(document).ready(function(){
         $('.find-new-backer').toggleClass('backer-search-form')
     })
 
+    $('#edit-profile-button').click(function(){
+        event.preventDefault()
+        $('.edit-profile').removeClass('edit-mate-preference-show')
+        $('.edit-profile').toggleClass('edit-profile-show')
+    })
+    $('#edit-mate-button').click(function(){
+        event.preventDefault()
+        $('.edit-profile').removeClass('edit-profile-show')
+        $('.edit-mate-preference').toggleClass('edit-mate-preference-show')
+    })
+
+    
+
 
 	var window_width 	 = $(window).width(),
 	window_height 		 = window.innerHeight,

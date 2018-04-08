@@ -9,6 +9,8 @@
       <%= link_to 'Profile',user_path(current_user), class:"primary-btn btn-md"  %>
       <%= link_to 'Gallery', users_path, class:"primary-btn btn-md"%>
       <%= link_to 'Messages',conversations_path, class:"primary-btn btn-md" %>
+    <p>Your Mate Preferences</p>
+    <p> <%= current_dater.mate_preference.smoker%></p>
   </div>
 </div>
 <div class = 'user-container'>
@@ -30,7 +32,10 @@
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
         </div>
     </div>
-        <div class="card profile-card">
+      <%= link_to 'Edit your profile',nil, class:"primary-btn btn-md", id:"edit-profile-button" %>
+      <%= link_to 'Edit your mate preference',nil, class:"primary-btn btn-md",id:"edit-mate-button"  %>
+    <div class = 'edit-profile-container'>
+        <div class="card profile-card edit-profile">
             <div class="card-header">
                 Edit Your Profile 
             </div>
@@ -44,7 +49,7 @@
             <p>  <%= f.submit "Update" , class: "primary-btn btn-md" %></p>
         <% end %>
         </div>
-        <div class="card profile-card">
+        <div class="card profile-card edit-mate-preference">
             <div class="card-header">
                 Edit Your Mate Preferences 
             </div>
@@ -60,20 +65,20 @@
              <tr>
                 <td><%= f.label :min_height %></td>
                 <td>
-                    <%=  number_field_tag "min_height_ft", nil, in: 4...10, id: 'number-input'%> ft
-                    <%= number_field_tag "min_height_in", nil, in: 0...12, id: 'number-input' %> in 
+                    <%=  number_field_tag "min_height_ft", nil, in: 4...10, id: 'number-input', value:"#{current_dater.mate_preference.min_height/12}",  :style => 'backgound-color: green' %> ft
+                    <%= number_field_tag "min_height_in", nil, in: 0...12, id: 'number-input', value:"#{current_dater.mate_preference.min_height%12}" %> in 
                 </td> 
             </tr>
              <tr>
                 <td><%= f.label :max_height %></td>
                 <td>
-                    <%=  number_field_tag "max_height_ft", nil, in: 4...10, id: 'number-input'%> ft
-                    <%= number_field_tag "max_height_in", nil, in: 0...12, id: 'number-input' %> in 
+                    <%=  number_field_tag "max_height_ft", nil, in: 4...10, id: 'number-input', value:"#{current_dater.mate_preference.max_height/12}"%> ft
+                    <%= number_field_tag "max_height_in", nil, in: 0...12, id: 'number-input', value:"#{current_dater.mate_preference.max_height/12}" %> in 
                 </td> 
             </tr>
             <tr>
                  <td><%= f.label :smoker %></td>
-                 <td><%= f.select :smoker, MatePreference.smokers.map { |key, value| [key.humanize, key] }, class: "btn btn-secondary dropdown-toggle", id:"dropdownMenu2"%></td>
+                 <td><%= f.select :smoker, MatePreference.smokers.map { |key, value| [key.humanize, key] }, class: "btn btn-secondary dropdown-toggle", id:"dropdownMenu2", class:" form-control"%></td>
             </tr>
             <tr>
                  <td><%= f.label :religiosity %></td>
@@ -82,10 +87,6 @@
             <tr>
                  <td><%= f.label :religion %></td>
                  <td><%= f.select :religion, MatePreference.religions.map { |key, value| [key.humanize, key] }, class: "btn btn-secondary dropdown-toggle", id:"dropdownMenu2"%></td>
-            </tr>
-            <tr>
-                 <td><%= f.label :politicalness %></td>
-                 <td><%= f.select :politicalness, MatePreference.politicalnesses.map { |key, value| [key.humanize, key] }, class: "btn btn-secondary dropdown-toggle", id:"dropdownMenu2"%></td>
             </tr>
             <tr>
                 <td><%= f.label :alcohol %></td>
@@ -106,6 +107,10 @@
             <tr>
                 <td> <%= f.label :education %></td>
                 <td><%= f.select :education, [['Not a college Grad', false], ['Collage Grad', true]] %></td>
+            </tr>
+            <tr>
+                 <td><%= f.label :politicalness %></td>
+                 <td><%= f.select :politicalness, MatePreference.politicalnesses.map { |key, value| [key.humanize, key] }, class: "btn btn-secondary dropdown-toggle", id:"dropdownMenu2"%></td>
             </tr>
             <tr>
                 <td> <%= f.label :political_leaning %></td>
@@ -131,7 +136,7 @@
   </table>
               <%= f.submit "Update" , class: "primary-btn btn-md" %>
         <% end %>
-
+        </div>
         </div>
     </div>
 </div>
