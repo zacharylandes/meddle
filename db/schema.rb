@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180407203603) do
-=======
-ActiveRecord::Schema.define(version: 20180408152630) do
->>>>>>> mate preferences upating
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -156,24 +153,24 @@ ActiveRecord::Schema.define(version: 20180408152630) do
 
   create_table "traits", force: :cascade do |t|
     t.bigint "dater_id"
-    t.integer "height"
-    t.integer "smoker"
-    t.integer "alcohol"
-    t.string "ethnicity"
-    t.string "education"
-    t.integer "body_type"
+    t.integer "height", default: 0
+    t.integer "smoker", default: 0
+    t.integer "alcohol", default: 0
+    t.integer "ethnicity", default: 0
+    t.boolean "education", default: false
+    t.integer "body_type", default: 0
     t.string "occupation"
-    t.integer "zip"
-    t.string "religion"
-    t.integer "religiosity"
-    t.integer "political_leaning"
-    t.integer "politicalness"
-    t.boolean "has_kids"
-    t.boolean "wants_kids"
-    t.integer "has_pets"
-    t.integer "orientation"
-    t.integer "gender"
-    t.text "other"
+    t.integer "zip", default: 0
+    t.integer "religion", default: 0
+    t.integer "religiosity", default: 0
+    t.integer "political_leaning", default: 0
+    t.integer "politicalness", default: 0
+    t.boolean "has_kids", default: false
+    t.boolean "wants_kids", default: false
+    t.boolean "has_pets", default: false
+    t.integer "orientation", default: 0
+    t.integer "gender", default: 0
+    t.string "other", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["dater_id"], name: "index_traits_on_dater_id"

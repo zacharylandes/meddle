@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resource :homes, only: [:show]
   resources :search, only: [:index]
   resource :mate_preference, only: [:update]
+  resource :trait, only: [:update]
 
   root to: "homes#show"
 
