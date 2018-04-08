@@ -21,6 +21,8 @@ $(document).ready(function(){
     $('#find-backer-by-email').click(function(event) {
       event.preventDefault()
       let email = event.target.offsetParent.childNodes[1].value
+      let currentUser = document.location.pathname.substr(11)
+
 
       fetch(`http://localhost:3000/api/v1/users?email=${email}`)
       .then((response) => response.json())
@@ -35,6 +37,13 @@ $(document).ready(function(){
           $("#backer-not-found-alert").delay( 3000 ).fadeOut( 300 )
         }
         else {
+          let backerId = parsed.id
+          let currentUser = document.location.pathname.substr(11)
+          console.log(parsed.id)
+          console.log(currentUser)
+          fetch(`http://localhost:3000/api/v1/daters/${currentUser}/backers`, postDaterBacker(backerId))
+          .then((response) => console.log(response))
+
           $(".find-new-backer").append(
              `<div class="alert alert-success" role="alert" id="backer-invited-alert">
                 <h4 class="alert-heading">${parsed.f_name} ${parsed.l_name} was added as a backer!</h4>
@@ -46,6 +55,15 @@ $(document).ready(function(){
       }
     )
 
+    const postDaterBacker = (backerId) => {
+      return {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(backerId)
+      }
+    }
+
+
 
     $("#invite-backer-button").click()
     //send invite, hide or destroy th appended thingy.
@@ -54,6 +72,7 @@ $(document).ready(function(){
       event.preventDefault()
       let first = event.target.offsetParent.childNodes[1].value
       let last =  event.target.offsetParent.childNodes[3].value
+      let currentUser = document.location.pathname.substr(11)
 
             fetch(`http://localhost:3000/api/v1/users?f_name=${first}&l_name=${last}`)
             .then((response) => response.json())
