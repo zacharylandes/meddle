@@ -10,18 +10,20 @@
   <% else %>
     <% current_dater.pool.each do |match| %>
         <div class="card dater-card">
+        <div class = 'card-img-top'>
          <% if current_user.image %>
-          <%= image_tag current_user.image.url %>
+          <%= link_to image_tag(match.first.user.image.url), user_path(match.first.user) %>
         <% end %>
-                <div class="card-body" id="card-body">
-                    <h5 class="card-title" id="card-body"><%= match[0].f_name %></h5>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><%= match[0].l_name %></li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Another link</a>
-                </div>
+        </div>
+            <div class="card-body" id="card-body">
+                <h5 class="card-title" id="card-body"><%= match[0].f_name %></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><%= match[0].l_name %></li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="card-link">Another link</a>
+            </div>
         </div>
     <% end %>
 

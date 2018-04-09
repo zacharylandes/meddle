@@ -1,0 +1,26 @@
+        <div class="card profile-card">
+            <div class="card-header">
+               Filter
+            </div>
+<table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Trait</th>
+                <th scope="col">Selection</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%= form_tag( '/users/', :method => :get ) do %>
+             <tr>
+                <td><%= label_tag :political_leaning %></td>
+                <td> <%= select_tag :political_leaning, options_for_select(Trait.political_leanings.map {|k, v| [k.humanize.capitalize, v]}) %></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :politicalness%></td>
+                <td> <%= select_tag :politicalness, options_for_select(Trait.politicalnesses.map {|k, v| [k.humanize.capitalize, v]}) %></td>
+            </tr>
+            </tbody>
+        </table>
+              <%= submit_tag "Update" , class: "primary-btn btn-md" %>
+        <% end %>
+        </div>

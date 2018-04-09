@@ -2,6 +2,12 @@
 $(document).ready(function(){
     "use strict";
 
+    $("#ex13").slider({
+        ticks: [0, 100, 200, 300, 400],
+        ticks_labels: ['$0', '$100', '$200', '$300', '$400'],
+        ticks_snap_bounds: 30
+    });
+
 
     $('#pool-button').click(function(){
         $('.show-the-daters-backers').toggleClass('show-the-daters-backersAdd')
