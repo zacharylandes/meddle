@@ -1,13 +1,15 @@
-<div class = 'dashboard-container'>
-  <div class="card col-md-2 dash-side " >
-  <div class = 'side-navatar'>
-          <% if current_user.image %>
-          <%= image_tag current_user.image.url %>
-        <% end %>
+  
+  <div class="card col-md-2 dash-side" >
+    <div class = 'card-header'id='dash-side-head'><%= current_user.f_name%>
+    </div>
+    <div class = 'side-navatar'>
+            <% if current_user.image %>
+            <%= image_tag current_user.image.url %>
+          <% end %>
+    </div>
+    <div class="card-body ">
+        <%= link_to 'Profile',user_path(current_user), class:"primary-btn btn-md"  %>
+        <%= link_to 'Gallery', users_path, class:"primary-btn btn-md"%>
+        <%= link_to 'Messages',conversations_path, class:"primary-btn btn-md" %>
+    </div>
   </div>
-  <div class="card-body ">
-      <%= link_to 'Profile',user_path(current_user), class:"primary-btn btn-md"  %>
-      <%= link_to 'Gallery', users_path, class:"primary-btn btn-md"%>
-      <%= link_to 'Messages',conversations_path, class:"primary-btn btn-md" %>
-  </div>
-</div>

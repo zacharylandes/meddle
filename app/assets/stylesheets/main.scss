@@ -35,10 +35,23 @@ $grey:  #D3D6D6;
   align-items: center;
 }
 #gallery-cards-container{
-  display: flex;
-  flex-direction:row;
-  align-items: flex-start;
-  
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  // grid-gap: 10px;  
+}
+#filter-table{
+  padding:0px;
+  overflow: hidden;
+  // display:flex;
+  // flex-direction: column;
+  // overflow-wrap: normal;
+}
+select{
+  font-size:10px;
+  border-radius:60px;
+}
+td{
+  font-size:10px;
 }
 #gallery-container{
   margin:20px;
@@ -233,6 +246,10 @@ body{
 .dashboard-container{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
 }
 .dash-body{
   display:flex;
@@ -289,8 +306,13 @@ body{
 .match-preferences-show{
   display:block
 }
+#dash-side-head{
+  text-align: center;
+  padding:10px -10px 10px 0;
+}
 .dash-side{
   display:flex;
+  margin:20px 10px 0 0 ;
   flex-direction:column;
   justify-content: flex-start;
   align-items:center;
