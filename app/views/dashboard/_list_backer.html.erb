@@ -1,20 +1,13 @@
 <!-- LIST OF BACKERS FOR CURRENT DATER -->
-<div class="show-the-daters-backers" >
-
-
-    <% current_dater.backers.each do |backer| %>
-        <div class="card dater-card">
-                <!-- <%#= link_to image_tag(backer.image_1, class:'card-img-top'), user_path(backer.id)%> -->
-                <div class="card-body" id="card-body">
-                    <h5 class="card-title" id="card-body"><%= backer.f_name %></h5>
-                </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><%= backer.l_name %></li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-        </div>
-    <% end %>
-
+<div class="list-and-add-backers" >
+  <h6>Your Backers</h6>
+  <ul id="list-and-add-backers">
+    <% current_user.backers.each do |backer| %>
+    <li class="backer-name"><p><%= "#{backer.f_name} #{backer.l_name}" %></p>
+      <%end  %>
+    </ul>
+    <br>
+    <h6> Add a Backer<h6>
+    <br >
+    <%= render 'add_backer'%>
 </div>

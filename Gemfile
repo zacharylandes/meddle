@@ -25,6 +25,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem "active_model_serializers"
 gem 'redis'
 gem 'sidekiq'
+gem 'mailgun-ruby'
 
 
 # Use Uglifier as compressor for JavaScript assets

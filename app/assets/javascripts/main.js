@@ -7,13 +7,15 @@ $(document).ready(function(){
         $('.show-the-daters-backers').toggleClass('show-the-daters-backersAdd')
     })
 
-    $('#invite-backer-button').click(function(){
-        $('.find-new-backer').toggleClass('backer-search-form')
-    })
-
     $('#show-match-preferences').click(function(){
         $('.match-preferences').toggleClass('match-preferences-show')
     })
+
+    $('#list-backer-button').click(function(){
+      $('.list-and-add-backers').toggleClass('list-and-add-backers-show')
+    })
+
+
     $('#card-button').click(function(){
         $('.find-new-backer').toggleClass('backer-search-form')
     })
@@ -21,6 +23,13 @@ $(document).ready(function(){
         event.preventDefault()
         $('.about-you').toggleClass('edit-profile-show')
     })
+
+
+
+    //flash message if pool is empty from erb template
+    $("#pool-is-empty").delay( 6000 ).fadeOut( 300 )
+
+
 
 // DATER SEARCHES FOR BACKER MY EMAIL
     $('#find-backer-by-email').click(function(event) {

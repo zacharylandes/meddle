@@ -1,7 +1,7 @@
 class InvitesController < ApplicationController
 
   def show
-    binding.pry
+    # binding.pry
     if params[:email]
       UserMailer.dater_requests_backer(current_user, params[:email]).deliver_now
       redirect_to "/dashboard/#{current_user.id}?tab=dater"
