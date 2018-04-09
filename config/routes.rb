@@ -40,7 +40,7 @@ Rails.application.routes.draw do
 
     end
   end
-
+  get '/invites', to: 'invites#show'
   # get '/api/v1/daters/:id/backers', to: '/api/v1/daters/backers#index'
   # For details on the DSL available within this file, see http://guides.rubyonraiils.org/routing.html
 end
