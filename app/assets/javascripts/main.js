@@ -22,6 +22,7 @@ $(document).ready(function(){
         $('.about-you').toggleClass('edit-profile-show')
     })
 
+// DATER SEARCHES FOR BACKER MY EMAIL
     $('#find-backer-by-email').click(function(event) {
       event.preventDefault()
       let email = event.target.offsetParent.childNodes[1].value
@@ -35,7 +36,7 @@ $(document).ready(function(){
             `<div class="alert alert-warning" role="alert" id="backer-not-found-alert">
               <h4 class="alert-heading">Oh Snap!</h4>
                 <p>That person isn't signed up. Send them an invite!</p>
-                <a class ="primary-btn card-button" id="invite-backer-button"> Invite "${email}"! </a>
+                <a class ="primary-btn card-button" id="invite-backer-button" data-id="${email}"> Invite "${email}"! </a>
              </div>`)
           $("#backer-not-found-alert").delay( 3000 ).fadeOut( 300 )
         }
@@ -57,10 +58,16 @@ $(document).ready(function(){
     )
 
 
-    $("#invite-backer-button").click()
-    //send invite, hide or destroy th appended thingy.
+//SEND EMAIL TO INVITE NEW USER
+    $(".find-new-backer").on("click", "#invite-backer-button", function(event) {
+      //send invite, hide or destroy th appended thingy.
+      event.preventDefault()
+      let email= event.currentTarget.dataset.id
+      //in the controller, I can access the current user, so I just need to send the backerId or email address
+      window.location.href = `http://localhost:3000/invites?email=${email}`
+    })
 
-
+// DATER SEARCHES FOR BACKER BY NAME
     $('#find-backer-by-name').click(function(event) {
       event.preventDefault()
       let first = event.target.offsetParent.childNodes[1].value
@@ -121,6 +128,11 @@ $(document).ready(function(){
             <h4 class="alert-heading"> Backer Added!</h4>
           </div>`).delay( 1500 ).fadeOut( 300 )
       })
+
+
+
+
+
     $('#answer-questions').click(function(){
         event.preventDefault()
         $('.layer').css('display',"block")
@@ -152,7 +164,7 @@ $(document).ready(function(){
         modal.find('.modal-title').text('New message to ' + recipient)
         modal.find('.modal-body input').val(recipient)
       })
-    
+
 
 
 	var window_width 	 = $(window).width(),
