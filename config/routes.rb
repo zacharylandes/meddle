@@ -19,7 +19,11 @@ Rails.application.routes.draw do
 
 
   resources :users
+  post 'search', to: 'search#create' , as: "search"
+
   get 'user/:id/pool', to: 'pool#index' , as: "user_pool"
+  put 'user/:id/pool', to: 'pool#update' , as: "edit_user_pool"
+  
 
   namespace :api do
     namespace :v1 do

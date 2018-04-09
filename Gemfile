@@ -11,6 +11,9 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'aws-sdk-rails'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
+gem 'zip-codes'
+gem 'bootstrap-slider-rails'
+
 gem 'figaro'
 gem 'faraday'
 gem 'sass-rails', '~> 5.0'

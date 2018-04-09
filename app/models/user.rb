@@ -29,7 +29,7 @@ has_one :mate_preference
       Dater.find_or_create_by(id: user.id, user_id: user.id,f_name: user.f_name, l_name: user.l_name)
       MatePreference.find_or_create_by(dater_id:user.id)
       Backer.find_or_create_by(id: user.id, user_id: user.id, f_name: user.f_name, l_name: user.l_name)
-      Trait.find_or_create_by(dater_id:user.id)
+      Trait.find_or_create_by(dater_id:user.id, zip:80203)
     end
   end
 

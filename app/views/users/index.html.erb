@@ -3,6 +3,9 @@
 
 <div class="  col-md-8 card" id="gallery-container">
   <h5 class="card-header">All Daters</h5>
+  <h6 class="card-header">Filters
+   </h6>
+    <%= render 'filter'%>
     <div id='gallery-cards-container'>
       <% @daters.each do |dater| %>
           <div class="card dater-card">
