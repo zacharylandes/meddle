@@ -3,17 +3,16 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader,
 
  :mount_on => :image
-has_many :daters
-has_many :backers
-has_many :dater_backers, through: :daters
-has_many :dater_backers, through: :backers
-has_one :mate_preference
+  has_many :daters
+  has_many :backers
+  has_many :dater_backers, through: :daters
+  has_many :dater_backers, through: :backers
+  has_one :mate_preference
 
   acts_as_messageable
 
-
-
   def self.from_omniauth(auth)
+    binding.pry
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider
       user.uid = auth.uid
@@ -26,18 +25,16 @@ has_one :mate_preference
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
 
-      #find user in invites table
       Dater.find_or_create_by(user_id: user.id)
       Backer.find_or_create_by(user_id: user.id, f_name: user.f_name, l_name: user.l_name)
-      MatePreference.find_or_create_by(dater_id:user.id)
-      Trait.find_or_create_by(dater_id:user.id)
+      MatePreference.find_or_create_by(dater_id: user.id)
+      Trait.find_or_create_by(dater_id: user.id)
     end
   end
 
   def mailboxer_email(object)
-      return email
-
-    end
+    return email
+  end
 
 
 end

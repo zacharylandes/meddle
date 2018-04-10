@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
+  get '/invites', to: 'invites#show'
   root to: "homes#show"
 
   resources :sessions, only: [:create, :destroy]
@@ -10,27 +11,23 @@ Rails.application.routes.draw do
   resource :mate_preference, only: [:update]
   resource :trait, only: [:update]
 
-
-
-
   resources :conversations
-
 
   resources :dashboard
 
-resources :backers do
-resources :daters do
-      resources :comments,  as: 'comments' 
-      resources :personalities
-end
-end
+  resources :backers do
+    resources :daters do
+          resources :comments,  as: 'comments'
+          resources :personalities
+    end
+  end
 
   resources :users
   post 'search', to: 'search#create' , as: "search"
 
   get 'user/:id/pool', to: 'pool#index' , as: "user_pool"
   put 'user/:id/pool', to: 'pool#update' , as: "edit_user_pool"
-  
+
 
   namespace :api do
     namespace :v1 do
@@ -51,7 +48,4 @@ end
 
     end
   end
-  get '/invites', to: 'invites#show'
-  # get '/api/v1/daters/:id/backers', to: '/api/v1/daters/backers#index'
-  # For details on the DSL available within this file, see http://guides.rubyonraiils.org/routing.html
 end

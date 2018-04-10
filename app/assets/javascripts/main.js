@@ -79,21 +79,6 @@ $(document).ready(function(){
       }
     )
 
-// SEND EMAIL TO CONNECT EXISTING USER AS A BACKER
-    $(".list-and-add-backers").on("click", "#invite-dater-button", function(event) {
-        event.preventDefault()
-        let email = event.target.offsetParent.childNodes[1].value
-        console.log(email)
-        $.get(`http://localhost:3000/invites?email=${email}`)
-      })
-
-// SEND EMAIL TO INVITE NEW BACKER
-    $(".list-and-add-backers").on("click", "#invite-backer-button", function(event) {
-      event.preventDefault()
-      let email = event.target.offsetParent.childNodes[1].value
-      console.log(email)
-      $.get(`http://localhost:3000/invites?email=${email}`)
-    })
 
 // DATER SEARCHES FOR BACKER BY NAME
     $('#find-backer-by-name').click(function(event) {
@@ -264,7 +249,24 @@ $(document).ready(function(){
           </div>`).delay( 1500 ).fadeOut( 300 )
       })
 
+////////////////////////////////////////////
 
+    // SEND EMAIL TO INVITE A DATER
+    $(".list-and-add-backers").on("click", "#invite-dater-button", function(event) {
+      event.preventDefault()
+      let email = event.target.offsetParent.childNodes[1].value
+      console.log(email)
+      $.get(`http://localhost:3000/invites?email=${email}&add-dater=true`)
+    })
+
+    // SEND EMAIL TO INVITE NEW BACKER
+    $(".list-and-add-backers").on("click", "#invite-backer-button", function(event) {
+      event.preventDefault()
+      let email = event.target.offsetParent.childNodes[1].value
+      console.log(email)
+      $.get(`http://localhost:3000/invites?email=${email}&add_backer=true`)
+    })
+    ///////////////////////////////////////
 
 
     $('#answer-questions').click(function(){
