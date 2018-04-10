@@ -44,7 +44,6 @@ $facebook-color: #3b5999;
   width: 340px;
   margin-top:20px;
 
-  // margin: 50px auto;
   background-color: white;
   border-radius: 0;
   border: 0;
@@ -107,6 +106,23 @@ $grey:  #EAEAEA;
   flex-direction:column;
   justify-content: flex-start;
   align-items: center;
+}
+.login-button a{
+  color:white !important;
+}
+
+.login,.login a {
+  color: $teal !important;
+}
+.pyt-signup{
+  display:flex;
+  flex-direction: column;
+  align-items:space-between;
+  justify-content: center;
+}
+[class*="col-md-12"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 #gallery-cards-container{
   display: grid;
