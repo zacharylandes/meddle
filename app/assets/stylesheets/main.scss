@@ -81,6 +81,10 @@ $grey:  #D3D6D6;
 .backer-search-form, .list-and-add-backers-show {
   display:block;
 }
+.list-and-add-backers {
+
+  margin: 20px;
+}
 
 #main-nav{
   border-bottom: 2px solid $darkBlue;
@@ -153,10 +157,7 @@ body{
   justify-content: flex-start;
   margin: 20px;
 }
-.list-and-add-backers {
 
-  margin: 20px;
-}
 
 #dash-dater-img{
   width:60%;
