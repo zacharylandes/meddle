@@ -12,7 +12,6 @@
                     <%= ZipCodes.identify("#{@dater.trait.zip}")[:state_name] %></p>
                 <h5 class="card-title">Sexual Orientation</h5>
                 <%= @dater.trait.orientation.capitalize%>
-                    
             </div>
         </div>
         <div class="card profile-card">
@@ -26,11 +25,19 @@
         </div>
         <div class="card profile-card">
             <div class="card-header">
-                What <%@user.f_name%>'s backers say about them
+                What <%=@dater.f_name%>'s backers say about them
             </div>
             <div class="card-body">
-                <h5 class="card-title">He's good guy</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+             <%= link_to "#{Question.first.question}",nil, class:"primary-btn btn-md", id:'dater-q1-button' %>
+            <%= render 'dater-answer1-list'%>
+             <%= link_to "#{Question.second.question}",nil, class:"primary-btn btn-md", id:'dater-q2-button' %>
+            <%= render 'dater-answer2-list'%>
+             <%= link_to "#{Question.third.question}",nil, class:"primary-btn btn-md", id:'dater-q3-button' %>
+            <%= render 'dater-answer3-list'%>
+             <%= link_to "#{Question.find(4).question}",nil, class:"primary-btn btn-md", id:'dater-q4-button' %>
+            <%= render 'dater-answer4-list'%>
+             <%= link_to "#{Question.find(5).question}",nil, class:"primary-btn btn-md", id:'dater-q5-button' %>
+            <%= render 'dater-answer5-list'%>
             </div>
         </div>
         <%= render 'show_dater_traits'%>

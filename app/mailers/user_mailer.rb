@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
   def dater_requests_backer(current_user, email_new_user)
     @email_new_user = email_new_user
     @current_user = current_user
-    @url  = "" #this link should hav some sort of link that takes the user to the site and connects them automatically to the dater
+    @url  = "localhost:3000/auth/google_oauth2?tab=backer&user_id=#{current_user.id}" #this link should hav some sort of link that takes the user to the site and connects them automatically to the dater
     # mail(to: @email_new_user, subject: "#{@current_user.f_name} would like to connect with you! ANOTHER TEST")
 
     mg_client = Mailgun::Client.new ENV['api_key']

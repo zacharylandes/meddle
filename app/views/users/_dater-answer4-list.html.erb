@@ -1,0 +1,19 @@
+<div class = 'answer4-table col-md-12'>
+    <table class = 'table table-striped '>
+        <thead>
+      <tr>
+        <th scope="col">Commenter</th>
+        <th scope="col">Comment</th>        
+      </tr>
+
+    </thead>
+<tbody>
+<% current_dater.comments.where(question_id:4).each do  |comment|%>
+    <tr>
+    <td><%= Backer.find(comment.backer_id).f_name%></td>
+    <td><%= comment.comment %></td>
+    </tr>
+<% end %>
+</tbody>
+    </table>
+</div>

@@ -1,0 +1,25 @@
+        <div class="card-body" id ='p2-comment-box' >
+            <p class="card-text">How adaptable are they?</p>
+                 <input type="range" min="1" max="5" value="5" id= "p6-value">
+                <%= hidden_field_tag 'backer_id', "#{@dater.id}", id:'backer_id_hidden' %>
+                <%= hidden_field_tag 'dater_id', "#{@backer.id}", id:'dater_id_hidden'  %>
+                <%= hidden_field_tag 'p6', "adaptable", id:'p6_id_hidden'  %>
+            </p>
+            <p class="card-text">How confident are they?</p>
+                 <input type="range" min="1" max="5" value="5" id= "p7-value">
+                <%= hidden_field_tag 'p7', "confident", id:'p7_id_hidden'  %>
+            </p>
+            <p class="card-text">How logical are they?</p>
+                 <input type="range" min="1" max="5" value="5" id= "p8-value">
+                <%= hidden_field_tag 'p8', "logical", id:'p8_id_hidden'  %>
+            </p>
+            <p class="card-text">How independent are they?</p>
+                 <input type="range" min="1" max="5" value="5" id= "p9-value">
+                <%= hidden_field_tag 'p9', "independent", id:'p9_id_hidden'  %>
+            </p>
+            <p class="card-text">How organized are they?</p>
+                 <input type="range" min="1" max="5" value="5" id= "p10-value">
+                <%= hidden_field_tag 'p10', "organized", id:'p10_id_hidden'  %>
+                <p><%= submit_tag 'submit', class: 'primary-btn btn-md', id:"p2-submit" %></p>
+            </p>
+        </div>

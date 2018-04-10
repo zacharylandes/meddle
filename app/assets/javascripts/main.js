@@ -18,11 +18,35 @@ $(document).ready(function(){
     })
 
 
-
-   
     $('#show-match-preferences').click(function(){
-        $('.match-preferences').toggleClass('match-preferences-show')
+      $('.match-preferences').toggleClass('match-preferences-show')
+  })
+   
+    $('#dater-q1-button').click(function(){
+      event.preventDefault()
+        $('.answer1-table').toggleClass('answer1-table-show')
     })
+
+    $('#dater-q2-button').click(function(){
+      event.preventDefault()
+        $('.answer2-table').toggleClass('answer1-table-show')
+    })
+    
+    $('#dater-q3-button').click(function(){
+      event.preventDefault()
+        $('.answer3-table').toggleClass('answer1-table-show')
+    })
+    $('#dater-q4-button').click(function(){
+      event.preventDefault()
+        $('.answer4-table').toggleClass('answer1-table-show')
+    })
+    $('#dater-q5-button').click(function(){
+      event.preventDefault()
+        $('.answer5-table').toggleClass('answer1-table-show')
+    })
+
+
+
 
     $('#list-backer-button').click(function(){
       console.log('clicked')
