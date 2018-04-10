@@ -12,7 +12,7 @@ class User < ApplicationRecord
   acts_as_messageable
 
   def self.from_omniauth(auth)
-    binding.pry
+     
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider
       user.uid = auth.uid
