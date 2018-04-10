@@ -25,8 +25,8 @@ $(document).ready(function(){
     $('#list-backer-button').click(function(){
       $('.list-and-add-backers').toggleClass('list-backers-show')
     })
-    .list-and-add-backers
-    
+
+
 
     $('#card-button').click(function(){
         $('.list-and-add-backers').toggleClass('backer-search-form')
@@ -194,12 +194,11 @@ $(document).ready(function(){
 
 //SEND EMAIL TO INVITE NEW DATER - not complete yet. need email functionality
     $(".search-for-new-dater").on("click", "#invite-dater-button", function(event) {
-      //send invite, hide or destroy th appended thingy.
       event.preventDefault()
-      console.log("Email button clicked!")
-      let email = event.currentTarget.dataset.id
-      //in the controller, I can access the current user, so I just need to send the backerId or email address
-      // window.location.href = `http://localhost:3000/invites?email=${email}`
+      let email = event.target.offsetParent.childNodes[1].value
+      console.log(email)
+      $('.form-control').html('')
+      $.get(`http://localhost:3000/invites?email=${email}`)
     })
 
 
@@ -210,6 +209,7 @@ $(document).ready(function(){
       let first = event.target.offsetParent.childNodes[1].value
       let last =  event.target.offsetParent.childNodes[3].value
       let currentUser = document.location.pathname.substr(11)
+      console.log(first, last, currentUser)
 
             fetch(`http://localhost:3000/api/v1/users?f_name=${first}&l_name=${last}`)
             .then((response) => response.json())
