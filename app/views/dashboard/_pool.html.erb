@@ -1,12 +1,11 @@
 <div class="show-the-daters-backers" >
+        <div id='gallery-cards-container'>
     <% current_dater.pool.each do |match| %>
         <div class="card dater-card">
-        <div class = 'card-img-top'>
          <% if current_user.image %>
-          <%= link_to image_tag(match.first.user.image.url), user_path(match.first.user) %>
+          <%= link_to image_tag(match.first.user.image.url, class:'card-img-top'), user_path(match.first.user) %>
         <% end %>
-        </div>
-            <div class="card-body" id="card-body">
+            <div class="card-body"id="card-body" >
                 <h5 class="card-title" id="card-body"><%= match[0].f_name %></h5>
             </div>
             <ul class="list-group list-group-flush">
@@ -17,4 +16,5 @@
             </div>
         </div>
     <% end %>
+    </div>
 </div>

@@ -1,15 +1,22 @@
-  
-  <div class="card col-md-2 dash-side" >
-    <div class = 'card-header'id='dash-side-head'><%= current_user.f_name%>
-    </div>
-    <div class = 'side-navatar'>
-            <% if current_user.image %>
-            <%= image_tag current_user.image.url %>
-          <% end %>
-    </div>
-    <div class="card-body ">
-        <%= link_to 'Profile',user_path(current_user), class:"primary-btn btn-md"  %>
-        <%= link_to 'Gallery', users_path, class:"primary-btn btn-md"%>
-        <%= link_to 'Messages',conversations_path, class:"primary-btn btn-md" %>
-    </div>
+
+
+
+<div class='card  card-profile text-center col-md-2' id='dash-side' >
+  <div class = 'card-header'> You</div>
+  <img alt='' class='card-img-top' src='https://s3.amazonaws.com/pytdating/andrea-reiman-417352-unsplash.jpg'>
+  <div class='card-block'>
+         <% if current_user.image %>
+              <%= image_tag current_user.image.url, class:'card-img-profile' %>
+            <% end %>
+    <h4 class='card-title'>
+    <%= current_user.f_name%>    
+    </h4>
+      <div class="card-body ">
+          <%= link_to 'Profile',user_path(current_user), class:"primary-btn btn-md"  %>
+          <%= link_to 'Gallery', users_path, class:"primary-btn btn-md"%>
+          <%= link_to 'Messages',conversations_path, class:"primary-btn btn-md" %>
+      </div>
   </div>
+</div>
+
+

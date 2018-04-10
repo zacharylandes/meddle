@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     
   def index
     @daters = SearchService.new.search(params,current_user)
+    params = {} 
   end
 
   def create

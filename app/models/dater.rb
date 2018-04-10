@@ -4,6 +4,8 @@ class Dater < ApplicationRecord
   has_many :backers, through: :dater_backers
   has_many :matches
   has_many :comments
+  has_many :personalities
+  
   has_one :trait
   has_many :backer_evals
   has_one :mate_preference

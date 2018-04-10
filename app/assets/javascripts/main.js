@@ -17,6 +17,9 @@ $(document).ready(function(){
         $('.find-new-backer').toggleClass('backer-search-form')
     })
 
+
+
+   
     $('#show-match-preferences').click(function(){
         $('.match-preferences').toggleClass('match-preferences-show')
     })
