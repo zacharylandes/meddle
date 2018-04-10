@@ -1,0 +1,9 @@
+        <div class="card-body  " id ='q5-comment-box' >
+            <p class="card-text" ><%=@question5.question%></p>
+                <input type="text-area" id='q5-comment-answer'>
+                <%= hidden_field_tag 'backer_id', "#{@dater.id}", id:'backer_id_hidden' %>
+                <%= hidden_field_tag 'dater_id', "#{@backer.id}", id:'dater_id_hidden'  %>
+                <%= hidden_field_tag 'q1', "#{@question5.id}", id:'q5_id_hidden'  %>
+                <p><%= submit_tag 'submit', class: 'primary-btn',id:"q5-comment-submit" %></p>
+            </p>
+        </div>

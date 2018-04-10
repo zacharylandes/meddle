@@ -2,10 +2,10 @@
 <div class = "dater-tab-container">
     <ul class="nav nav-tabs">
     <li class="nav-item">
-     <%= link_to 'Dater', dashboard_path(current_user, tab:'dater'), class:'nav-link'%>
+     <%= link_to 'Dater Corner', dashboard_path(current_user, tab:'dater'), class:'nav-link'%>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" href="#">Backers Here</a>
+        <a class="nav-link active" href="#">Backer Corner</a>
     </li>
     </ul>
 </div>
@@ -13,26 +13,31 @@
 <div class="card">
 <h5 class="card-title">Your Daters</h5>
     <div class="card-body dater-tab-body">
-    <table class="table">
+    <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">First</th>
         <th scope="col">Last</th>
+        <th scope="col">Percent Complete</th>
+        
+        <th scope="col">Answer Questions</th>
+        
         <th scope="col">Find a mate for them</th>
       </tr>
     </thead>
     <tbody>
+    <% current_backer.daters.each  do |dater|%>
       <tr>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td><%= dater.f_name %></td>
+        <td><%= dater.l_name %></td>
+        <td>50%</td>
+        <td><%= link_to 'Qs and Ts', new_backer_dater_comment_path(current_user, dater), class:'primary-btn btn-sm', id:'q-button'%></td>
+        <td><a class="primary-btn" id="q-button">Mate Finder</a></td>
       </tr>
-
+  <%  end %>
     </tbody>
   </table>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <h6>Find a dater</h6>
-    </div>
+    <h6>Or add a new dater below</h6>
+    </div> 
     <%= render 'add_dater'%>
-
-</div>
+</div>  

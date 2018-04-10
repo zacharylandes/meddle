@@ -1,22 +1,42 @@
 <%=render 'dashboard/dash_side'%>
-<div class = 'user-container'>
-    <div class="card profile-card">
-        <div class="card-header">
-            About
+<div class = 'user-parent'>
+    <div class = 'user-container'>
+        <div class="card profile-card">
+            <div class="card-header">
+                <%= @dater.f_name %>
+                <%= @dater.l_name %>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Location</h5>
+                <p class="card-text"><%= ZipCodes.identify("#{@dater.trait.zip}")[:city] %>
+                    <%= ZipCodes.identify("#{@dater.trait.zip}")[:state_name] %></p>
+                <h5 class="card-title">Sexual Orientation</h5>
+                <%= @dater.trait.orientation.capitalize%>
+                    
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">I'm just a good guy</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <div class="card profile-card">
+            <div class="card-header">
+                About
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">I'm just a good guy</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
         </div>
+        <div class="card profile-card">
+            <div class="card-header">
+                What <%@user.f_name%>'s backers say about them
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">He's good guy</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+        </div>
+        <%= render 'show_dater_traits'%>
     </div>
-    <div class="card profile-card">
-        <div class="card-header">
-            What <%@user.f_name%>'s backers say about them
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">He's good guy</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        </div>
-    </div>
-    <%= link_to 'Send Message', new_conversation_path(recipient: @user), class:"primary-btn btn-md" %>
-    <%= render 'show_dater_traits'%>
+    <div class = 'user-right-side'>
+        <%= link_to 'Send Message', new_conversation_path(recipient: @user), class:"primary-btn btn-md" %>
+        <%= button_to 'Add to your pool', edit_user_pool_path(@user), method: :put, class:"primary-btn btn-md" %>
+    </div>  
+</div>
