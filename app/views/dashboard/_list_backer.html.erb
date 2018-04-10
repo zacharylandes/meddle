@@ -1,8 +1,8 @@
 <!-- LIST OF BACKERS FOR CURRENT DATER -->
 <div class="list-and-add-backers" >
   <h6>Your Backers</h6>
-  <ul id="list-and-add-backers">
-    <% current_user.backers.each do |backer| %>
+  <ul >
+    <% current_dater.backers.each do |backer| %>
     <li class="backer-name"><p><%= "#{backer.f_name} #{backer.l_name}" %></p>
       <%end  %>
     </ul>

@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
     
   def index
-    @daters = Dater.where.not(id: current_user.id)
+    @daters = SearchService.new.search(params,current_user)
+    params = {} 
+  end
+
+  def create
   end
 
   def edit

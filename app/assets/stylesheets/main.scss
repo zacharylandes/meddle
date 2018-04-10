@@ -1,4 +1,81 @@
 
+
+
+
+
+$bg-start: #9d9181;
+$bg-end: #9e866c;
+$card-bg: #DFDFE2;
+$dribbble-color: #ea4b89;
+$twitter-color: #68aade;
+$facebook-color: #3b5999;
+
+
+.card:hover{
+  box-shadow: 1em 1em 2em rgba(0,0,0,.2);
+}
+.pyt-logo{
+
+}
+#q-button{
+  margin:0;
+}
+#q-button-start{
+  text-align: center;
+  box-shadow: 1em 1em 2em rgba(0,0,0,.2);
+
+}
+#q-button-start:hover{
+  color:white;
+}
+#q1-comment-box{
+  display:flex;
+  flex-direction: column;
+}
+#hero-text{
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin:3% 0 0 15%;
+}
+
+.card-profile {
+  width: 340px;
+  margin-top:20px;
+
+  background-color: white;
+  border-radius: 0;
+  border: 0;
+  box-shadow: 1em 1em 2em rgba(0,0,0,.2);
+
+  .card-img-top {
+    border-radius: 0;
+  }
+
+  .card-img-profile {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-top: -95px;
+    margin-bottom: 35px;
+    border: 5px solid $card-bg;
+  }
+
+  .card-title {
+    margin-bottom: 50px;
+
+    small {
+      display: block;
+      font-size: .6em;
+      margin-top: .2em;
+    }
+  }
+
+}
+
+
+
+
 /*--------------------------- Color variations ----------------------*/
 /* Medium Layout: 1280px */
 /* Tablet Layout: 768px */
@@ -14,14 +91,10 @@ $darkBlue: #085465;
 $red: #dd3f4a;
 $grey:  #EAEAEA;
 
-/* CSS used here will be applied after bootstrap.css */
 
 
 
-$teal:#51A1A1;
-$darkBlue: #085465;
-$red: #DD3F4A;
-$grey:  #D3D6D6;
+
 
 
 .dash{
@@ -34,14 +107,45 @@ $grey:  #D3D6D6;
   justify-content: flex-start;
   align-items: center;
 }
-#gallery-cards-container{
-  display: flex;
-  flex-direction:row;
-  align-items: flex-start;
+.login-button a{
+  color:white !important;
+}
 
+.login,.login a {
+  color: $teal !important;
+}
+.pyt-signup{
+  display:flex;
+  flex-direction: column;
+  align-items:space-between;
+  justify-content: center;
+}
+[class*="col-md-12"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+#gallery-cards-container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  // grid-gap: 10px;
+}
+#filter-table{
+  padding:0px;
+  overflow: hidden;
+  box-shadow: 1em 1em 2em rgba(0,0,0,.2);
+
+}
+select{
+  font-size:10px;
+  border-radius:60px;
+}
+td{
+  font-size:14px;
 }
 #gallery-container{
   margin:20px;
+  box-shadow: 1em 1em 2em rgba(0,0,0,.2);
+
 }
 #dater-tab-body{
   display: flex;
@@ -59,15 +163,33 @@ $grey:  #D3D6D6;
 .dash-card-container{
   width:80%;
 }
+#q-button{
+  background-color: $teal;
+  color:white;
+  padding:5px;
+}
 .find-new-backer, .input-field{
   margin-top:40px;
   border-radius:10px;
 }
+#question-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .card{
+  box-shadow: 1em 1em 2em rgba(0,0,0,.2);
+  }
 
+}
 #header-title {
   color:$darkBlue;
 }
+.comment-box{
+  display: none;
 
+  // width: 200px;
+}
 .card-button:hover,#dash-side-button:hover{
   color:white;
 }
@@ -75,22 +197,28 @@ $grey:  #D3D6D6;
   font-size:1em;
 }
 
-.find-new-backer, .list-and-add-backers {
-  display:none;
+.backer-search-form,#q2-comment-box,#question-end,#q3-comment-box,#q4-comment-box,#q5-comment-box, .list-and-add-backers{
+  display:none
 }
-.backer-search-form, .list-and-add-backers-show {
-  display:block;
+
+.list-backers-show,.find-new-backer {
+  margin:2%;
+  display: block;
 }
 .list-and-add-backers {
 
   margin: 20px;
 }
 
+
 #main-nav{
   border-bottom: 2px solid $darkBlue;
 }
 .main{
   height:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 #active{
@@ -111,13 +239,19 @@ body{
   margin:20px;
   height:20em;
 }
+.user-right-side{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+
 .overlay h1{
   font-size: 4em;
   color:$teal;
-  margin: 5% 10% 0 15%;
+  // margin: 5% 10% 0 15%;
 }
 .q_1_modal{
-
   position: absolute;
   z-index: 3000;
   padding:20px;
@@ -133,6 +267,13 @@ body{
 
 .show-the-daters-backers, .edit-profile, .edit-mate-preference, .about-you{
   display: none;
+}
+
+.comment-box{
+  position: absolute;
+  z-index:3000;
+  margin:auto;
+
 }
 
 .layer {
@@ -178,6 +319,9 @@ body{
 .dater-tab-container{
   margin-top:20px;
   display:flex;
+  box-shadow: 1em 1em 2em rgba(0,0,0,.2);
+
+
   flex-direction:row;
   justify-content: flex-start;
   align-items:flex-start
@@ -190,16 +334,18 @@ body{
   color:white;
   border:2px solid $darkBlue;
 }
-.dater-tab{
+#dater-tab{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#dater-tab-body{
   display:flex;
+  flex-direction: column;
   justify-content: center;
-  color:white;
   padding:auto;
   margin:0px 1px;
   border-radius: 10% 10% 0% 0% ;
-  width: 100px;
-  height: 30px;
-  background-color:$teal;
 }
 #dash-side-btn:hover{
   border-bottom: 2px solid $darkBlue;
@@ -229,6 +375,10 @@ body{
 .dashboard-container{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
 }
 .dash-body{
   display:flex;
@@ -239,15 +389,14 @@ body{
   width:50px;
 }
 .side-navatar img{
-  width:100%;
-  border-radius: 100%;
 }
 .side-navatar{
-  margin-top:4%;
+  // margin-top:4%;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  // height:20%;
 }
 #delete-message{
   margin:10px;
@@ -283,14 +432,13 @@ body{
 .match-preferences-show{
   display:block
 }
-.dash-side{
-  display:flex;
-  flex-direction:column;
-  justify-content: flex-start;
-  align-items:center;
-
-  // width: 15%;
-  height:800px;
+#dash-side-head{
+  text-align: center;
+  padding:10px -10px 10px 0;
+}
+#dash-side{
+  margin-right: 15px;
+  padding: 0px;
   // border-right: 3px solid $teal;
 }
 .logo img{
@@ -2211,8 +2359,6 @@ body {
 .default-header {
   padding: 10px 0;
   background-color: teal;
-
-
   border-bottom: 3px solid $red;
   top: 0;
   left: 0;
@@ -2324,9 +2470,18 @@ nav a:hover {
 .primary-btn:focus {
   outline: none;
 }
+.exit a {
+  border:1px solid black;
 
+}
+.exit{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
 .primary-btn:hover {
   background: $teal;
+  color:white;
 }
 
 .banner-area {

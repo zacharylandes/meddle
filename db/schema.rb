@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408191006) do
+ActiveRecord::Schema.define(version: 20180409224302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(version: 20180408191006) do
     t.datetime "updated_at", null: false
     t.bigint "backer_id"
     t.bigint "dater_id"
+    t.bigint "question_id"
     t.index ["backer_id"], name: "index_comments_on_backer_id"
     t.index ["dater_id"], name: "index_comments_on_dater_id"
+    t.index ["question_id"], name: "index_comments_on_question_id"
   end
 
   create_table "dater_backers", force: :cascade do |t|
@@ -150,6 +152,34 @@ ActiveRecord::Schema.define(version: 20180408191006) do
     t.index ["dater_id"], name: "index_mate_preferences_on_dater_id"
   end
 
+  create_table "personalities", force: :cascade do |t|
+    t.bigint "dater_id"
+    t.bigint "backer_id"
+    t.integer "charitable"
+    t.integer "intelligent"
+    t.integer "shy"
+    t.integer "spontaneous"
+    t.integer "funny"
+    t.integer "adaptable"
+    t.integer "confident"
+    t.integer "logical"
+    t.integer "independent"
+    t.integer "organized"
+    t.integer "relaxed"
+    t.integer "friendly"
+    t.integer "energetic"
+    t.integer "silly"
+    t.integer "patient"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["backer_id"], name: "index_personalities_on_backer_id"
+    t.index ["dater_id"], name: "index_personalities_on_dater_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "question"
+  end
+
   create_table "traits", force: :cascade do |t|
     t.bigint "dater_id"
     t.integer "height", default: 0
@@ -194,6 +224,7 @@ ActiveRecord::Schema.define(version: 20180408191006) do
   add_foreign_key "backers", "users"
   add_foreign_key "comments", "backers"
   add_foreign_key "comments", "daters"
+  add_foreign_key "comments", "questions"
   add_foreign_key "dater_backers", "backers"
   add_foreign_key "dater_backers", "daters"
   add_foreign_key "daters", "users"
@@ -202,5 +233,7 @@ ActiveRecord::Schema.define(version: 20180408191006) do
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
   add_foreign_key "matches", "daters"
   add_foreign_key "mate_preferences", "daters"
+  add_foreign_key "personalities", "backers"
+  add_foreign_key "personalities", "daters"
   add_foreign_key "traits", "daters"
 end

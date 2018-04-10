@@ -1,0 +1,20 @@
+<%= render 'dashboard/dash_side'%>
+<div class = 'dashboard-container col-md-10 card-profile text-center' id='question-container'>
+            <input class= 'primary-btn btn-md' id='q-button-start' value="Get Started!">
+      <div class = 'card profile-card comment-box' id='comment-container' >
+          <div class="card-header">
+            Questions for <%= @dater.f_name%>
+        </div>
+        <%= render 'q1' %>
+        <%= render 'q2' %>
+        <%= render 'q3' %>
+        <%= render 'q4' %>
+        <%= render 'q5' %>
+        <%= render 'personality/p1' %>
+        <%= render 'question_end' %>
+        
+        <a class = 'exit'>
+        x
+        </a>
+     </div>
+</div>

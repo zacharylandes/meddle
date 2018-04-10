@@ -1,22 +1,20 @@
-    <section class="banner-area relative">
-      <div class="overlay overlay-bg">
-
-      <h1>Petition Your Tribe </h1>
-      <h4 class="text-white slogan">Meddle in your framily's love life <br></h4>
+    <section class="banner-area col-md-12">
+      <div class="overlay overlay-bg" >
+      <div id = 'hero-text'>
+        <div class = 'pyt-title col-md-7'  >
+          <h1>Petition Your Tribe </h1>
+          <h4 class="text-white slogan">Meddle in your framily's love life <br></h4>
+        </div>
+        <div class = 'pyt-signup col-md-5'>       
+          <button id="home-button" class="primary-btn btn-sm col-md-5 login-button"><span ><%= link_to "Sign Up", "/auth/google_oauth2?tab=backer"  %></span></button> <br>
+          <p class="text-white">Find love for your loved ones</p>
+            <button id="home-button" class="primary-btn btn-sm col-md-5   login-button"><span ><%= link_to "Sign Up", "/auth/google_oauth2?tab=dater"  %></span></button> <br>
+          <p class="text-white">Find love for yourself</p>
+        </div>
+        </div>
       </div>
       <div class="container">
-      <div class="row fullscreen align-items-center justify-content-center">
-          <div class="col-lg-12">
-            <div class="banner-content">
-            <div class = "button-container">
-              <div class="intro-button">
-               <p class="text-white">Find love for your loved ones</p>
-               <button id="home-button" class="primary-btn "><span ><%= link_to "Sign Up", "/auth/google_oauth2"  %></span></button> <br>
-              </div>
-            </div>
-
-          </div>
-        </div>
+      <div class=" fullscreen align-items-center justify-content-center">
         </div>
         </div>
       </div>

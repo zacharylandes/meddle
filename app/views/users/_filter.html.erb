@@ -1,0 +1,72 @@
+        <div class="card profile-card col-md-2" id="filter-table">
+            <div class="card-header">
+               Filter
+            </div>
+            <table class="table table-striped" >
+            <tbody>
+            <%= form_tag( '/users/', :method => :get ) do %>
+             <tr>
+                <td><%= label_tag :political_leaning %></td>
+            </tr>
+            <tr>
+                <td id="select"> <%= select_tag :political_leaning, options_for_select(Trait.political_leanings.map {|k, v| [k.humanize.capitalize, v]}), {class: " btn-sm form-control"} %></td>
+            </tr>
+             <tr>
+            <td><%= label_tag :politicalness%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :politicalness, options_for_select(Trait.politicalnesses.map {|k, v| [k.humanize.capitalize, v]}), {class: " btn-sm form-control"} %></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :smoker%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :smoker, options_for_select(Trait.smokers.map {|k, v| [k.humanize.capitalize, v]}), {class: "form-control"} %></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :alcohol%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :alcohol, options_for_select(Trait.alcohols.map {|k, v| [k.humanize.capitalize, v]}), {class: " btn-sm form-control"} %></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :body_type%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :body_type, options_for_select(Trait.body_types.map {|k, v| [k.humanize.capitalize, v]}) , {class: " btn-sm form-control"}%></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :religiosity%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :religiosity, options_for_select(Trait.religiosities.map {|k, v| [k.humanize.capitalize, v]}), {class: " btn-sm form-control"} %></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :orientation%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :orientation, options_for_select(Trait.orientations.map {|k, v| [k.humanize.capitalize, v]}), {class: " btn-sm form-control"} %></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :gender%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :gender, options_for_select(Trait.genders.map {|k, v| [k.humanize.capitalize, v]}), {class: " btn-sm form-control"} %></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :religion%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :religion, options_for_select(Trait.religions.map {|k, v| [k.humanize.capitalize, v]}), {class: " btn-sm form-control"} %></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :ethnicity%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :ethnicity, options_for_select(Trait.ethnicities.map {|k, v| [k.humanize.capitalize, v]}), {class: " btn-sm form-control"} %></td>
+            </tr>
+            </tbody>
+        </table>
+              <%= submit_tag "Update" , class: "primary-btn btn-md" %>
+        <% end %>
+    </div>

@@ -1,24 +1,24 @@
 
 <%= render 'dashboard/dash_side'%>
-
-<div class="  col-md-8 card" id="gallery-container">
-  <h5 class="card-header">All Daters</h5>
-    <div id='gallery-cards-container'>
-      <% @daters.each do |dater| %>
-          <div class="card dater-card">
-          <% if current_user.image %>
-               <%= link_to image_tag(dater.user.image.url, class:'card-img-top'), user_path(dater.id) %>
-          <% end %>    
-                  <div class="card-body" id="card-body">
-                      <h5 class="card-title" id="card-body"><%= dater.f_name %></h5>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                      <li class="list-group-item"><%= dater.l_name %></li>
-                  </ul>
-                  <div class="card-body">
-                      <a href="#" class="card-link">Another link</a>
-                  </div>
-          </div>
-      <% end %>
-      </div>
-</div>
+<%= render 'filter'%>
+    <div class=" col-md-8 card" id="gallery-container">
+    <h5 class="card-header">All Daters</h5>
+        <div id='gallery-cards-container'>
+        <% @daters.each do |dater| %>
+            <div class="card dater-card">
+            <% if current_user.image %>
+                <%= link_to image_tag(dater.user.image.url, class:'card-img-top'), user_path(dater.id) %>
+            <% end %>    
+                <div class="card-body" id="card-body">
+                    <h5 class="card-title" id="card-body"><%= dater.f_name %></h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><%= dater.l_name %></li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    </div>
