@@ -3,7 +3,7 @@
   <h6>Your Backers</h6>
   <ul >
     <% current_dater.backers.each do |backer| %>
-    <li class="backer-name"><p><%= "#{backer.f_name} #{backer.l_name}" %></p>
+    <li class="backer-name"><p><%= link_to "#{backer.f_name} #{backer.l_name}", backer_path(backer) %></p>
       <%end  %>
     </ul>
     <br>

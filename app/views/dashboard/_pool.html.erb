@@ -3,11 +3,11 @@
 
     <div class="alert alert-warning" role="alert" id="pool-is-empty">
       <h4 class="alert-heading">Your Dating Pool is Empty!</h4>
-        <p>Message your Backers! Tell them to pull it together and find you a date!</p>
-     </div>
+      <p>Message your Backers! Tell them to pull it together and find you a date!</p>
+   </div>
 
   <% else %>
-        <div id='gallery-cards-container'>
+    <div id='gallery-cards-container'>
     <% current_dater.pool.each do |match| %>
         <div class="card dater-card">
          <% if current_user.image %>
@@ -27,5 +27,4 @@
 
   <% end%>
 </div>
-    </div>
 </div>
