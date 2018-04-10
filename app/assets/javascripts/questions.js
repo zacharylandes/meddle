@@ -33,7 +33,8 @@ $('#q1-comment-submit').click(function(){
   let ans1= $('#q1-comment-answer').val()
   let backer= $('#backer_id_hidden').val()
   let dater= $('#dater_id_hidden').val()
-  $('#q1-comment-box').slideUp(2000)
+  console.log($('#q1-comment-box'))
+  $('#q1-comment-box').slideUp(1000)
   let body = {
     'ans' : ans1,
     'q': q1
@@ -47,12 +48,12 @@ $('#q2-comment-submit').click(function(){
     let ans2= $('#q2-comment-answer').val()
     let backer= $('#backer_id_hidden').val()
     let dater= $('#dater_id_hidden').val()
-    $('#q2-comment-box').slideUp(3000)
+    $('#q2-comment-box').slideUp(1000)
     let body = {
         'ans' : ans2,
         'q': q2
     }
-    $('#q3-comment-box').slideDown(3000)
+    $('#q3-comment-box').slideDown(2000)
     postComment(body,backer,dater)
   })
 
@@ -66,7 +67,7 @@ $('#q2-comment-submit').click(function(){
         'ans' : ans3,
         'q': q3
     }
-    $('#q4-comment-box').slideDown(3000)
+    $('#q4-comment-box').slideDown(2000)
     postComment(body,backer,dater)
   })
 
