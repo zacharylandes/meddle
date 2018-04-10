@@ -140,8 +140,7 @@ $(document).ready(function(){
           </div>`).delay( 1500 ).fadeOut( 300 )
       })
 
-
-
+//////////////////////////////////////////////////
 
 // BACKER SEARCHES FOR DATER BY EMAIL
     $('#find-dater-by-email').click(function(event) {
@@ -154,7 +153,7 @@ $(document).ready(function(){
       .then((parsed) => {
         console.log(parsed)
         if (parsed === null) {
-          $(".find-new-dater").append(
+          $(".search-for-new-dater").append(
             `<div class="alert alert-warning" role="alert" id="dater-not-found-alert">
               <h4 class="alert-heading">Oh Snap!</h4>
                 <p>That person isn't signed up. Send them an invite!</p>
@@ -169,28 +168,30 @@ $(document).ready(function(){
 
           $(".search-for-new-dater").append(
              `<div class="alert alert-success" role="alert" id="dater-invited-alert">
-                <h4 class="alert-heading">${parsed.f_name} ${parsed.l_name} was added as a backer!</h4>
+                <h4 class="alert-heading">${parsed.f_name} ${parsed.l_name} isn't part of your Tribe yet!</h4>
                 <a class ="primary-btn card-button" id="invite-dater-button" data-id="${email}"> "Ask ${parsed.f_name}" to back you! </a>
               </div>`)
-          $("#dater-invited-alert").delay( 4000 ).fadeOut( 300 )
+          $("#dater-invited-alert").delay( 10000 ).fadeOut( 300 )
         }
       })
       .catch(error => console.error(error) )
       }
     )
 
-
-//SEND EMAIL TO INVITE NEW DATER
-    $(".find-new-backer").on("click", "#invite-backer-button", function(event) {
+//SEND EMAIL TO INVITE NEW DATER - not complete yet. need email functionality
+    $(".search-for-new-dater").on("click", "#invite-dater-button", function(event) {
       //send invite, hide or destroy th appended thingy.
       event.preventDefault()
-      let email= event.currentTarget.dataset.id
+      console.log("Email button clicked!")
+      let email = event.currentTarget.dataset.id
       //in the controller, I can access the current user, so I just need to send the backerId or email address
-      window.location.href = `http://localhost:3000/invites?email=${email}`
+      // window.location.href = `http://localhost:3000/invites?email=${email}`
     })
 
+
+
 // BACKER SEARCHES FOR DATER BY NAME
-    $('#find-backer-by-name').click(function(event) {
+    $('#find-dater-by-name').click(function(event) {
       event.preventDefault()
       let first = event.target.offsetParent.childNodes[1].value
       let last =  event.target.offsetParent.childNodes[3].value
@@ -198,36 +199,35 @@ $(document).ready(function(){
 
             fetch(`http://localhost:3000/api/v1/users?f_name=${first}&l_name=${last}`)
             .then((response) => response.json())
-            .then((parsedBackers) => {
-              console.log(parsedBackers)
-              if (parsedBackers.length === 0) {
+            .then((parsedDaters) => {
+              console.log(parsedDaters)
+              if (parsedDaters.length === 0) {
                 // CAN'T FIND BY FIRST AND LAST NAME
-                $(".find-new-backer").append(
-                  `<div class="alert alert-warning" role="alert" id="backer-not-found-alert">
+                $(".search-for-new-dater").append(
+                  `<div class="alert alert-warning" role="alert" id="dater-not-found-alert">
                     <h4 class="alert-heading">Oh Snap!</h4>
                       <p>That person isn't signed up. Send them an invite!</p>
-                      <a class ="primary-btn card-button" id="invite-backer-button"> Invite "${first}"! </a>
+                      <a class ="primary-btn card-button" id="invite-dater-button"> Invite "${first}"! </a>
                    </div>`)
-                $("#backer-not-found-alert").delay( 3000 ).fadeOut( 300 )
-                $(".find-new-backer").append("line 80 -- append an invite form here")
+                $("#dater-not-found-alert").delay( 3000 ).fadeOut( 300 )
               }
 
               else {
                 //FOUND AT LEAST ONE PERSON BY THAT NAME. PRESENT NAME AND IMAGES FOR USER TO SELECT.
-                $(".find-new-backer").append(
-                   `<div class="alert alert-success" role="alert" id="backer-invited-alert">
+                $(".search-for-new-dater").append(
+                   `<div class="alert alert-success" role="alert" id="dater-invited-alert">
                       <h4 class="alert-heading"> Which ${first.toUpperCase()} ${last.toUpperCase()} is your Framily Member?</h4>
                     </div>`)
-                $("#backer-invited-alert").delay( 2000 ).fadeOut( 300 )
-                parsedBackers.forEach(function(backer) {
+                $("#dater-invited-alert").delay( 2000 ).fadeOut( 300 )
+                parsedDaters.forEach(function(dater) {
 
-                $(".find-new-backer").append(`
+                $(".search-for-new-dater").append(`
                   <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="..." alt="Card image cap">
                     <div class="card-body">
-                      <h5 class="card-title">${backer.f_name} ${backer.l_name}</h5>
+                      <h5 class="card-title">${dater.f_name} ${dater.l_name}</h5>
                       <p class="card-text">...</p>
-                      <a class ="primary-btn card-button" id="connect-user-as-backer" data-text="${backer.id}" >Connect with Me!</a>
+                      <a class ="primary-btn card-button" id="connect-user-as-dater" data-text="${dater.id}" >Connect with Me!</a>
                     </div>
                   </div>
                 `)
@@ -238,16 +238,16 @@ $(document).ready(function(){
     })
 
 //BACKER ADDS NEW DATER IN-APP - INCLUDES PERMISSION
-    $('.find-new-backer').on("click", '#connect-user-as-backer', function(event) {
+    $('.search-for-new-dater').on("click", '#connect-user-as-dater', function(event) {
       event.preventDefault()
-      let backerId = event.currentTarget.attributes[2].nodeValue
+      let daterId = event.currentTarget.attributes[2].nodeValue
       let currentUser = document.location.pathname.substr(11)
-      fetch(`http://localhost:3000/api/v1/daters/${currentUser}/backers/${backerId}`)
+      fetch(`http://localhost:3000/api/v1/daters/${currentUser}/daters/${daterId}`)
       .catch(error => console.error(error))
 
-        $(".find-new-backer").append(`
-          <div class="alert alert-success" role="alert" id="backer-invited-alert">
-            <h4 class="alert-heading"> Backer Added!</h4>
+        $(".search-for-new-dater").append(`
+          <div class="alert alert-success" role="alert" id="dater-invited-alert">
+            <h4 class="alert-heading"> Dater Added!</h4>
           </div>`).delay( 1500 ).fadeOut( 300 )
       })
 
