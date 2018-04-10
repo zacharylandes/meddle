@@ -23,9 +23,10 @@ $(document).ready(function(){
     })
 
     $('#list-backer-button').click(function(){
-      $('.match-preferences').toggleClass('match-preferences-show')
       $('.list-and-add-backers').toggleClass('list-backers-show')
     })
+    .list-and-add-backers
+    
 
     $('#card-button').click(function(){
         $('.list-and-add-backers').toggleClass('backer-search-form')
