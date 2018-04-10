@@ -40,8 +40,9 @@ $(document).ready(function(){
       fetch(`http://localhost:3000/api/v1/users?email=${email}`)
       .then((response) => response.json())
       .then((parsed) => {
+        console.log(parsed)
         if (parsed === null) {
-          $(".find-new-backer").append(
+          $(".list-and-add-backers").append(
             `<div class="alert alert-warning" role="alert" id="backer-not-found-alert">
               <h4 class="alert-heading">Oh Snap!</h4>
                 <p>That person isn't signed up. Send them an invite!</p>
@@ -55,7 +56,7 @@ $(document).ready(function(){
           fetch(`http://localhost:3000/api/v1/daters/${currentUser}/backers/${backerId}`)
           .catch(error => console.error(error))
 
-          $(".find-new-backer").append(
+          $(".list-and-add-backers").append(
              `<div class="alert alert-success" role="alert" id="backer-invited-alert">
                 <h4 class="alert-heading">${parsed.f_name} ${parsed.l_name} was added as a backer!</h4>
               </div>`)
@@ -70,12 +71,13 @@ $(document).ready(function(){
     $("#invite-dater-button").click()
 
 // SEND EMAIL TO INVITE NEW BACKER
-    $(".find-new-backer").on("click", "#invite-backer-button", function(event) {
+    $(".list-and-add-backers").on("click", "#invite-backer-button", function(event) {
       //send invite, hide or destroy th appended thingy.
       event.preventDefault()
       let email= event.currentTarget.dataset.id
       //in the controller, I can access the current user, so I just need to send the backerId or email address
-      window.location.href = `http://localhost:3000/invites?email=${email}`
+
+      $.get(`http://localhost:3000/invites?email=${email}`)
     })
 
 // DATER SEARCHES FOR BACKER BY NAME
