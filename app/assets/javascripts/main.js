@@ -13,6 +13,13 @@ $(document).ready(function(){
         $('.show-the-daters-backers').toggleClass('show-the-daters-backersAdd')
     })
 
+    $('#invite-backer-button').click(function(){
+        $('.find-new-backer').toggleClass('backer-search-form')
+    })
+
+
+
+   
     $('#show-match-preferences').click(function(){
         $('.match-preferences').toggleClass('match-preferences-show')
     })

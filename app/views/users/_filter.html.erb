@@ -9,19 +9,19 @@
                 <td><%= label_tag :political_leaning %></td>
             </tr>
             <tr>
-                <td> <%= select_tag :political_leaning, options_for_select(Trait.political_leanings.map {|k, v| [k.humanize.capitalize, v]}) %></td>
+                <td id="select"> <%= select_tag :political_leaning, options_for_select(Trait.political_leanings.map {|k, v| [k.humanize.capitalize, v]}), {class: " btn-sm form-control"} %></td>
             </tr>
              <tr>
             <td><%= label_tag :politicalness%></td>
             </tr>
             <tr>
-                <td> <%= select_tag :politicalness, options_for_select(Trait.politicalnesses.map {|k, v| [k.humanize.capitalize, v]}) %></td>
+                <td> <%= select_tag :politicalness, options_for_select(Trait.politicalnesses.map {|k, v| [k.humanize.capitalize, v]}), {class: " btn-sm form-control"} %></td>
             </tr>
              <tr>
                 <td><%= label_tag :smoker%></td>
             </tr>
             <tr>
-                <td> <%= select_tag :smoker, options_for_select(Trait.smokers.map {|k, v| [k.humanize.capitalize, v]}) %></td>
+                <td> <%= select_tag :smoker, options_for_select(Trait.smokers.map {|k, v| [k.humanize.capitalize, v]}), {class: "form-control"} %></td>
             </tr>
              <tr>
                 <td><%= label_tag :alcohol%></td>
@@ -69,5 +69,4 @@
         </table>
               <%= submit_tag "Update" , class: "primary-btn btn-md" %>
         <% end %>
-        </div>
     </div>

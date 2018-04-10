@@ -1,17 +1,4 @@
-<div class = 'dashboard-container'>
-  <div class="card col-md-2 dash-side " >
-  <div class = 'side-navatar'>
-          <% if !current_user.image.nil? %>
-          <%= image_tag current_user.image.url %>
-        <% end %>
-  </div>
-  <div class="card-body ">
-    
-      <%= link_to 'Profile',user_path(current_user), class:"primary-btn btn-md"  %>
-      <%= link_to 'Gallery', users_path, class:"primary-btn btn-md"%>
-      <%= link_to 'Messages',conversations_path, class:"primary-btn btn-md" %>
-  </div>
-</div>
+<%= render 'dashboard/dash_side'%>
 <div class = 'user-container'>
     <p>Welcome <%= current_user.f_name%>!</p>
     <div class="card profile-card">
@@ -64,4 +51,3 @@
         <%= render 'edit_traits'%>        
         </div>
     </div>
-</div>

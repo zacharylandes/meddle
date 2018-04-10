@@ -35,16 +35,16 @@ class Seed
     backer_4 = Backer.create!(id: user_4.id, user_id: user_4.id, f_name: user_4.f_name, l_name: user_4.l_name)
 
 
-    user_5 = User.create!( id: 500, provider: "google_oauth2", uid: "123459", auth_name: "Mr.Match", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Mister", l_name:"Match", email: "email5@email.com", remote_image_url: shots.sample )
+    user_5 = User.create!( id: 500, provider: "google_oauth2", uid: "123459", auth_name: "Mr.Match", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Jack", l_name:"Jorgen", email: "email5@email.com", remote_image_url: shots.sample )
     dater_5 = Dater.create!(id: user_5.id, user_id: user_5.id,f_name: user_5.f_name, l_name: user_5.l_name)
     backer_5 = Backer.create!(id: user_5.id, user_id: user_5.id, f_name: user_5.f_name, l_name: user_5.l_name)
 
 
-    user_6 = User.create!( id: 600, provider: "google_oauth2", uid: "123439", auth_name: "Mr.Match", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Mister", l_name:"Match", email: "email6@email.com", remote_image_url: shots.sample )
+    user_6 = User.create!( id: 600, provider: "google_oauth2", uid: "123439", auth_name: "Mr.Match", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Back", l_name:"Borgen", email: "email6@email.com", remote_image_url: shots.sample )
     dater_6 = Dater.create!(id: user_6.id, user_id: user_6.id,f_name: user_6.f_name, l_name: user_6.l_name)
     backer_6 = Backer.create!(id: user_6.id, user_id: user_6.id, f_name: user_6.f_name, l_name: user_6.l_name)
 
-    user_7 = User.create!( id: 700, provider: "google_oauth2", uid: "123359", auth_name: "Mr.Match", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Mister", l_name:"Match", email: "email7@email.com", remote_image_url: shots.sample )
+    user_7 = User.create!( id: 700, provider: "google_oauth2", uid: "123359", auth_name: "Mr.Match", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Stack", l_name:"Steiner", email: "email7@email.com", remote_image_url: shots.sample )
     dater_7 = Dater.create!(id: user_7.id, user_id: user_7.id,f_name: user_7.f_name, l_name: user_7.l_name)
     backer_7 = Backer.create!(id: user_7.id, user_id: user_7.id, f_name: user_7.f_name, l_name: user_7.l_name)
 

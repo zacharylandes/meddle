@@ -1,0 +1,9 @@
+        <div class="card-body  " id ='question-end' >
+                <h5>Thanks for answering those quesitons!</h5>
+                <p>You're helping them out ;)</p>
+                <%= hidden_field_tag 'backer_id', "#{@dater.id}", id:'backer_id_hidden' %>
+                <%= hidden_field_tag 'dater_id', "#{@backer.id}", id:'dater_id_hidden'  %>
+                <%= hidden_field_tag 'q1', "#{@question5.id}", id:'q5_id_hidden'  %>
+                <p><%=  link_to 'Back to you dashboard', dashboard_path(@dater), class: 'primary-btn',id:"question-end-submit" %></p>
+            </p>
+        </div>

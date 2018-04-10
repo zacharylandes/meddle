@@ -4,23 +4,28 @@
 <div class = "dater-tab-container">
     <ul class="nav nav-tabs">
     <li class="nav-item">
-    <a class="nav-link active" id="active"> Daters here</a>
+    <a class="nav-link active" id="active"> Dater Corner</a>
     </li>
     <li class="nav-item">
-        <%= link_to 'Backer', dashboard_path(current_user, tab:'backer'), class:'nav-link',id:"not-active" %>
+        <%= link_to 'Backer Corner', dashboard_path(current_user, tab:'backer'), class:'nav-link',id:"not-active" %>
     </li>
     </ul>
-
 </div>
-<div class="card " id="" >
+
+<div class="card" id='dater-tab' >
     <div class="card-body" id="dater-tab-body">
-        <h5 class="card-title">Daters Here</h5>
-        <a class ="primary-btn card-button" id="pool-button"> Your Pool</a>
+        <div class = 'tab-info'>
+            <h5 class="card-title">Daters </h5>
+            <h6>Welcome to the dater's corner</h6>
+            <p>Here you can explore your pool, look at your backers or add a new backer</p>
+        </div>
+        <div class = 'dater-tab-buttons'>
+            <a class ="primary-btn card-button" id="pool-button"> Your pool</a>
         <a class ="primary-btn card-button" id="list-backer-button"> Your Backers </a>
-        <a class ="primary-btn card-button" id="show-match-preferences"> Your Match Preferences</a>
+    
         </div>
         <%= render 'pool'%>
         <%= render 'list_backer'%>
         <%= render 'match_preferences'%>
-        </div>
+    </div>
 </div>
