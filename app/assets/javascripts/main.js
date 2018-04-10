@@ -25,7 +25,10 @@ $(document).ready(function(){
     })
 
     $('#list-backer-button').click(function(){
-      $('.list-and-add-backers').toggleClass('list-and-add-backers-show')
+      console.log('clicked')
+      $('.match-preferences').toggleClass('match-preferences-show')
+      
+      $('.list-and-add-backers').toggleClass('list-backers-show')
     })
 
 
