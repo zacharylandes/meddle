@@ -1,5 +1,5 @@
 <!-- LIST OF BACKERS FOR CURRENT DATER -->
-<div class="list-and-add-backers" >
+<div class="list-backers" >
   <h6>Your Backers</h6>
   <ul >
     <% current_dater.backers.each do |backer| %>
@@ -7,7 +7,10 @@
       <%end  %>
     </ul>
     <br>
+
+  <div class="list-and-add-backers" >
     <h6> Add a Backer<h6>
     <br >
     <%= render 'add_backer'%>
+  </div>
 </div>

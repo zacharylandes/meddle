@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     elsif request.env['omniauth.params']['requestor-backs']
       DaterBacker.create!(dater_id: user.id, backer_id: request.env['omniauth.params']['requestor-backs'])
     else
-      redirect_to root_path
+      # redirect_to root_path
     end
 
     session[:user_id] = user.id

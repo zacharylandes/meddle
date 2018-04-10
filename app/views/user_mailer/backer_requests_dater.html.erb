@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi!</h1>
+    <h3>
+      <%= @requestor.f_name.capitalize%> wants to help you find Love via PYTDating.com.</h3>
+
+      <p>PYT Dating (Petition Your Tribe Dating) is an online dating service with twist!  Instead of browsing through potential matches on your own, your Tribe fills out information about you and suggests matches for you to check out.</p>
+
+      <p>Don't leave <%= @requestor.f_name.capitalize%> hanging.</p>
+        <h3>Follow this link to sign up and connect:
+        <%= link_to 'Accept Invitation and Sign Up', @url, class:'primary-btn btn-sm', id:'accept-invitation-button'%>.
+      </h3>
+    <br>
+    <p>Happy Meddling!</p>
+    <br>
+    <h3>Petition Your Tribe  |  Promote Your Tribe  |  Protect Your Tribe</h3>
+  </body>
+</html>
