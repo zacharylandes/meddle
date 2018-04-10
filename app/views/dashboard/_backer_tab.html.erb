@@ -19,9 +19,7 @@
         <th scope="col">First</th>
         <th scope="col">Last</th>
         <th scope="col">Percent Complete</th>
-        
-        <th scope="col">Answer Questions</th>
-        
+        <th scope="col">Answer Questions</th>  
         <th scope="col">Find a mate for them</th>
       </tr>
     </thead>
@@ -31,8 +29,8 @@
         <td><%= dater.f_name %></td>
         <td><%= dater.l_name %></td>
         <td>50%</td>
-        <td><%= link_to 'Qs and Ts', new_backer_dater_comment_path(current_user, dater), class:'primary-btn btn-sm', id:'q-button'%></td>
-        <td><a class="primary-btn" id="q-button">Mate Finder</a></td>
+        <td><%= link_to 'Qs and Ts', new_backer_dater_comment_path(current_user, dater), class:'btn-primary btn-sm',id:'d-q-button'%></td>
+        <td><%= link_to 'Find their mate', new_backer_dater_comment_path(current_user, dater), class:'btn-primary btn-sm',id:'d-q-button'%></td>
       </tr>
   <%  end %>
     </tbody>

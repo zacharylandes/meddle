@@ -13,11 +13,15 @@ class CommentsController < ApplicationController
     end
 
     def create
-        comment = Comment.create!(dater_id:params[:dater_id], backer_id:params[:dater_id], comment:params[:ans],question_id: params[:q])
-        redirect_to new_backer_dater_comment_path(params[:backer_id],params[:dater_id])
+
+       comment =  CommentService.new.create_comment(params)
+    #    redirect_to new_backer_dater_comment_path(params[:backer_id],params[:dater_id])
+  
     end 
+
     def update 
     end
+
     def destroy
     end
   end

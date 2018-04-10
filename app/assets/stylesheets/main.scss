@@ -25,6 +25,8 @@ $facebook-color: #3b5999;
   box-shadow: 1em 1em 2em rgba(0,0,0,.2);
 
 }
+
+
 #q-button-start:hover{
   color:white;
 }
@@ -159,14 +161,19 @@ td{
 .card-button, #dash-side-button{
   color:$teal;
 }
+.answer1-table{
+  display:none
+}
 
 .dash-card-container{
   width:80%;
 }
-#q-button{
-  background-color: $teal;
-  color:white;
-  padding:5px;
+#d-q-button{
+  border-radius:10px;
+  color:$teal;
+  padding:5%;
+  border: 1px solid $teal;
+  background-color: transparent;
 }
 .list-and-add-backers, .input-field{
   margin-top:40px;
@@ -197,11 +204,33 @@ td{
   font-size:1em;
 }
 
+<<<<<<< HEAD
 .backer-search-form,#q2-comment-box,#question-end,#q3-comment-box,#q4-comment-box,#q5-comment-box, .list-and-add-backers, .list-backers{
   display:none
 }
 
 .list-backers-show, {
+=======
+.backer-search-form,
+#q2-comment-box,
+#question-end,
+#q3-comment-box,
+#q4-comment-box,
+#q5-comment-box,
+.list-and-add-backers,
+.answer2-table, 
+.answer3-table,
+.answer4-table,
+.answer5-table,
+#p1-comment-box,
+#p2-comment-box,
+#p3-comment-box
+{
+  display:none
+}
+
+.list-backers-show,.find-new-backer,.answer1-table-show {
+>>>>>>> all personality traits
   margin:2%;
   display: block;
 }
@@ -376,8 +405,8 @@ body{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 
 }
 .dash-body{
