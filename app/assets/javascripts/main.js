@@ -181,13 +181,13 @@ $(document).ready(function(){
     )
 
 //SEND EMAIL TO INVITE NEW DATER - not complete yet. need email functionality
-    $(".search-for-new-dater").on("click", "#invite-dater-button", function(event) {
-      event.preventDefault()
-      let email = event.target.offsetParent.childNodes[1].value
-      console.log(email)
-      $('.form-control').html('')
-      $.get(`http://localhost:3000/invites?email=${email}`)
-    })
+    // $(".search-for-new-dater").on("click", "#invite-dater-button", function(event) {
+    //   event.preventDefault()
+    //   let email = event.target.offsetParent.childNodes[1].value
+    //   console.log(email)
+    //   $('.form-control').html('')
+    //   $.get(`http://localhost:3000/invites?email=${email}`)
+    // })
 
 
 
@@ -238,24 +238,24 @@ $(document).ready(function(){
             .catch(error => console.error(error))
     })
 
-//BACKER ADDS NEW DATER IN-APP - INCLUDES PERMISSION
-    $('.search-for-new-dater').on("click", '#connect-user-as-dater', function(event) {
-      event.preventDefault()
-      let daterId = event.currentTarget.attributes[2].nodeValue
-      let currentUser = document.location.pathname.substr(11)
-      fetch(`http://localhost:3000/api/v1/backers/${currentUser}/daters/${daterId}`)
-      .catch(error => console.error(error))
-
-        $(".search-for-new-dater").append(`
-          <div class="alert alert-success" role="alert" id="dater-invited-alert">
-            <h4 class="alert-heading"> Dater Added!</h4>
-          </div>`).delay( 1500 ).fadeOut( 300 )
-      })
+// //BACKER ADDS NEW DATER IN-APP - INCLUDES PERMISSION
+//     $('.search-for-new-dater').on("click", '#connect-user-as-dater', function(event) {
+//       event.preventDefault()
+//       let daterId = event.currentTarget.attributes[2].nodeValue
+//       let currentUser = document.location.pathname.substr(11)
+//       fetch(`http://localhost:3000/api/v1/backers/${currentUser}/daters/${daterId}`)
+//       .catch(error => console.error(error))
+//
+//         $(".search-for-new-dater").append(`
+//           <div class="alert alert-success" role="alert" id="dater-invited-alert">
+//             <h4 class="alert-heading"> Dater Added!</h4>
+//           </div>`).delay( 1500 ).fadeOut( 300 )
+//       })
 
 ////////////////////////////////////////////
 
     // SEND EMAIL TO INVITE A DATER
-    $(".list-and-add-backers").on("click", "#invite-dater-button", function(event) {
+    $(".search-for-new-dater").on("click", "#invite-dater-button", function(event) {
       event.preventDefault()
       let email = event.target.offsetParent.childNodes[1].value
       console.log(email)
