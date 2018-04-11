@@ -217,13 +217,27 @@ $(document).ready(function(){
 //             <h4 class="alert-heading"> Dater Added!</h4>
 //           </div>`).delay( 1500 ).fadeOut( 300 )
 //       })
+
 ////////////////////////////////////////////
-  // SEND EMAIL TO INVITE A DATER
-  $(".search-for-new-dater").on("click", "#invite-dater-button", function(event) {
-    event.preventDefault()
-    let email = event.target.offsetParent.childNodes[1].value
-    console.log(email)
-    $.get(`http://localhost:3000/invites?email=${email}&add_dater=true`)
+
+    // SEND EMAIL TO INVITE A DATER
+    $(".search-for-new-dater").on("click", "#invite-dater-button", function(event) {
+      event.preventDefault()
+      let email = event.target.offsetParent.childNodes[1].value
+      console.log(email)
+      $.get(`http://localhost:3000/invites?email=${email}&add_dater=true`)
+        $(".list-and-add-backers").append(`
+          <div class="alert alert-success" role="alert" id="dater-invited-alert">
+            <h4 class="alert-heading"> Email Sent!</h4>
+            `).delay( 1500 ).fadeOut( 300 )
+    })
+
+    // SEND EMAIL TO INVITE NEW BACKER
+    $(".list-and-add-backers").on("click", "#invite-backer-button", function(event) {
+      event.preventDefault()
+      let email = event.target.offsetParent.childNodes[1].value
+      console.log(email)
+      $.get(`http://localhost:3000/invites?email=${email}&add_backer=true`)
       $(".list-and-add-backers").append(`
         <div class="alert alert-success" role="alert" id="dater-invited-alert">
           <h4 class="alert-heading"> Email Sent!</h4>
