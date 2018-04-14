@@ -13,7 +13,7 @@ describe 'user edit page' do
 
     backer.daters << dater
     visit "/users/#{user.id}"
-    save_and_open_page
+    
     page.attach_file('user[image]', Rails.root + 'app/assets/images/pytlogo.png')
     
     within('.edit-profile') do 

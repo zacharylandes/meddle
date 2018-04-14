@@ -13,13 +13,9 @@ RSpec.describe User, type: :model do
   context "User responds to other tables" do
 
     it "responds to " do
-      user = build(:user)
+      user = create(:user)
       expect(user).to respond_to(:daters)
       expect(user).to respond_to(:backers)
-      expect(user).to respond_to(:dater_backers)
-      expect(user).to respond_to(:mate_preference)
-      expect(user).to respond_to(:trait)
-      expect(user).to respond_to(:trait)
     end
   end
 

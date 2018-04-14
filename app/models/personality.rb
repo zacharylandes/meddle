@@ -2,8 +2,8 @@ class Personality < ApplicationRecord
   belongs_to :dater
   belongs_to :backer
 
-def self.avg
-  # binding.
-end
+  def self.traits
+    [:charitable,:intelligent,:shy,:spontaneous,:funny,:adaptable,:confident,:logical,:independent,:organized,:relaxed,:friendly,:energetic,:silly,:patient]
+  end
 
 end

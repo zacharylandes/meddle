@@ -19,6 +19,26 @@ $(document).ready(function(){
   $('#show-match-preferences').click(function(){
       $('.match-preferences').toggleClass('match-preferences-show')
   })
+  $('#dater-q1-button').click(function(){
+    $('.answer1-table').slideToggle('slow',function(){
+    })
+})
+$('#dater-q2-button').click(function(){
+  $('.answer2-table').slideToggle('slow',function(){
+  })
+})
+$('#dater-q3-button').click(function(){
+  $('.answer3-table').slideToggle('slow',function(){
+  })
+})
+$('#dater-q4-button').click(function(){
+  $('.answer4-table').slideToggle('slow',function(){
+  })
+})
+$('#dater-q5-button').click(function(){
+  $('.answer5-table').slideToggle('slow',function(){
+  })
+})
   $('#list-backer-button').click(function(){
     $('.list-backers').toggleClass('list-backers-show')
   })

@@ -1,4 +1,4 @@
-<div class = 'answer1-table col-md-12'>
+<div class = 'answer1-table col-md-12 collapse' id= "answer1Collapse">
     <table class = 'table table-striped '>
         <thead>
       <tr>
@@ -8,7 +8,7 @@
 
     </thead>
 <tbody>
-<% current_dater.comments.where(question_id:1).each do  |comment|%>
+<% @dater.comments.where(question_id:1).each do  |comment|%>
     <tr>
     <td><%= Backer.find(comment.backer_id).f_name%></td>
     <td><%= comment.comment %></td>

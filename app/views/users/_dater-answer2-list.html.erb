@@ -8,7 +8,7 @@
 
     </thead>
 <tbody>
-<% current_dater.comments.where(question_id:2).each do  |comment|%>
+<% @dater.comments.where(question_id:2).each do  |comment|%>
     <tr>
     <td><%= Backer.find(comment.backer_id).f_name%></td>
     <td><%= comment.comment %></td>

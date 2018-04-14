@@ -32,7 +32,6 @@ class CommentService
                 "#{trait10}": params[:p10_value]
             )
         elsif params[:val3]
-            binding.pry
             
             trait11 = params[:p_11]
             trait12 = params[:p12]

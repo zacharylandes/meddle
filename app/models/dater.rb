@@ -4,17 +4,21 @@ class Dater < ApplicationRecord
   has_many :backers, through: :dater_backers
   has_many :matches
   has_many :comments
-  has_one :personality
+  has_many :personalities
   has_many :images
   
   has_one :trait
   has_many :backer_evals
   has_one :mate_preference
 
-def pool
-  matches.map do |match|
-      Dater.where(id: match.match_id)
-  end  
-end
+  def pool
+    matches.map do |match|
+        Dater.where(id: match.match_id)
+    end  
+  end
+  def personality_avg(trait)
+   traits= self.personalities.pluck(trait).compact
+   (traits.sum/traits.length) *20
+  end
 
 end

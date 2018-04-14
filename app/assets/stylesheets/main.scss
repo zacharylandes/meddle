@@ -9,14 +9,38 @@ $card-bg: #DFDFE2;
 $dribbble-color: #ea4b89;
 $twitter-color: #68aade;
 $facebook-color: #3b5999;
+$teal:#51A1A1;
+$darkBlue: #085465;
+$red: #dd3f4a;
+$grey:  #EAEAEA;
+
+
 
 
 .card:hover{
   box-shadow: 1em 1em 2em rgba(0,0,0,.2);
 }
-.pyt-logo{
 
+.parent-slider{
+  width:100%;
+  height:10px;
+  border-radius: 10px;
+  position:relative;
+  margin:10px 0;
+  border: .5px solid $grey;
+} 
+.slider-title, {
+  margin:10px 0;
 }
+.personality-stats-show{
+ margin: 20px 0;
+}
+.child-slider{
+  border-radius: 10px;
+  height: 10px;
+  position:absolute;
+}
+
 #q-button{
   margin:0;
 }
@@ -86,12 +110,6 @@ $facebook-color: #3b5999;
 /* =================================== */
 /*  Basic Style
 /* =================================== */
-
-
-$teal:#51A1A1;
-$darkBlue: #085465;
-$red: #dd3f4a;
-$grey:  #EAEAEA;
 
 
 
@@ -203,7 +221,15 @@ td{
 #dash-side-button{
   font-size:1em;
 }
-
+.dater-answer-button{
+  margin:20px 0;
+}
+#answer-card{
+  display:flex;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start;
+} 
 .backer-search-form,
 #q2-comment-box,
 #question-end,

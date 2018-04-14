@@ -1,4 +1,4 @@
-<%=render 'dashboard/dash_side'%>
+<%=render 'dashboard/visitor_profile_side'%>
 <div class = 'user-parent'>
     <div class = 'user-container'>
         <div class="card profile-card">
@@ -11,7 +11,7 @@
                 <p class="card-text"><%= ZipCodes.identify("#{@dater.trait.zip}")[:city] %>
                     <%= ZipCodes.identify("#{@dater.trait.zip}")[:state_name] %></p>
                 <h5 class="card-title">Sexual Orientation</h5>
-                <%= @dater.trait.orientation.capitalize%>
+                     <%= @dater.trait.orientation.capitalize%>
             </div>
         </div>
         <div class="card profile-card">
@@ -27,23 +27,40 @@
             <div class="card-header">
                 What <%=@dater.f_name%>'s backers say about them
             </div>
-            <div class="card-body">
-             <%= link_to "#{Question.first.question}",nil, class:"primary-btn btn-md", id:'dater-q1-button' %>
-            <%= render 'dater-answer1-list'%>
-             <%= link_to "#{Question.second.question}",nil, class:"primary-btn btn-md", id:'dater-q2-button' %>
-            <%= render 'dater-answer2-list'%>
-             <%= link_to "#{Question.third.question}",nil, class:"primary-btn btn-md", id:'dater-q3-button' %>
-            <%= render 'dater-answer3-list'%>
-             <%= link_to "#{Question.find(4).question}",nil, class:"primary-btn btn-md", id:'dater-q4-button' %>
-            <%= render 'dater-answer4-list'%>
-             <%= link_to "#{Question.find(5).question}",nil, class:"primary-btn btn-md", id:'dater-q5-button' %>
-            <%= render 'dater-answer5-list'%>
+            <div class="" id="answer-card">
+                <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q1-button' aria-controls="collapseExample">       
+                <%="#{Question.first.question}"%></button>
+                <%= render 'dater-answer1-list'%>
+                <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q2-button' aria-controls="collapseExample">       
+                <%="#{Question.second.question}"%></button>
+                <%= render 'dater-answer2-list'%>
+                <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q3-button' aria-controls="collapseExample">       
+                <%="#{Question.third.question}"%></button>
+                <%= render 'dater-answer3-list'%>
+                <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q4-button' aria-controls="collapseExample">       
+                <%="#{Question.find(4).question}"%></button>
+                <%= render 'dater-answer4-list'%>
+                <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q5-button' aria-controls="collapseExample">       
+                <%="#{Question.find(5).question}"%></button>
+                <%= render 'dater-answer5-list'%>
             </div>
         </div>
         <%= render 'show_dater_traits'%>
-    </div>
+</div>
     <div class = 'user-right-side'>
         <%= link_to 'Send Message', new_conversation_path(recipient: @user), class:"primary-btn btn-md" %>
         <%= button_to 'Add to your pool', edit_user_pool_path(@user), method: :put, class:"primary-btn btn-md" %>
+    <div class = 'personality-stats-show'>
+    <h5>How <%=@dater.f_name%>'s backers rate them</h5>
+    <% Personality.traits.each do |trait|%>
+    <div class = 'slider-title'>
+    <%=trait.to_s.capitalize%>
+    </div>
+    <div class = 'parent-slider'>
+    <div class = 'child-slider' style = 'width:<%= @dater.personality_avg(trait)%>%;background-color:<%= slider_colors.sample%>'>
+    </div>
+    </div>
+    <% end %>
+    </div>
     </div>  
 </div>
