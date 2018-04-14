@@ -16,6 +16,7 @@ class Dater < ApplicationRecord
         Dater.where(id: match.match_id)
     end  
   end
+  
   def personality_avg(trait)
    traits= self.personalities.pluck(trait).compact
    if traits.sum > 0

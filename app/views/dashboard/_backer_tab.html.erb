@@ -1,21 +1,34 @@
 
+<%if false%>
 <div class = "dater-tab-container">
     <ul class="nav nav-tabs">
     <li class="nav-item">
      <%= link_to 'Dater Corner', dashboard_path(current_user, tab:'dater'), class:'nav-link'%>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" href="#">Backer Corner</a>
+        <a class="nav-link active " href="#">Backer Corner</a>
     </li>
     </ul>
 </div>
+<% end %>
+<div class = 'backer-tab-container'>
+  <ul class="pagination  ">
+    <li class="page-item ">
+      <a class="page-link backer-table-striped" id='backer-tab-active' >Backers</a>
+    </li>
+    <li class="page-item"><%= link_to 'Daters', dashboard_path(current_user,tab:'dater'),class:'page-link', id:'dater-tab-not-active'%></li>
+  </ul>
+</div>
 
-<div class="card">
-<h5 class="card-title">Your Daters</h5>
-    <div class="card-body dater-tab-body">
+    <div class="card-body backer-tab-body">
+    <div class = 'backer-tab-header col-md-8'>
+    <h4>
+      Welcome to the backer area. Here you can help your daters find a mate or search for new daters 
+    </h4>
+    </div>
     <table class="table table-striped">
     <thead>
-      <tr>
+      <tr class= 'backer-table-striped'>
         <th scope="col">First</th>
         <th scope="col">Last</th>
         <th scope="col">Percent Complete</th>
@@ -25,14 +38,14 @@
     </thead>
     <tbody>
     <% current_backer.daters.each  do |dater|%>
-      <tr>
-        <td><%= dater.f_name %></td>
+      <tr class='backer-table-row'>
+        <td ><%= dater.f_name %></td>
         <td><%= dater.l_name %></td>
         <td>50%</td>
         <td><%= link_to 'Qs and Ts', new_backer_dater_comment_path(current_user, dater), class:'btn-primary btn-sm',id:'d-q-button'%></td>
         <td><%= link_to 'Find their mate', new_backer_dater_comment_path(current_user, dater), class:'btn-primary btn-sm',id:'d-q-button'%></td>
 
-          
+  
           </td>
         </tr>
       </tr>
@@ -43,6 +56,6 @@
     </tbody>
   </table>
     <h6>Or add a new dater below</h6>
-    </div> 
     <%= render 'add_dater'%>
+    </div> 
 </div>  

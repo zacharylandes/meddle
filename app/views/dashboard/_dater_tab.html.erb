@@ -1,22 +1,48 @@
 
+<%if false%>
 <div class = "dater-tab-container">
     <ul class="nav nav-tabs">
     <li class="nav-item">
-    <a class="nav-link active" id="active"> Dater Corner</a>
+     <%= link_to 'Dater Corner', dashboard_path(current_user, tab:'dater'), class:'nav-link'%>
     </li>
     <li class="nav-item">
-        <%= link_to 'Backer Corner', dashboard_path(current_user, tab:'backer'), class:'nav-link',id:"not-active" %>
+        <a class="nav-link active " href="#">Backer Corner</a>
     </li>
     </ul>
 </div>
+<% end %>
+<div class = 'dater-tab-container'>
+  <ul class="pagination  ">
+    <li class="page-item ">
+    <%= link_to 'Backers', dashboard_path(current_user,tab:'backer'),class:'page-link', id:'backer-tab-not-active'%>
+    </li>
+      <a class="page-link backer-table-striped" id='dater-tab-active' >Daters</a>
+    <li class="page-item"></li>
+  </ul>
+</div>
 
-<div class="card" id='dater-tab' >
-    <div class="card-body" id="dater-tab-body">
-        <div class = 'tab-info'>
-            <h5 class="card-title">Daters </h5>
-            <h6>Welcome to the dater's corner</h6>
-            <p>Here you can explore your pool, look at your backers or add a new backer</p>
-        </div>
+    <div class="card-body dater-tab-body">
+    <div class = 'dater-tab-header col-md-8'>
+    <h4>
+      Welcome to the dater area. Here you can edit your pool or get a new backer to help your chances 
+    </h4>
+    </div>
+    <table class="table table-striped">
+    <thead>
+      <tr class= 'dater-table-striped'>
+        <th >First</th>
+        <th scope="col">Last</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% current_dater.backers.each  do |backer|%>
+      <tr class=''>
+        <td><%= backer.f_name %></td>
+        <td><%= backer.l_name %></td>
+        </tr>
+  <%  end %>     
+    </tbody>
+  </table>
         <div class = 'dater-tab-buttons'>
             <a class ="primary-btn card-button" id="pool-button"> Your pool</a>
             <a class ="primary-btn card-button" id="list-backer-button"> Your Backers </a>
@@ -24,5 +50,6 @@
         </div>
         <%= render 'pool'%>
         <%= render 'list_backer'%>
-    </div>
-</div>
+
+    </div> 
+</div>  
