@@ -18,7 +18,11 @@ class Dater < ApplicationRecord
   end
   def personality_avg(trait)
    traits= self.personalities.pluck(trait).compact
+   if traits.sum > 0
    (traits.sum/traits.length) *20
+   else
+    0 
+   end
   end
 
 end
