@@ -1,7 +1,6 @@
 class InvitesController < ApplicationController
 
   def show
-
     if params[:email] && params[:add_dater]
       UserMailer.backer_requests_dater(current_user, params[:email]).deliver_now
       render plain: "ok"

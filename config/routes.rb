@@ -11,8 +11,13 @@ Rails.application.routes.draw do
   resource :mate_preference, only: [:update]
   resource :trait, only: [:update]
 
-  resources :conversations
+  resources :conversations do
+    resources :messages
+   end
 
+   resources :daters do 
+    resources :images
+  end
   resources :dashboard
 
   resources :backers do

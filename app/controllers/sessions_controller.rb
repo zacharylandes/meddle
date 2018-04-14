@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def create
-
     user = User.from_omniauth(request.env["omniauth.auth"])
 
     if request.env['omniauth.params']['requestor-dates']
@@ -8,7 +7,6 @@ class SessionsController < ApplicationController
     elsif request.env['omniauth.params']['requestor-backs']
       DaterBacker.create!(dater_id: user.id, backer_id: request.env['omniauth.params']['requestor-backs'])
     else
-      # redirect_to root_path
     end
 
     session[:user_id] = user.id
@@ -22,3 +20,4 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 end
+

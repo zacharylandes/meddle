@@ -17,6 +17,7 @@ class CommentService
                 "#{trait5}": params[:p5_value]
              )
         elsif params[:val2]
+            
             trait6 = params[:p_6]
             trait7 = params[:p7]
             trait8 = params[:p8]
@@ -31,6 +32,8 @@ class CommentService
                 "#{trait10}": params[:p10_value]
             )
         elsif params[:val3]
+            binding.pry
+            
             trait11 = params[:p_11]
             trait12 = params[:p12]
             trait13 = params[:p13]
@@ -45,7 +48,7 @@ class CommentService
                 "#{trait15}": params[:p15_value]
             )
          else
-            comment = Comment.create!(dater_id:params[:dater_id], backer_id:params[:dater_id], comment:params[:ans],question_id: params[:q])
+            comment = Comment.find_or_create_by!(dater_id:params[:dater_id], backer_id:params[:backer_id], comment:params[:ans],question_id: params[:q])
          end
     end
 end

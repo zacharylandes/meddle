@@ -1,24 +1,22 @@
 <%= render 'dashboard/dash_side'%>
 <div class = 'user-container'>
     <p>Welcome <%= current_user.f_name%>!</p>
-    <div class="card profile-card">
-    
+    <div class="card profile-card" id = 'about-you'>
         <div class="card-header">
             About You
         </div>
         <div class="card-body">
             <p class="card-text"><%= current_dater.trait.other%></p>
         </div>
-      <%= link_to 'Edit',nil, class:"primary-btn btn-md",id:"edit-about-button"  %>
+        <%= link_to 'Edit',nil, class:"primary-btn btn-md col-md-2",id:"edit-about-button"  %>
        <div class = 'about-you'>
-        <%= form_for @dater.trait do |f| %>
-            <p>  <%= f.text_area :other, class:'form-control'%></p>
-            <p>  <%= f.submit "Update" , class: "primary-btn btn-md" %></p>
-        <% end %>
+            <%= form_for @dater.trait do |f| %>
+                <p>  <%= f.text_area :other, class:'form-control'%></p>
+                 <%= f.submit "Update" , class: "primary-btn btn-md" %>
+            <% end %>
         </div>
     </div>
-        <%= render 'q_1_modal'%>
-    
+     <%= render 'q_1_modal'%>
     <div class="card profile-card">
         <div class="card-header">
             What your backers say about you

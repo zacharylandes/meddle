@@ -1,0 +1,12 @@
+<div class = 'image-container'  id= 'i1-container'>
+        <% binding.pry %>
+        <%= form_for @user do |f| %>
+            <p>  <%= f.label :First_Name %></p>
+            <p>  <%= f.text_field :f_name, class:'form-control'%></p>
+            <p>  <%= f.label :Last_Name %></p>
+            <p>  <%= f.text_field :l_name, class:'form-control'%></p>
+            <p>  <%= f.label :Image %></p>
+            <p>  <%= f.file_field :image, class:'form-control'%></p>
+            <p>  <%= f.submit "Update" , class: "primary-btn btn-md" %></p>
+        <% end %>
+</div>

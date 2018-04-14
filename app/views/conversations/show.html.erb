@@ -13,7 +13,7 @@
       <div class="card-body"id="message-card">
           <p class="card-text"> <%= receipt.message.body %></p>
       </div>
-      <p><%= button_to 'Delete', conversation_message_path(params[:id],receipt), method: :delete, class:'primary-btn btn', id:'delete-message' %>  </p>
+      <p><%= button_to 'Delete', conversation_message_path(params[:id],receipt.id), method: :delete, class:'primary-btn btn', id:'delete-message' %>  </p>
     </div>
   <% end %>
       

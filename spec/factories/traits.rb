@@ -1,16 +1,13 @@
 FactoryBot.define do
   factory :trait do
 
-    user 1
     height 70
     smoker 1
     alcohol 1
-    ethnicity "unknown"
     education "Higher Education"
     body_type 0
     occupation "I Work"
-    zip 80210
-    religion "Some Religion"
+    zip 80203
     religiosity 2
     political_leaning 2
     politicalness 1

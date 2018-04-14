@@ -31,8 +31,23 @@
         <td>50%</td>
         <td><%= link_to 'Qs and Ts', new_backer_dater_comment_path(current_user, dater), class:'btn-primary btn-sm',id:'d-q-button'%></td>
         <td><%= link_to 'Find their mate', new_backer_dater_comment_path(current_user, dater), class:'btn-primary btn-sm',id:'d-q-button'%></td>
+        <td id= 'backer-add-images' class = 'btn-primary'>Add to their photos</td>
+        <tr class = 'image-container'  id= 'i1-container'>
+          <td>
+                <%= form_tag("/daters/#{dater.id}/images") do %>
+            <p>  <%= label_tag :Image %></p>
+            <p>  <%= file_field_tag :i_1, class:'form-control'%></p>
+            <p>  <%= submit_tag "Add photo" , class: "primary-btn btn-md" %></p>
+        <% end %>
+          
+          
+          </td>
+        </tr>
       </tr>
-  <%  end %>
+      <tr>
+      
+    </tr>
+  <%  end %>     
     </tbody>
   </table>
     <h6>Or add a new dater below</h6>

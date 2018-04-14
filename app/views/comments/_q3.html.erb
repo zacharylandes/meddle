@@ -2,8 +2,8 @@
             <p class="card-text" ><%=@question3.question%></p>
                 <textarea type="text" id='q3-comment-answer'></textarea>
                 
-                <%= hidden_field_tag 'backer_id', "#{@dater.id}", id:'backer_id_hidden' %>
-                <%= hidden_field_tag 'dater_id', "#{@backer.id}", id:'dater_id_hidden'  %>
+                <%= hidden_field_tag 'backer_id', "#{@backer.id}", id:'backer_id_hidden' %>
+                <%= hidden_field_tag 'dater_id', "#{@dater.id}", id:'dater_id_hidden'  %>
                 <%= hidden_field_tag 'q', "#{@question3.id}", id:'q3_id_hidden'  %>
                 <p><%= submit_tag 'submit', class: 'primary-btn',id:"q3-comment-submit" %></p>
             </p>

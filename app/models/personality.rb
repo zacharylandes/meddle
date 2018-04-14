@@ -3,7 +3,7 @@ class Personality < ApplicationRecord
   belongs_to :backer
 
 def self.avg
-  binding.
+  # binding.
 end
 
 end

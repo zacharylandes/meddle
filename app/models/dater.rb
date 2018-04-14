@@ -5,6 +5,7 @@ class Dater < ApplicationRecord
   has_many :matches
   has_many :comments
   has_one :personality
+  has_many :images
   
   has_one :trait
   has_many :backer_evals

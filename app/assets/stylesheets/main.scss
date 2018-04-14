@@ -204,13 +204,6 @@ td{
   font-size:1em;
 }
 
-<<<<<<< HEAD
-.backer-search-form,#q2-comment-box,#question-end,#q3-comment-box,#q4-comment-box,#q5-comment-box, .list-and-add-backers, .list-backers{
-  display:none
-}
-
-.list-backers-show, {
-=======
 .backer-search-form,
 #q2-comment-box,
 #question-end,
@@ -224,13 +217,13 @@ td{
 .answer5-table,
 #p1-comment-box,
 #p2-comment-box,
-#p3-comment-box
+#p3-comment-box,
+.image-container
 {
   display:none
 }
 
 .list-backers-show,.find-new-backer,.answer1-table-show {
->>>>>>> all personality traits
   margin:2%;
   display: block;
 }
@@ -273,6 +266,9 @@ body{
   flex-direction: column;
   justify-content: flex-start;
 
+}
+.edit-about-button a {
+  text-align: center;
 }
 
 .overlay h1{
@@ -317,8 +313,11 @@ body{
 }
 
 .edit-mate-preference-show,.edit-profile-show{
-  display:block;
+  display:flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top:20px;
 }
 
 .show-the-daters-backersAdd{
@@ -348,7 +347,6 @@ body{
 .dater-tab-container{
   margin-top:20px;
   display:flex;
-  box-shadow: 1em 1em 2em rgba(0,0,0,.2);
 
 
   flex-direction:row;
@@ -451,9 +449,18 @@ body{
   flex-direction: column;
   justify-content: flex-start;
 }
+#about-you{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items:center;
+}
+
 
 .profile-card{
   margin-top:20px;
+
 }
 #traits-table{
   margin-top: 20px;
@@ -515,14 +522,15 @@ body{
 
 #home-button:hover{
   background-color:white;
-  color:$teal;
 }
+.login-button{
+color:white;
+}
+
 ::-moz-selection {
-  /* Code for Firefox */
   background-color: $teal;
   color: #fff;
 }
-
 ::selection {
   background-color:$teal;
   color: #fff;
@@ -679,16 +687,13 @@ h6, .h6 {
 td, th {
   border-radius: 0px;
 }
+#edit_trait_9{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom:20px;
+}
 
-/**
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    contenteditable attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that are clearfixed.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
 .clear::before, .clear::after {
   content: " ";
   display: table;
@@ -2482,6 +2487,7 @@ nav a:hover {
   border-radius: 20px;
   border: 1px solid $teal;
   color: $teal;
+  text-align:center;
   display: inline-block;
   font-weight: 500;
   position: relative;
