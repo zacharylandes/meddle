@@ -2,7 +2,9 @@ class UsersController < ApplicationController
     
   def index
     @daters = SearchService.new.search(params,current_user)
-    params = {} 
+    if params[:format]
+      @searching_for = Dater.find(params[:format])
+    end
   end
 
   def create

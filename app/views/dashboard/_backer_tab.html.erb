@@ -43,7 +43,7 @@
         <td><%= dater.l_name %></td>
         <td>50%</td>
         <td><%= link_to 'Qs and Ts', new_backer_dater_comment_path(current_user, dater), class:'btn-primary btn-sm',id:'d-q-button'%></td>
-        <td><%= link_to 'Find their mate', new_backer_dater_comment_path(current_user, dater), class:'btn-primary btn-sm',id:'d-q-button'%></td>
+        <td><%= link_to 'Find their mate', users_path(dater), class:'btn-primary btn-sm',id:'find-mate-for-backer'%></td>
 
   
           </td>

@@ -1,6 +1,12 @@
 
+
+<% if params[:format]%>
+<%= render 'searching_for'%>
+    <% else%>
 <%= render 'dashboard/dash_side'%>
+<%end%>
 <%= render 'filter'%>
+
     <div class=" col-md-8 card" id="gallery-container">
     <h5 class="card-header">All Daters</h5>
         <div id='gallery-cards-container'>

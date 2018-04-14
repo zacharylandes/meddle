@@ -1,0 +1,51 @@
+
+
+
+<div class='card  card-profile text-center col-md-2' id='dash-side' >
+  <div class = 'card-header'>Searchig for <%= @searching_for.f_name %></div>
+  <img alt='' class='card-img-top' src='https://s3.amazonaws.com/pytdating/andrea-reiman-417352-unsplash.jpg'>
+  <div class='card-block'>
+         <% if @searching_for.user.image %>
+              <%= image_tag @searching_for.user.image.url, class:'card-img-profile' %>
+            <% end %>
+    <h4 class='card-title'>
+    <%= @searching_for.f_name%>'s  mate preferences    
+    </h4>
+      <div class="card-body ">
+      <table class = 'table table-striped'>
+      <thead>
+      </thead>
+      <tbody>
+        <tr><td>Smoking</td></tr>
+        <%if @searching_for.mate_preference.smoker == 'dont_care'%>
+            <tr><td>doesn't smoke</td></tr>
+        <%else%>
+            <tr><td><%= @searching_for.mate_preference.smoker%></td></tr>
+        <%end%> 
+        <tr><td>Drinking</td></tr>
+        <tr><td><%= @searching_for.mate_preference.alcohol%></td></tr>
+        <tr><td>Gender</td></tr>
+        <tr><td><%= @searching_for.mate_preference.gender%></td></tr>
+        <tr><td>Body Type</td></tr>
+        <%if @searching_for.mate_preference.body_type == 'any'%>
+            <tr><td>
+            Decline to answer
+            </tr></td>
+        <%else%>
+            <tr><td><%= @searching_for.mate_preference.smoker%></td></tr>
+        <%end%> 
+        <tr><td>Religiosity</td></tr>
+        <tr><td><%= @searching_for.mate_preference.religiosity%></td></tr>
+        <tr><td>Religion</td></tr>
+        <tr><td><%= @searching_for.mate_preference.religion%></td></tr>
+        <tr><td>ethnicity</td></tr>
+        <tr><td><%= @searching_for.mate_preference.ethnicity%></td></tr>
+        </tbody>
+      </table>
+        
+      </div>
+
+  </div>
+</div>
+
+
