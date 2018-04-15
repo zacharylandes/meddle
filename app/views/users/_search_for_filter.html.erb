@@ -1,0 +1,61 @@
+        <div class="card card-profile col-md-2" id="filter-table">
+            <div class="card-header">
+               <p>Filter</p>
+               <p>(autpopulated with <%= @searching_for.f_name%>'s preferences)</p>
+            </div>
+            <table class="table table-striped" >
+            <tbody>
+            <%= form_tag( '/users/', :method => :get ) do %>
+             <tr>
+                <td><%= label_tag :political_leaning %></td>
+            </tr>
+            <tr>
+                <td id="select"> <%= select_tag :political_leaning, options_for_select(MatePreference.political_leanings.map {|k, v| [k.humanize.capitalize, v]},@searching_for.mate_preference.political_leaning), {class: " btn-sm form-control"} %></td>
+            </tr>
+             <tr>
+            <td><%= label_tag :politicalness%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :politicalness, options_for_select(MatePreference.politicalnesses.map {|k, v| [k.humanize.capitalize, v]},@searching_for.mate_preference.politicalness), {class: " btn-sm form-control"} %></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :smoker%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :smoker, options_for_select(MatePreference.smokers.map {|k, v| [k.humanize.capitalize, v]},@searching_for.mate_preference.smoker), {class: "form-control"} %></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :alcohol%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :alcohol, options_for_select(MatePreference.alcohols.map {|k, v| [k.humanize.capitalize, v]},@searching_for.mate_preference.alcohol), {class: " btn-sm form-control"} %></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :body_type%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :body_type, options_for_select(MatePreference.body_types.map {|k, v| [k.humanize.capitalize, v]},@searching_for.mate_preference.body_type) , {class: " btn-sm form-control"}%></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :religiosity%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :religiosity, options_for_select(MatePreference.religiosities.map {|k, v| [k.humanize.capitalize, v]}, @searching_for.mate_preference.religiosity), {class: " btn-sm form-control"} %></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :orientation%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :orientation, options_for_select(MatePreference.orientations.map {|k, v| [k.humanize.capitalize, v]}, @searching_for.mate_preference.orientation), {class: " btn-sm form-control"} %></td>
+            </tr>
+             <tr>
+                <td><%= label_tag :religion%></td>
+            </tr>
+            <tr>
+                <td> <%= select_tag :religion, options_for_select(MatePreference.religions.map {|k, v| [k.humanize.capitalize, v]}, @searching_for.mate_preference.religion), {class: " btn-sm form-control"} %></td>
+            </tr>
+            </tbody>
+        </table>
+              <%= submit_tag "Update" , class: "primary-btn btn-md" %>
+        <% end %>
+    </div>

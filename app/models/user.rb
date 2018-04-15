@@ -20,7 +20,7 @@ class User < ApplicationRecord
       user.f_name = auth.info.first_name
       user.l_name = auth.info.last_name
       user.email = auth.info.email
-      user.remote_image_url =  "https://s3.amazonaws.com/pytdating/p3.jpeg"
+      user.remote_image_url =  "https://s3.amazonaws.com/pytdating/p2.jpeg"
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!

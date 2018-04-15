@@ -9,7 +9,7 @@ $card-bg: #DFDFE2;
 $dribbble-color: #ea4b89;
 $twitter-color: #68aade;
 $facebook-color: #3b5999;
-$teal:#51A1A1;
+$darkBlue:#51A1A1;
 $darkBlue: #085465;
 $red: #dd3f4a;
 $grey:  #EAEAEA;
@@ -169,17 +169,15 @@ td{
   font-size:14px;
 }
 #gallery-container{
-  margin:20px;
+  margin:20px 0 0 40px;
   box-shadow: 1em 1em 2em rgba(0,0,0,.2);
-
 }
 
-
-.col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8{
+.col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8,.col-md-9{
   padding:0;
 }
 .card-button, #dash-side-button{
-  color:$teal;
+  color:$darkBlue;
 }
 .answer1-table{
   display:none
@@ -193,8 +191,23 @@ td{
   color:$lightBlue;
 }
 .searching-for{
-  margin:20px;
+
+  margin-top:20px !important;
 }
+#searching-for-table td, #searching-for-table tr{
+  margin:0 !important;
+  padding:0 !important;
+  
+  font-size:.7em;
+}
+#searching-for-body{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+
 .dater-table-row,.dater-tab-header h4{
   color:$maroon;
 }
@@ -206,13 +219,17 @@ td{
   background-color:$maroon;
   color:white;
 }
-#d-q-button{
+#d-q-button,#find-mate-for-backer{
+  
+
   border-radius:8px;
   color:$lightBlue;
   padding:5%;
   border: 1px solid $lightBlue;
   background-color: transparent;
 }
+
+
 .list-and-add-backers, .input-field{
   margin-top:40px;
   border-radius:10px;
@@ -284,13 +301,14 @@ td{
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
   background-color: $darkBlue;
   color:white !important;
-
 }
 .main{
   height:100%;
   display: flex;
+  width:100%;
   flex-direction: row;
   justify-content: flex-start;
+  // padding:0 4%;
 }
 
 #active{
@@ -304,12 +322,19 @@ body{
 }
 
 #tab1{
-  background-color:$teal;
+  background-color:$darkBlue;
 }
 .dater-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width:12em;
   margin:20px;
-  height:20em;
+  border:1px solid $darkBlue;
+}
+.dater-card a{
+  width:85%;
 }
 .user-right-side{
   display: flex;
@@ -323,8 +348,7 @@ body{
 
 .overlay h1{
   font-size: 4em;
-  color:$teal;
-  // margin: 5% 10% 0 15%;
+  color: $darkBlue;
 }
 .q_1_modal{
   position: absolute;
@@ -392,7 +416,7 @@ body{
 .dash-body-tab{
   height:700px;
   width:80%;
-  background-color:$teal;
+  background-color:$darkBlue;
 }
 .dater-tab-container{
   // margin-top:20px;
@@ -440,8 +464,8 @@ body{
   color:$darkBlue;
   width:100%;
   padding:10px;
-  border-bottom: 2px solid $teal;
-  border-top: 2px solid $teal;
+  border-bottom: 2px solid $darkBlue;
+  border-top: 2px solid $darkBlue;
   background-color: white;
 }
 .user-container{
@@ -530,12 +554,10 @@ color:white;
 .side-navatar img{
 }
 .side-navatar{
-  // margin-top:4%;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // height:20%;
 }
 #delete-message{
   margin:10px;
@@ -585,9 +607,9 @@ color:white;
   padding:10px -10px 10px 0;
 }
 #dash-side{
-  margin-right: 15px;
+  margin: 20px 15px 0 15px;
   padding: 0px;
-  // border-right: 3px solid $teal;
+  // border-right: 3px solid $darkBlue;
 }
 .logo img{
   height: 80px;
@@ -600,7 +622,7 @@ color:white;
   align-items: center;
 }
 #backer-sign-up {
-  color: $teal;
+  color: $darkBlue;
   padding:10%;
   border-radius: 20px;
 }
@@ -634,23 +656,24 @@ color:white;
 }
 #home-button{
   font-size: 1.4em;
-  background-color:$teal;
+  background-color:$darkBlue;
   color:white;
 }
 
 #home-button:hover{
   background-color:white;
+  color: $darkBlue !important;
 }
 .login-button{
 color:white;
 }
 
 ::-moz-selection {
-  background-color: $teal;
+  background-color: $darkBlue;
   color: #fff;
 }
 ::selection {
-  background-color:$teal;
+  background-color:$darkBlue;
   color: #fff;
 }
 
@@ -737,6 +760,8 @@ a, a:focus, a:hover {
 }
 .card-header{
   width:100%;
+  background-color: $darkBlue;
+  color:white;
 }
 .card-panel {
   margin: 0;
@@ -1389,7 +1414,7 @@ td, th {
 }
 
 b, i, sup, sub, u, del {
-  color:$teal;
+  color:$darkBlue;
 }
 
 h1 {
@@ -1524,25 +1549,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .genric-btn.primary {
   color: #fff;
-  background: $teal;
+  background: $darkBlue;
   border: 1px solid transparent;
 }
 
 .genric-btn.primary:hover {
-  color: $teal;
-  border: 1px solid $teal;
+  color: $darkBlue;
+  border: 1px solid $darkBlue;
   background: #fff;
 }
 
 .genric-btn.primary-border {
-  color: $teal;
-  border: 1px solid $teal;
+  color: $darkBlue;
+  border: 1px solid $darkBlue;
   background: #fff;
 }
 
 .genric-btn.primary-border:hover {
   color: #fff;
-  background: $teal;
+  background: $darkBlue;
   border: 1px solid transparent;
 }
 
@@ -1678,7 +1703,7 @@ h1, h2, h3, h4, h5, h6 {
 .generic-blockquote {
   padding: 30px 50px 30px 30px;
   background: #f9f9ff;
-  border-left: 2px solid $teal;
+  border-left: 2px solid $darkBlue;
 }
 
 .progress-table-wrap {
@@ -1802,7 +1827,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   width: 14px;
   height: 14px;
-  border: 3px solid $teal;
+  border: 3px solid $darkBlue;
   background: #fff;
   top: 4px;
   left: 0;
@@ -1815,7 +1840,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .ordered-list li {
   list-style-type: decimal-leading-zero;
-  color: $teal;
+  color: $darkBlue;
   font-weight: 500;
   line-height: 1.82em !important;
 }
@@ -1828,7 +1853,7 @@ h1, h2, h3, h4, h5, h6 {
 .ordered-list-alpha li {
   margin-left: 30px;
   list-style-type: lower-alpha;
-  color: $teal;
+  color: $darkBlue;
   font-weight: 500;
   line-height: 1.82em !important;
 }
@@ -1841,7 +1866,7 @@ h1, h2, h3, h4, h5, h6 {
 .ordered-list-roman li {
   margin-left: 30px;
   list-style-type: lower-roman;
-  color: $teal;
+  color: $darkBlue;
   font-weight: 500;
   line-height: 1.82em !important;
 }
@@ -1913,7 +1938,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .single-input-primary:focus {
   outline: none;
-  border: 1px solid $teal;
+  border: 1px solid $darkBlue;
 }
 
 .single-input-accent {
@@ -1974,7 +1999,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: $teal;
+  background: $darkBlue;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
@@ -2057,7 +2082,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .primary-switch input:checked + label:before {
-  background: $teal;
+  background: $darkBlue;
 }
 
 .confirm-switch {
@@ -2406,12 +2431,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .default-select .nice-select .list .option.selected {
-  color: $teal;
+  color: $darkBlue;
   background: transparent;
 }
 
 .default-select .nice-select .list .option:hover {
-  color: $teal;
+  color: $darkBlue;
   background: transparent;
 }
 
@@ -2461,12 +2486,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .form-select .nice-select .list .option.selected {
-  color: $teal;
+  color: $darkBlue;
   background: transparent;
 }
 
 .form-select .nice-select .list .option:hover {
-  color: $teal;
+  color: $darkBlue;
   background: transparent;
 }
 
@@ -2480,7 +2505,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slogan{
-  color:$teal;
+  color:$darkBlue;
   font-size:1.5em;
   margin: 2% 10% 0 15%;
 }
@@ -2510,7 +2535,7 @@ body {
 
 .default-header {
   padding: 10px 0;
-  background-color: teal;
+  background-color: dar$darkBlue;
   border-bottom: 3px solid $red;
   top: 0;
   left: 0;
@@ -2548,7 +2573,7 @@ nav {
     text-align: right;
     padding: 20px 0;
     z-index: 5;
-    background: $teal;
+    background: $darkBlue;
   }
 }
 
@@ -2603,8 +2628,8 @@ nav a:hover {
   line-height: 40px;
   padding: 0 30px;
   border-radius: 20px;
-  border: 1px solid $teal;
-  color: $teal;
+  border: 1px solid $darkBlue;
+  color: $darkBlue;
   text-align:center;
   display: inline-block;
   font-weight: 500;
@@ -2633,7 +2658,7 @@ nav a:hover {
   justify-content: flex-start;
 }
 .primary-btn:hover {
-  background: $teal;
+  background: $darkBlue;
   color:white;
 }
 
@@ -2656,7 +2681,7 @@ nav a:hover {
   font-weight: 600;
   line-height: 1.2em;
   margin-bottom: 20px;
-  color: $teal;
+  color: $darkBlue;
 }
 
 @media (max-width: 767px) {
@@ -2689,7 +2714,7 @@ nav a:hover {
 }
 
 .generic-banner {
-  background: $teal;
+  background: $darkBlue;
 }
 
 .generic-banner .height {
@@ -2784,7 +2809,7 @@ nav a:hover {
   font-size: 36px;
   line-height: 1.25em;
   margin-bottom: 20px;
-  color: $teal;
+  color: $darkBlue;
 }
 
 @media (max-width: 767px) {
@@ -2837,8 +2862,8 @@ nav a:hover {
 }
 
 .carousel-area .carousel-trigger .next-trigger:hover, .carousel-area .carousel-trigger .prev-trigger:hover {
-  background: $teal;
-  border: 1px solid $teal;
+  background: $darkBlue;
+  border: 1px solid $darkBlue;
 }
 
 .carousel-area .carousel-trigger .next-trigger:hover span, .carousel-area .carousel-trigger .prev-trigger:hover span {
@@ -2886,7 +2911,7 @@ nav a:hover {
 .single-service .icon span {
   margin: auto;
   font-size: 36px;
-  color: $teal;
+  color: $darkBlue;
   font-weight: 600;
 }
 
@@ -2924,7 +2949,7 @@ nav a:hover {
 .service-area-2 .single-service .icon span {
   margin: auto;
   font-size: 36px;
-  color: $teal;
+  color: $darkBlue;
   font-weight: 600;
 }
 
@@ -3040,7 +3065,7 @@ nav a:hover {
 }
 
 .single-address:hover .icon {
-  background: $teal;
+  background: $darkBlue;
 }
 
 .single-address:hover .icon span {
@@ -3161,7 +3186,7 @@ nav a:hover {
 }
 
 .subscription .info.error {
-  color: $teal;
+  color: $darkBlue;
 }
 
 footer {
@@ -3182,7 +3207,7 @@ footer .footer-nav li a {
 }
 
 footer .footer-nav li a:hover {
-  color: $teal;
+  color: $darkBlue;
 }
 
 .instafeed {
@@ -3215,15 +3240,15 @@ footer .footer-nav li a:hover {
 }
 
 .footer-bottom .footer-text i {
-  color: $teal;
+  color: $darkBlue;
 }
 
 .footer-bottom .footer-text a {
-  color: $teal;
+  color: $darkBlue;
 }
 
 .footer-bottom .footer-text a:hover {
-  color: $teal;
+  color: $darkBlue;
 }
 
 @media (max-width: 767px) {
@@ -3250,7 +3275,7 @@ footer .footer-nav li a:hover {
 }
 
 .footer-social a:hover {
-  background: $teal;
+  background: $darkBlue;
 }
 
 .about-generic-area {

@@ -1,9 +1,14 @@
 
 
-
-<div class='card  card-profile text-center col-md-2' id='dash-side' >
-  <div class = 'card-header'>Searchig for <%= @searching_for.f_name %></div>
-  <img alt='' class='card-img-top' src='https://s3.amazonaws.com/pytdating/andrea-reiman-417352-unsplash.jpg'>
+<div class = 'card text-center searching-for col-md-12' id= ''>
+  <div class = 'card-header'id='searching-for-header'>You are looking for a mate for <%= @searching_for.f_name %></div>
+    <div class = 'card-body'id='searching-for-body'>       
+      <% if @searching_for.user.image %>
+        <%= image_tag @searching_for.user.image.url, class:'card-img-profile' %>
+      <% end %>
+    </div>
+</div>
+<% if false%>
   <div class='card-block'>
          <% if @searching_for.user.image %>
               <%= image_tag @searching_for.user.image.url, class:'card-img-profile' %>
@@ -49,3 +54,4 @@
 </div>
 
 
+<%end%>

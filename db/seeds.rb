@@ -13,7 +13,7 @@ class Seed
 
   def run
 
-    shots = ['https://s3.amazonaws.com/pytdating/p2.jpeg','https://s3.amazonaws.com/pytdating/p3.jpeg','https://s3.amazonaws.com/pytdating/p4.jpeg','https://s3.amazonaws.com/pytdating/p1.jpeg','https://s3.amazonaws.com/pytdating/p7.jpeg','https://s3.amazonaws.com/pytdating/p11.jpeg','https://s3.amazonaws.com/pytdating/p12.jpeg','https://s3.amazonaws.com/pytdating/p13.jpeg']
+    shots = ['https://s3.amazonaws.com/pytdating/p2.jpeg','https://s3.amazonaws.com/pytdating/p4.jpeg','https://s3.amazonaws.com/pytdating/p1.jpeg','https://s3.amazonaws.com/pytdating/p7.jpeg','https://s3.amazonaws.com/pytdating/p12.jpeg','https://s3.amazonaws.com/pytdating/p13.jpeg']
 
     user_1 = User.create!( id: 100, provider: "google_oauth2", uid: "12345", auth_name: "Susie", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Susie", l_name:"Smith", email: "email1@email.com", remote_image_url: shots[0] )
     dater_1 = Dater.create!(id: user_1.id, user_id: user_1.id,f_name: user_1.f_name, l_name: user_1.l_name)
@@ -44,7 +44,7 @@ class Seed
     dater_6 = Dater.create!(id: user_6.id, user_id: user_6.id,f_name: user_6.f_name, l_name: user_6.l_name)
     backer_6 = Backer.create!(id: user_6.id, user_id: user_6.id, f_name: user_6.f_name, l_name: user_6.l_name)
 
-    user_7 = User.create!( id: 700, provider: "google_oauth2", uid: "123359", auth_name: "Mr.Match", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Stack", l_name:"Steiner", email: "email7@email.com", remote_image_url: shots[6] )
+    user_7 = User.create!( id: 700, provider: "google_oauth2", uid: "123359", auth_name: "Mr.Match", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Stack", l_name:"Steiner", email: "email7@email.com", remote_image_url: shots[3] )
     dater_7 = Dater.create!(id: user_7.id, user_id: user_7.id,f_name: user_7.f_name, l_name: user_7.l_name)
     backer_7 = Backer.create!(id: user_7.id, user_id: user_7.id, f_name: user_7.f_name, l_name: user_7.l_name)
 
@@ -53,10 +53,36 @@ class Seed
     q1= Question.create(question: "What's their favorite panda ")
     q2= Question.create(question: "What are they eating right now")
     q3= Question.create(question: "Are they funny, actually?")
-    q4= Question.create(question: "Their least favorite type of creal")
+    q4= Question.create(question: "Their least favorite type of cereal")
     q5= Question.create(question: "Childhood candy bar")
     
+    Personality.create(dater_id:dater_1.id,backer_id:backer_2.id, charitable:2,intelligent:4,shy: 2,spontaneous:1,funny: 4,adaptable:1,logical:4,independent:4,organized:5,relaxed:1,friendly:5,energetic:2,silly:2,patient:4 )
+    Personality.create(dater_id:dater_2.id,backer_id:backer_2.id, charitable:1,intelligent:4,shy: 3,spontaneous:2,funny: 4,adaptable:1,logical:4,independent:3,organized:3,relaxed:4,friendly:5,energetic:2,silly:2,patient:4 )
+    Personality.create(dater_id:dater_3.id,backer_id:backer_2.id, charitable:2,intelligent:3,shy: 2,spontaneous:5,funny: 4,adaptable:1,logical:3,independent:1,organized:2,relaxed:5,friendly:5,energetic:4,silly:2,patient:4 )
+    Personality.create(dater_id:dater_4.id,backer_id:backer_2.id, charitable:3,intelligent:2,shy: 3,spontaneous:6,funny: 4,adaptable:4,logical:2,independent:2,organized:2,relaxed:6,friendly:1,energetic:5,silly:2,patient:4 )
+    Personality.create(dater_id:dater_5.id,backer_id:backer_2.id, charitable:4,intelligent:2,shy: 2,spontaneous:4,funny: 3,adaptable:4,logical:5,independent:2,organized:3,relaxed:3,friendly:1,energetic:6,silly:2,patient:4 )
+    Personality.create(dater_id:dater_6.id,backer_id:backer_2.id, charitable:5,intelligent:4,shy: 2,spontaneous:3,funny: 2,adaptable:4,logical:1,independent:2,organized:5,relaxed:1,friendly:5,energetic:2,silly:2,patient:4 )
+    Personality.create(dater_id:dater_7.id,backer_id:backer_2.id, charitable:3,intelligent:1,shy: 2,spontaneous:2,funny: 1,adaptable:4,logical:3,independent:4,organized:5,relaxed:1,friendly:5,energetic:2,silly:2,patient:4 )
 
+    Comment.create(dater_id:dater_7.id,backer_id:backer_2.id,question_id:1, comment:"trash pandas")
+    Comment.create(dater_id:dater_7.id,backer_id:backer_2.id,question_id:2, comment:"they're eating dem naners")
+    Comment.create(dater_id:dater_7.id,backer_id:backer_2.id,question_id:3, comment:"super duper funz")
+    Comment.create(dater_id:dater_7.id,backer_id:backer_2.id,question_id:4, comment:"marshy cereal")
+    Comment.create(dater_id:dater_7.id,backer_id:backer_2.id,question_id:5, comment:"twix")
+    Comment.create(dater_id:dater_6.id,backer_id:backer_1.id,question_id:1, comment:"trash pandas")
+    Comment.create(dater_id:dater_6.id,backer_id:backer_1.id,question_id:2, comment:"trash pandas")
+    Comment.create(dater_id:dater_6.id,backer_id:backer_1.id,question_id:3, comment:"trash pandas")
+    Comment.create(dater_id:dater_6.id,backer_id:backer_4.id,question_id:4, comment:"trash pandas")
+    Comment.create(dater_id:dater_6.id,backer_id:backer_5.id,question_id:5, comment:"trash pandas")
+    Comment.create(dater_id:dater_5.id,backer_id:backer_6.id,question_id:1, comment:"trash pandas")
+    Comment.create(dater_id:dater_5.id,backer_id:backer_7.id,question_id:2, comment:"trash pandas")
+    Comment.create(dater_id:dater_5.id,backer_id:backer_3.id,question_id:3, comment:"trash pandas")
+    Comment.create(dater_id:dater_5.id,backer_id:backer_2.id,question_id:4, comment:"trash pandas")
+    Comment.create(dater_id:dater_5.id,backer_id:backer_2.id,question_id:5, comment:"trash pandas")
+    Comment.create(dater_id:dater_4.id,backer_id:backer_2.id,question_id:1, comment:"trash pandas")
+    Comment.create(dater_id:dater_4.id,backer_id:backer_2.id,question_id:2, comment:"trash pandas")
+    Comment.create(dater_id:dater_4.id,backer_id:backer_2.id,question_id:3, comment:"trash pandas")
+    
     match = user_5
 
     dater_1.backers << backer_2
