@@ -1,5 +1,6 @@
 require 'rails_helper'
 describe 'gallery  page' do
+
 before(:each) do 
     user1 = create(:user, f_name:"zach", remote_image_url:"https://s3.amazonaws.com/pytdating/p3.jpeg")
     user2 = create(:user, f_name:"joan", remote_image_url:"https://s3.amazonaws.com/pytdating/p3.jpeg")
@@ -12,6 +13,13 @@ before(:each) do
     dater3= create(:dater, user_id: user3.id)
     dater4= create(:dater, user_id: user4.id)
     dater5= create(:dater, user_id: user5.id)
+    Trait.create(dater_id:dater1.id, zip:80203)
+    Trait.create(dater_id:dater2.id, zip:80203)
+    Trait.create(dater_id:dater3.id, zip:80203)
+    Trait.create(dater_id:dater4.id, zip:80203)
+    Trait.create(dater_id:dater5.id, zip:80203)
+    
+    
 
 
 end
@@ -21,7 +29,7 @@ it 'can filter gallery by alcohol ' do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(User.first)
 
-    visit "/users/"
+    visit "/users"
     select "Drinker", :from => "alcohol"
 
     expect(page).to_not have_content('bob')
@@ -32,7 +40,7 @@ it 'can filter gallery by alcohol ' do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(User.first)
 
-    visit "/users/"
+    visit "/users"
     select "Lets do this", :from => "politicalness"
 
     expect(page).to_not have_content('bob')
@@ -45,7 +53,7 @@ it 'can filter gallery by alcohol ' do
     trait1 = create(:trait, dater_id: Dater.first.id, ethnicity:1)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(User.first)
 
-    visit "/users/"
+    visit "/users"
     select "Devout", :from => "religiosity"
     select "Non binary", :from => "gender"
     select "Caucasian", :from => "ethnicity"

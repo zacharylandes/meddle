@@ -13,6 +13,10 @@ describe 'gallery' do
 
     dater_3= Dater.create(id: user_3.id, user_id: 1,f_name: user_3.f_name, l_name: user_3.l_name)
     dater_4= Dater.create(id: user_4.id, user_id: 1,f_name: user_4.f_name, l_name: user_4.l_name)
+    trait1 = create(:trait, dater_id:dater_1.id)
+    trait2 = create(:trait, dater_id:dater_2.id)
+    trai3 = create(:trait, dater_id:dater_3.id)
+    trai3 = create(:trait, dater_id:dater_4.id)
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
 
