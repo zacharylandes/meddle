@@ -13,6 +13,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'zip-codes'
 gem 'bootstrap-slider-rails'
+gem 'rails_12factor', group: :production
 
 gem 'figaro'
 gem 'faraday'
