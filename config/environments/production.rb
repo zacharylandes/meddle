@@ -37,7 +37,7 @@ Rails.application.configure do
 
 
 
-  config.assets.compile = false
+  config.assets.compile = true
 
   
   if ENV["RAILS_LOG_TO_STDOUT"].present?

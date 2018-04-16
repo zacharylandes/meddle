@@ -2,56 +2,12 @@
 
 <div class = 'card text-center searching-for col-md-12' id= ''>
   <div class = 'card-header'id='searching-for-header'>You are looking for a mate for <%= @searching_for.f_name %></div>
-    <div class = 'card-body'id='searching-for-body'>       
+    <div class = 'card-body' id='searching-for-body'>       
+      <p><%= @searching_for.f_name%></p>
       <% if @searching_for.user.image %>
-        <%= image_tag @searching_for.user.image.url, class:'card-img-profile' %>
+        <%= link_to image_tag(@searching_for.user.image.url), user_path(@searching_for.user.id, class:'card-img-profile') %>
       <% end %>
+      <p><%= ZipCodes.identify("#{@searching_for.trait.zip}")[:city]%></p>
     </div>
-</div>
-<% if false%>
-  <div class='card-block'>
-         <% if @searching_for.user.image %>
-              <%= image_tag @searching_for.user.image.url, class:'card-img-profile' %>
-            <% end %>
-    <h4 class='card-title'>
-    <%= @searching_for.f_name%>'s  mate preferences    
-    </h4>
-      <div class="card-body ">
-      <table class = 'table table-striped'>
-      <thead>
-      </thead>
-      <tbody>
-        <tr><td>Smoking</td></tr>
-        <%if @searching_for.mate_preference.smoker == 'dont_care'%>
-            <tr><td>doesn't smoke</td></tr>
-        <%else%>
-            <tr><td><%= @searching_for.mate_preference.smoker%></td></tr>
-        <%end%> 
-        <tr><td>Drinking</td></tr>
-        <tr><td><%= @searching_for.mate_preference.alcohol%></td></tr>
-        <tr><td>Gender</td></tr>
-        <tr><td><%= @searching_for.mate_preference.gender%></td></tr>
-        <tr><td>Body Type</td></tr>
-        <%if @searching_for.mate_preference.body_type == 'any'%>
-            <tr><td>
-            Decline to answer
-            </tr></td>
-        <%else%>
-            <tr><td><%= @searching_for.mate_preference.smoker%></td></tr>
-        <%end%> 
-        <tr><td>Religiosity</td></tr>
-        <tr><td><%= @searching_for.mate_preference.religiosity%></td></tr>
-        <tr><td>Religion</td></tr>
-        <tr><td><%= @searching_for.mate_preference.religion%></td></tr>
-        <tr><td>ethnicity</td></tr>
-        <tr><td><%= @searching_for.mate_preference.ethnicity%></td></tr>
-        </tbody>
-      </table>
-        
-      </div>
-
   </div>
 </div>
-
-
-<%end%>
