@@ -2663,7 +2663,8 @@ nav a:hover {
 }
 
 .banner-area {
-  background:url('https://s3.amazonaws.com/pytdating/blackwhite1.jpg') no-repeat center center/cover;
+  
+  background: image-url('blackwhite1.jpg') no-repeat center center/cover;
 }
 
 .banner-area .overlay-bg {
