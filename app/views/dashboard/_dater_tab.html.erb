@@ -1,16 +1,4 @@
 
-<%if false%>
-<div class = "dater-tab-container">
-    <ul class="nav nav-tabs">
-    <li class="nav-item">
-     <%= link_to 'Dater Corner', dashboard_path(current_user, tab:'dater'), class:'nav-link'%>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link active " href="#">Backer Corner</a>
-    </li>
-    </ul>
-</div>
-<% end %>
 <div class = 'dater-tab-container'>
   <ul class="pagination  ">
     <li class="page-item ">
@@ -22,11 +10,9 @@
 </div>
 
     <div class="card-body dater-tab-body">
-    <div class = 'dater-tab-header col-md-8'>
-    <h4>
-      Welcome to the dater area. Here you can edit your pool or get a new backer to help your chances 
-    </h4>
-    </div>
+  <div class = 'dater-tab-header col-md-8'>
+    <h4>Welcome to the backer area. Here you can help your daters find a mate or search for new daters</h4>
+  </div>
     <table class="table table-striped">
     <thead>
       <tr class= 'dater-table-striped'>

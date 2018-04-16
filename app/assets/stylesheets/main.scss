@@ -293,7 +293,7 @@ td{
 
 .list-backers-show,.find-new-backer,.answer1-table-show {
   margin:2%;
-  display: block;
+  display: flex;
 }
 .list-and-add-backers {
 
@@ -455,8 +455,8 @@ body{
 .dater-tab-body{
   display:flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   padding:auto;
   margin:0px 1px;
 }
@@ -505,7 +505,7 @@ body{
 .backer-tab-body a,.backer-tab-body input,.backer-tab-body button,.backer-tab-body h6, .backer-tab-header h4{
   color:$lightBlue;
 }
-.backer-tab-header{
+.backer-tab-header,.dater-tab-header{
   margin:40px 0;
 }
 .backer-tab-container{
@@ -521,11 +521,9 @@ body{
   justify-content: space-between;
   margin:20px;
   color:$maroon;
-
 }
-#dater-tab-active{
 
-}
+
 #dater-tab-not-active, #dater-tab-active, .dater-table-striped, {
   background-color:$maroon !important;
   color: white;
@@ -653,7 +651,9 @@ color:white;
 .login, ,#dash-body h6{
   color:white;
 }
-
+nav h4{
+  color:white;
+}
 #login{
   width:44%;
   display:flex;

@@ -1,16 +1,4 @@
 
-<%if false%>
-<div class = "dater-tab-container">
-    <ul class="nav nav-tabs">
-    <li class="nav-item">
-     <%= link_to 'Dater Corner', dashboard_path(current_user, tab:'dater'), class:'nav-link'%>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link active " href="#">Backer Corner</a>
-    </li>
-    </ul>
-</div>
-<% end %>
 <div class = 'backer-tab-container'>
   <ul class="pagination  ">
     <li class="page-item ">
@@ -19,41 +7,32 @@
     <li class="page-item"><%= link_to 'Daters', dashboard_path(current_user,tab:'dater'),class:'page-link', id:'dater-tab-not-active'%></li>
   </ul>
 </div>
-
-    <div class="card-body backer-tab-body">
-    <div class = 'backer-tab-header col-md-8'>
-    <h4>
-      Welcome to the backer area. Here you can help your daters find a mate or search for new daters 
-    </h4>
-    </div>
-    <table class="table table-striped">
-    <thead>
-      <tr class= 'backer-table-striped'>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Percent Complete</th>
-        <th scope="col">Answer Questions</th>  
-        <th scope="col">Find a mate for them</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% current_backer.daters.each  do |dater|%>
-      <tr class='backer-table-row'>
-        <td ><%= dater.f_name %></td>
-        <td><%= dater.l_name %></td>
-        <td>50%</td>
-        <td><%= link_to 'Qs and Ts', new_backer_dater_comment_path(current_user, dater), class:'btn-primary btn-sm',id:'d-q-button'%></td>
-        <td><%= link_to 'Find their mate', users_path(dater), class:'btn-primary btn-sm',id:'find-mate-for-backer'%></td>
-          </td>
-        </tr>
-      </tr>
-      <tr>
-      
+<div class="card-body backer-tab-body">
+  <div class = 'backer-tab-header col-md-8'>
+    <h4>Welcome to the backer area. Here you can help your daters find a mate or search for new daters</h4>
+  </div>
+  <table class="table table-striped">
+  <thead>
+    <tr class= 'backer-table-striped'>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Percent Complete</th>
+      <th scope="col">Answer Questions about your dater</th>  
+      <th scope="col">Find a mate for them</th>
     </tr>
-  <%  end %>     
+  </thead>
+  <tbody>
+    <% current_backer.daters.each  do |dater|%>
+    <tr class='backer-table-row'>
+      <td ><%= dater.f_name %></td>
+      <td><%= dater.l_name %></td>
+      <td>50%</td>
+      <td><%= link_to 'Questions', new_backer_dater_comment_path(current_user, dater), class:'btn-primary btn-sm',id:'d-q-button'%></td>
+      <td><%= link_to 'Find their mate', users_path(dater), class:'btn-primary btn-sm',id:'find-mate-for-backer'%></td>
+    </tr>
+    <% end %>     
     </tbody>
   </table>
-    <h6>Or add a new dater below</h6>
-    <%= render 'add_dater'%>
-    </div> 
+  <h6>Or add a new dater below</h6>
+  <%= render 'add_dater'%>
 </div>  
