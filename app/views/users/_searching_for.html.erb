@@ -1,6 +1,6 @@
 
 
-<div class = 'card text-center searching-for col-md-12' id= ''>
+<div class = 'card text-center searching-for col-md-offset-6 col-md-6' id= ''>
   <div class = 'card-header'id='searching-for-header'>You are looking for a mate for <%= @searching_for.f_name %></div>
     <div class = 'card-body' id='searching-for-body'>       
       <p><%= @searching_for.f_name%></p>
@@ -9,5 +9,5 @@
       <% end %>
       <p><%= ZipCodes.identify("#{@searching_for.trait.zip}")[:city]%></p>
     </div>
-  </div>
-</div>
+ </div>
+ </div>

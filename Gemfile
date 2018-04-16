@@ -9,6 +9,7 @@ end
 gem 'rails', '~> 5.1.5'
 gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'aws-sdk-rails'
+
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'zip-codes'
