@@ -9,7 +9,7 @@ end
 gem 'rails', '~> 5.1.5'
 gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'aws-sdk-rails'
-
+gem 'sass-rails', '~> 5.0'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'zip-codes'
@@ -17,8 +17,6 @@ gem 'sprockets'
 gem 'bootstrap-slider-rails'
 gem 'figaro'
 gem 'faraday'
-gem 'sass-rails', '~> 5.0'
-gem "jquery-slick-rails"
 gem 'carrierwave-aws'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
@@ -28,9 +26,6 @@ gem "active_model_serializers"
 gem 'redis'
 gem 'sidekiq'
 gem 'mailgun-ruby'
-
-
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
@@ -53,10 +48,8 @@ group :development, :test do
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end

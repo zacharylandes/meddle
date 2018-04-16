@@ -1,13 +1,18 @@
 
 
-<div class = 'card text-center searching-for col-md-offset-6 col-md-6' id= ''>
-  <div class = 'card-header'id='searching-for-header'>You are looking for a mate for <%= @searching_for.f_name %></div>
-    <div class = 'card-body' id='searching-for-body'>       
-      <p><%= @searching_for.f_name%></p>
-      <% if @searching_for.user.image %>
-        <%= link_to image_tag(@searching_for.user.image.url), user_path(@searching_for.user.id, class:'card-img-profile') %>
-      <% end %>
-      <p><%= ZipCodes.identify("#{@searching_for.trait.zip}")[:city]%></p>
-    </div>
- </div>
- </div>
+
+
+
+<div class="container  col-md-4">
+      <div class = 'card text-center searching-for ' id= ''>
+        <div class = 'card-header'id='searching-for-header'>You are looking for a mate for <%= @searching_for.f_name %></div>
+          <div class = 'card-body' id='searching-for-body'>       
+            <p><%= @searching_for.f_name%></p>
+            <% if @searching_for.user.image %>
+              <%= link_to image_tag(@searching_for.user.image.url), user_path(@searching_for.user.id, class:'card-img-profile') %>
+            <% end %>
+            <p><%= ZipCodes.identify("#{@searching_for.trait.zip}")[:city]%></p>
+          </div>
+        </div>
+  </div>
+</div>
