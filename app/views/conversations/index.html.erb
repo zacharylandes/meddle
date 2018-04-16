@@ -10,13 +10,13 @@
           <th >Subject</th>
           <th >Date</th>
         </tr>
-      <% @conversations.each do |conversation| %>
+        <% @conversations.each do |conversation| %>
         <tr >
           <td> <%= User.find( conversation.receipts.where.not(receiver_id:current_user.id).first.receiver_id).f_name %></td>
           <td> <%= link_to conversation.subject, conversation_path(conversation) %></td>
           <td> <%= conversation.updated_at.strftime('%m-%d-%y') %></td>
         </tr>
-      <% end %>
+        <% end %>
     </table>  
   </div>
 </div>

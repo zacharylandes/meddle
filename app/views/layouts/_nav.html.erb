@@ -10,9 +10,9 @@
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                     <%if current_user%>
-                    <%=link_to 'Your Dashboard', dashboard_path(current_user)%>
+                        <%=link_to 'Your Dashboard', dashboard_path(current_user)%>
+                        <%=link_to 'Search all daters', users_path%>
                     <%end%>
-                    <%=link_to 'Search all daters', users_path%>
                     </li>
                     <a class='media' href='/conversations'>
                         <i class="far fa-envelope"></i>

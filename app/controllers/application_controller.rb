@@ -18,22 +18,10 @@ class ApplicationController < ActionController::Base
   ['#70C1B3','#91B7C7','#BD9391','#75485E']
 end
 
-
-  def inches_feet(inches)
-    mod = inches%12
-    inch = mod.to_s.split('')
-      if inch.length == 1 
-        inch.unshift('0')
-      end
-      inch = inch.join('')
-    p "#{inches/12}ft #{inch}in"
-  end
-
   def feet_inches(ft,inch)
     ft = (ft.to_i * 12)
     inch = inch.to_i 
     p inch + ft
   end
-
 
 end

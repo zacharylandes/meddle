@@ -1,15 +1,14 @@
 
 <%=render 'dash_side'%>
-        <% if params['tab'] = 'backer' && params['tab'] != 'dater' %>
-<div class = 'col-md-offset-1 col-md-9 card text-center' id= 'dash-body'>
-        <div class= 'card-header backer-table-striped'><h6> Backer's Dashboard</h6></div>
-
-            <%= render 'backer_tab' %>
-            <%print 'params',params%>
-         <% else %>
-         <div class = 'col-md-offset-1 col-md-9 card text-center' id= 'dash-body'>
-         <div class= 'card-header dater-table-striped'><h6> Dater's Dashboard</h6></div>
-            <%= render 'dater_tab'%>
-         <% end %>
-</div>
+<% if params['tab'] = 'backer' && params['tab'] != 'dater' %>
+  <div class = 'col-md-offset-1 col-md-9 card text-center' id= 'dash-body'>
+    <div class= 'card-header backer-table-striped'><h6> Backer's Dashboard</h6></div>
+    <%= render 'backer_tab' %>
+  </div>
+<% else %>
+  <div class = 'col-md-offset-1 col-md-9 card text-center' id= 'dash-body'>
+    <div class= 'card-header dater-table-striped'><h6> Dater's Dashboard</h6></div>
+      <%= render 'dater_tab'%>
+  </div>
+<% end %>
 

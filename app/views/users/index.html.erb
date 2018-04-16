@@ -13,17 +13,18 @@
         <% @daters.each do |dater| %>
             <div class="card dater-card">
                     <h5 class="card-header" id="card-body"><%= dater.f_name %></h5>
-            <% if current_user.image %>
+            <% if dater.user.image %>
+            <% if params[:format] %>
+                <%= link_to image_tag(dater.user.image.url, class:'card-img-top'), user_path(dater.id,searching_for: params[:format]) %>
+            <% else %>
                 <%= link_to image_tag(dater.user.image.url, class:'card-img-top'), user_path(dater.id) %>
+            <% end %>
             <% end %>    
-                <div class="card-body" id="card-body">
-                </div>
                 <ul class="list-group list-group-flush">
                     <% if dater.trait.zip > 0%>
                     <li class="list-group-item"><%= ZipCodes.identify("#{dater.trait.zip}")[:city] %></li>
                     <%end%>
                     <li class="list-group-item"><%= dater.trait.orientation%></li>
-                    
                 </ul>
                 <div>
                     <a href="#" class="card-link"></a>
