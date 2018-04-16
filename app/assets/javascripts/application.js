@@ -14,8 +14,8 @@
 //= require vendor/jquery-2.2.4.min
 //= require vendor/bootstrap.min
 //= require questions
-//= require main
 //= require bootstrap-slider
+//= require main
 
 
 
