@@ -31,7 +31,7 @@ class UserMailer < ApplicationMailer
                       :text    => render_to_string(template: "../views/user_mailer/dater_requests_backer.text.erb").to_str
                       }
     mg_client.send_message ENV['domain'], message_params
-  endp
+  end
 
 
 end
