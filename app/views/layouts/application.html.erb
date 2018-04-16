@@ -1,45 +1,17 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
   <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>PYT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PYT</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "application", media: "all"%>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>  
-  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>    
   </head>
-  <div class = 'layer'>
-  </div>
+  <div class = 'layer'></div>
     <body class='col-md-12'>
-      <nav class="navbar navbar-expand-lg   col-md-12" id="main-nav">
-        <div class = 'logo-div'>
-          <%= link_to image_tag('https://s3.amazonaws.com/pytdating/pytlogo.png'), homes_path %>
-        </div>
-        <a class="navbar-brand" id='header-title'></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-            <%if current_user%>
-            <%=link_to 'Your Dashboard', dashboard_path(current_user)%>
-            <%end%>
-            <%=link_to 'Search all daters', users_path%>
-            <i class="far fa-envelope"></i>
-            </li>
-          </ul>
-        </div>
-        <div class = 'login' id='login'>
-          <% if current_user %>
-          Signed in as <%= current_user.f_name %>
-          <%= link_to "Sign out", signout_path %>
-          <% else %>
-          <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", class:'' %>
-          <% end %>
-        </div>
-      </nav>
+      <%= render '/layouts/nav' %>
       <% if flash[:notice] %>
          <div class="notice"><%= flash[:notice] %></div>
       <% end %>
@@ -49,7 +21,6 @@
       <div class = 'main col-md-12 ' >
         <%= yield %>
       </div>
-
       <footer class= 'col-md-12' id="footer ">
       </footer>
     </body>
