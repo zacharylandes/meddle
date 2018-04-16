@@ -12,16 +12,13 @@ gem 'aws-sdk-rails'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'zip-codes'
+gem 'sprockets'
 gem 'bootstrap-slider-rails'
-gem 'rails_12factor', group: :production
-
 gem 'figaro'
 gem 'faraday'
 gem 'sass-rails', '~> 5.0'
 gem "jquery-slick-rails"
 gem 'carrierwave-aws'
-gem 'bootstrap-modal-rails'
-
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'mailboxer'
