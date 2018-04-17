@@ -12,9 +12,10 @@
 
 //= require rails-ujs
 //= require vendor/jquery-2.2.4.min
-//= require bootstrap-slider
+//= require popper
 //= require questions
 //= require main
+//= require bootstrap-slider
 //= require vendor/bootstrap.min
 
 

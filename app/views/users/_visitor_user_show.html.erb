@@ -9,8 +9,6 @@
             <div class="card-body">
                 <h5 class="card-title">Location</h5>
                 <p class="card-text"><%= ZipCodes.identify("#{@dater.trait.zip}")[:city] %></p>
-                <h5 class="card-title">Sexual Orientation</h5>
-                <%= @dater.trait.orientation.capitalize%>
             </div>
         </div>
         <div class="card profile-card">
