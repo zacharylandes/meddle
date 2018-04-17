@@ -18,7 +18,6 @@ class UserMailer < ApplicationMailer
   end
 
   def backer_requests_dater(current_user, email_new_user)
-    binding.pry
     @email_new_user = email_new_user
     @requestor = current_user
     @url  = "https://pytdating.herokuapp.com/auth/google_oauth2?tab=dater&requestor-backs=#{@requestor.id}"
