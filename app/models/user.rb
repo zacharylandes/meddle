@@ -27,7 +27,7 @@ class User < ApplicationRecord
       Dater.find_or_create_by(user_id: user.id, f_name:user.f_name, l_name:user.l_name,image_1: user.remote_image_url)
       Backer.find_or_create_by(user_id: user.id, f_name: user.f_name, l_name: user.l_name,image_1: user.remote_image_url)
       MatePreference.find_or_create_by(dater_id: user.id)
-      Trait.find_or_create_by(dater_id: user.id,zip:80203)
+      Trait.find_or_create_by(dater_id: user.id, zip:80203)
     end
   end
   

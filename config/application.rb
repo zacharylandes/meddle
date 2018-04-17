@@ -15,7 +15,8 @@ module Pytdating
     
     config.action_dispatch.default_headers = {
         'Access-Control-Allow-Origin' => '*',
-        'Access-Control-Request-Method' => %w{GET POST,PUT,PATCH,DELETE OPTIONS}.join(",")
+        'Access-Control-Request-Method' => %w{GET POST,PUT,PATCH,DELETE OPTIONS}.join(","),
+        'Access-Control-Allow-Headers' => 'accept, content-type'
       }
 
     # Settings in config/environments/* take precedence over those specified here.
