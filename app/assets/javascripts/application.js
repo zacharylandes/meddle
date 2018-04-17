@@ -11,8 +11,8 @@
 // about supported directives.
 
 //= require rails-ujs
-//= require vendor/jquery-2.2.4.min
 //= require main
+//= require vendor/jquery-2.2.4.min
 //= require vendor/bootstrap.min
 //= require bootstrap-slider
 //= require questions
