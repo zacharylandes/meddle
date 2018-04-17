@@ -70,23 +70,6 @@ class Seed
 (1..7).each do |x|
   (1..6).each do |n|
     Comment.create!(dater_id: Dater.find(n*100).id, backer_id: Backer.find((n+1)*100).id,question_id: x, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_7.id,backer_id:backer_2.id,question_id:2, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_7.id,backer_id:backer_2.id,question_id:3, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_7.id,backer_id:backer_2.id,question_id:4, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_7.id,backer_id:backer_2.id,question_id:5, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_6.id,backer_id:backer_1.id,question_id:1, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_6.id,backer_id:backer_1.id,question_id:2, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_6.id,backer_id:backer_1.id,question_id:3, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_6.id,backer_id:backer_4.id,question_id:4, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_6.id,backer_id:backer_5.id,question_id:5, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_5.id,backer_id:backer_6.id,question_id:1, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_5.id,backer_id:backer_7.id,question_id:2, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_5.id,backer_id:backer_3.id,question_id:3, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_5.id,backer_id:backer_2.id,question_id:4, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_5.id,backer_id:backer_2.id,question_id:5, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_4.id,backer_id:backer_2.id,question_id:1, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_4.id,backer_id:backer_2.id,question_id:2, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-    # Comment.create(dater_id: dater_4.id,backer_id:backer_2.id,question_id:3, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
   end
 end
     match = user_5

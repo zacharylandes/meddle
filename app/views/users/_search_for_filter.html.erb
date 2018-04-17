@@ -16,13 +16,13 @@
             <td><%= label_tag :politicalness%></td>
             </tr>
             <tr>
-                <td> <%= select_tag :politicalness, options_for_select(MatePreference.politicalnesses.map {|k, v| [k.humanize.capitalize, v]},@searching_for.mate_preference.politicalness), {class: " btn-sm form-control"} %></td>
+                <td> <%= select_tag :politicalness, options_for_select(MatePreference.politicalnesses.map {|k, v| [k.humanize.capitalize, v]}, @searching_for.mate_preference.politicalness.humanize), {class: " btn-sm form-control"} %></td>
             </tr>
              <tr>
                 <td><%= label_tag :smoker%></td>
             </tr>
             <tr>
-                <td> <%= select_tag :smoker, options_for_select(MatePreference.smokers.map {|k, v| [k.humanize.capitalize, v]},@searching_for.mate_preference.smoker), {class: "form-control"} %></td>
+                <td> <%= select_tag :smoker, options_for_select(MatePreference.smokers.map {|k, v| [k.humanize.capitalize, v]},:selected => @searching_for.mate_preference.smoker), {class: "form-control"} %></td>
             </tr>
              <tr>
                 <td><%= label_tag :alcohol%></td>
