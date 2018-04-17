@@ -50,11 +50,14 @@ class Seed
 
 
 
-    q1= Question.create(question: "What's their favorite panda ")
-    q2= Question.create(question: "What are they eating right now")
-    q3= Question.create(question: "Are they funny, actually?")
-    q4= Question.create(question: "Their least favorite type of cereal")
-    q5= Question.create(question: "Childhood candy bar")
+   Question.create(question: "What's their favorite panda")
+   Question.create(question: "What are they eating right now")
+   Question.create(question: "Are they funny, actually?")
+   Question.create(question: "Their least favorite type of cereal")
+   Question.create(question: "Childhood candy bar")
+   Question.create(question: "What did they want to be when they grew up")
+   Question.create(question: "What's their password?")
+    
     
     Personality.create(dater_id:dater_1.id,backer_id:backer_2.id, charitable:2,intelligent:4,shy: 2,spontaneous:1,funny: 4,adaptable:1,logical:4,independent:4,organized:5,relaxed:1,friendly:5,energetic:2,silly:2,patient:4 )
     Personality.create(dater_id:dater_2.id,backer_id:backer_2.id, charitable:1,intelligent:4,shy: 3,spontaneous:2,funny: 4,adaptable:1,logical:4,independent:3,organized:3,relaxed:4,friendly:5,energetic:2,silly:2,patient:4 )
@@ -64,38 +67,37 @@ class Seed
     Personality.create(dater_id:dater_6.id,backer_id:backer_2.id, charitable:5,intelligent:4,shy: 2,spontaneous:3,funny: 2,adaptable:4,logical:1,independent:2,organized:5,relaxed:1,friendly:5,energetic:2,silly:2,patient:4 )
     Personality.create(dater_id:dater_7.id,backer_id:backer_2.id, charitable:3,intelligent:1,shy: 2,spontaneous:2,funny: 1,adaptable:4,logical:3,independent:4,organized:5,relaxed:1,friendly:5,energetic:2,silly:2,patient:4 )
 
-    Comment.create(dater_id:dater_7.id,backer_id:backer_2.id,question_id:1, comment:"trash pandas")
-    Comment.create(dater_id:dater_7.id,backer_id:backer_2.id,question_id:2, comment:"they're eating dem naners")
-    Comment.create(dater_id:dater_7.id,backer_id:backer_2.id,question_id:3, comment:"super duper funz")
-    Comment.create(dater_id:dater_7.id,backer_id:backer_2.id,question_id:4, comment:"marshy cereal")
-    Comment.create(dater_id:dater_7.id,backer_id:backer_2.id,question_id:5, comment:"twix")
-    Comment.create(dater_id:dater_6.id,backer_id:backer_1.id,question_id:1, comment:"trash pandas")
-    Comment.create(dater_id:dater_6.id,backer_id:backer_1.id,question_id:2, comment:"trash pandas")
-    Comment.create(dater_id:dater_6.id,backer_id:backer_1.id,question_id:3, comment:"trash pandas")
-    Comment.create(dater_id:dater_6.id,backer_id:backer_4.id,question_id:4, comment:"trash pandas")
-    Comment.create(dater_id:dater_6.id,backer_id:backer_5.id,question_id:5, comment:"trash pandas")
-    Comment.create(dater_id:dater_5.id,backer_id:backer_6.id,question_id:1, comment:"trash pandas")
-    Comment.create(dater_id:dater_5.id,backer_id:backer_7.id,question_id:2, comment:"trash pandas")
-    Comment.create(dater_id:dater_5.id,backer_id:backer_3.id,question_id:3, comment:"trash pandas")
-    Comment.create(dater_id:dater_5.id,backer_id:backer_2.id,question_id:4, comment:"trash pandas")
-    Comment.create(dater_id:dater_5.id,backer_id:backer_2.id,question_id:5, comment:"trash pandas")
-    Comment.create(dater_id:dater_4.id,backer_id:backer_2.id,question_id:1, comment:"trash pandas")
-    Comment.create(dater_id:dater_4.id,backer_id:backer_2.id,question_id:2, comment:"trash pandas")
-    Comment.create(dater_id:dater_4.id,backer_id:backer_2.id,question_id:3, comment:"trash pandas")
-    
+(1..7).each do |x|
+  (1..6).each do |n|
+    Comment.create!(dater_id: Dater.find(n*100).id, backer_id: Backer.find((n+1)*100).id,question_id: x, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_7.id,backer_id:backer_2.id,question_id:2, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_7.id,backer_id:backer_2.id,question_id:3, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_7.id,backer_id:backer_2.id,question_id:4, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_7.id,backer_id:backer_2.id,question_id:5, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_6.id,backer_id:backer_1.id,question_id:1, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_6.id,backer_id:backer_1.id,question_id:2, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_6.id,backer_id:backer_1.id,question_id:3, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_6.id,backer_id:backer_4.id,question_id:4, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_6.id,backer_id:backer_5.id,question_id:5, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_5.id,backer_id:backer_6.id,question_id:1, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_5.id,backer_id:backer_7.id,question_id:2, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_5.id,backer_id:backer_3.id,question_id:3, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_5.id,backer_id:backer_2.id,question_id:4, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_5.id,backer_id:backer_2.id,question_id:5, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_4.id,backer_id:backer_2.id,question_id:1, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_4.id,backer_id:backer_2.id,question_id:2, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    # Comment.create(dater_id: dater_4.id,backer_id:backer_2.id,question_id:3, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+  end
+end
     match = user_5
+    match1 = user_1
+    
 
     dater_1.backers << backer_2
     dater_1.backers << backer_3
     dater_1.backers << backer_4
     dater_2.backers << backer_3
     dater_2.backers << backer_4
-
-
-    # comment_1 = Comment.create!(dater_id: dater_1.id, backer_id: backer_1.id, comment: "this is from the first backer")
-    # comment_2 = Comment.create!(dater_id: dater_1.id, backer_id: backer_2.id, comment: "this is from SECOND BACKER")
-    # comment_3 = Comment.create!(dater_id: dater_2.id, backer_id: backer_3.id, comment: "this is from third backer")
-    # comment_4 = Comment.create(dater_id: dater_2.id, backer_id: backer_4.id, comment: "this is from fourth backer")
 
 
     dater_1_traits = Trait.create!(dater_id: dater_1.id, height: 60, smoker: 0, alcohol: 0, ethnicity: 0, education: true, body_type: 0, occupation: 0, zip: 80203, religion: 0, religiosity: 1, political_leaning: 2, politicalness: 3, has_kids: false, wants_kids: false, has_pets: false, orientation: 1, gender: 1, other: "", created_at: 0, updated_at: 0)
@@ -116,13 +118,16 @@ class Seed
     dater_7_mate_trait = MatePreference.create!(dater_id: dater_7.id, min_height: 60, max_height: 70, smoker: 0, alcohol: 0, ethnicity: 0, education: 0, body_type: 0, zip_radius: 5, religion: 0, religiosity: 0, political_leaning: 1, politicalness: 3, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, created_at: 0, updated_at: 0)
 
 
-    dater_1_pool = Match.create!(dater_id: dater_1.id, match_id: match.id)
-
-
-    # backer_eval_1 = BackerEval.create!(dater_id: dater_1.id, backer_id: backer_2.id, q_1: "this is an amazing answer about a person")
-    # backer_eval_1 = BackerEval.create!(dater_id: dater_1.id, backer_id: backer_2.id, q_1: "this is also an amazing answer about a person")
-    # backer_eval_1 = BackerEval.create!(dater_id: dater_2.id, backer_id: backer_3.id, q_1: "this is also also an amazing answer about a person")
-
+    Match.create!(dater_id: dater_1.id, match_id: match.id)
+    Match.create!(dater_id: dater_2.id, match_id: match.id)
+    Match.create!(dater_id: dater_3.id, match_id: match.id)
+    Match.create!(dater_id: dater_4.id, match_id: match.id)
+    Match.create!(dater_id: dater_6.id, match_id: match.id)
+    Match.create!(dater_id: dater_2.id, match_id: match1.id)
+    Match.create!(dater_id: dater_3.id, match_id: match1.id)
+    Match.create!(dater_id: dater_4.id, match_id: match1.id)
+    Match.create!(dater_id: dater_6.id, match_id: match1.id)
+    
   end
 
 end

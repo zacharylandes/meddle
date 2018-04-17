@@ -25,6 +25,7 @@ gem 'mailboxer'
 gem 'will_paginate', '~> 3.1.0'
 gem "active_model_serializers"
 gem 'redis'
+gem 'faker'
 gem 'sidekiq'
 gem 'mailgun-ruby'
 gem 'uglifier', '>= 1.3.0'
