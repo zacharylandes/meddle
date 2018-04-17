@@ -9,9 +9,8 @@
             <div class="card-body">
                 <h5 class="card-title">Location</h5>
                 <p class="card-text"><%= ZipCodes.identify("#{@dater.trait.zip}")[:city] %></p>
-                <p> <%= ZipCodes.identify("#{@dater.trait.zip}")[:state_name] %></p>
                 <h5 class="card-title">Sexual Orientation</h5>
-                    <%= @dater.trait.orientation.capitalize%>
+                <%= @dater.trait.orientation.capitalize%>
             </div>
         </div>
         <div class="card profile-card">
@@ -19,8 +18,8 @@
                 About
             </div>
             <div class="card-body">
-                <h5 class="card-title">I'm just a good guy</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">I'm just a good person, I guess</h5>
+                <p class="card-text">Look what people say about me. They won't stop talking about me.</p>
             </div>
         </div>
         <div class="card profile-card">
@@ -50,7 +49,7 @@
                 <%= render 'dater-answer5-list'%>
             </div>
         </div>
-        <%= render 'show_dater_traits'%>
+        </div>
 </div>
     <div class = 'user-right-side'>
         <%= link_to 'Send Message', new_conversation_path(recipient: @user), class:"primary-btn btn-md" %>
