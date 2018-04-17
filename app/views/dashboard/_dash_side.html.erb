@@ -9,10 +9,8 @@
       <%= image_tag current_user.image.url, class:'card-img-profile' %>
     <% end %>
     <div class='card-title'>
-      <h6> <%= current_user.f_name%> </h6>
-      <p> <%= current_user.l_name%></p> 
-    </div>
-    <div class="card-body ">
+      <h6> <%= current_user.f_name%> </h6><br>
+      <p> <%= current_user.l_name%></p> <br>
       <h6>Location</h6><br>
       <p><%= ZipCodes.identify("#{current_user.daters.first.trait.zip}")[:city]%></p>
     </div>

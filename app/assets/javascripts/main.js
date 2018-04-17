@@ -245,11 +245,12 @@ $('#dater-q5-button').click(function(){
       event.preventDefault()
       let email = event.target.offsetParent.childNodes[1].value
       console.log(email)
-      $.get(`https://pytdating.herokuapp.com/invites?email=${email}&add_dater=true`)
+      $.get(`https://pytdating.herokuapp.com/invites?email=${email}&add_dater=true`,()=> {
         $(".list-and-add-backers").append(`
           <div class="alert alert-success" role="alert" id="dater-invited-alert">
             <h4 class="alert-heading"> Email Sent!</h4>
             `).delay( 1500 ).fadeOut( 300 )
+          })
     })
 
     // SEND EMAIL TO INVITE NEW BACKER
