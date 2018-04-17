@@ -10,12 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 
-//= require vendor/jquery-2.2.4.min
-//= require vendor/bootstrap.min
 //= require rails-ujs
-//= require bootstrap-slider
-//= require main
+//= require vendor/jquery-2.2.4.min
 //= require questions
+//= require main
+//= require vendor/bootstrap.min
+//= require bootstrap-slider
 
 
 
