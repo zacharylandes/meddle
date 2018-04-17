@@ -8,32 +8,29 @@
     <li class="page-item"></li>
   </ul>
 </div>
-
-    <div class="card-body dater-tab-body">
+<div class="card-body dater-tab-body">
   <div class = 'dater-tab-header col-md-8'>
     <h4>Welcome to the backer area. Here you can help your daters find a mate or search for new daters</h4>
   </div>
-    <table class="table table-striped">
+  <table class="table table-striped">
     <thead>
       <tr class= 'dater-table-striped'>
-        <th >First</th>
-        <th scope="col">Last</th>
+        <td>First</td>
+        <td >Last</td>
       </tr>
     </thead>
     <tbody>
-    <% current_dater.backers.each  do |backer|%>
-      <tr class=''>
+    <% current_dater.backers.each do |backer|%>
+      <tr>
         <td><%= backer.f_name %></td>
         <td><%= backer.l_name %></td>
-        </tr>
-  <%  end %>     
+      </tr>
+    <% end %>     
     </tbody>
   </table>
-        <div class = 'dater-tab-buttons'>
-            <a class ="primary-btn card-button" id="pool-button"> Your pool</a>
-            <a class ="primary-btn card-button" id="list-backer-button"> Your Backers </a>
-
-        </div>
-        <%= render 'pool'%>
-    </div> 
+  <div class = 'dater-tab-buttons'>
+      <a class ="primary-btn card-button" id="pool-button"> Your pool</a>
+      <a class ="primary-btn card-button" id="list-backer-button"> Your Backers </a>
+  </div>
+  <%= render 'pool'%>
 </div>  

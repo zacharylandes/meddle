@@ -13,40 +13,53 @@ class Seed
 
   def run
 
-    shots = ['https://s3.amazonaws.com/pytdating/p2.jpeg','https://s3.amazonaws.com/pytdating/p4.jpeg','https://s3.amazonaws.com/pytdating/p1.jpeg','https://s3.amazonaws.com/pytdating/p7.jpeg','https://s3.amazonaws.com/pytdating/p12.jpeg','https://s3.amazonaws.com/pytdating/p13.jpeg']
+    shots = [ 'https://s3.amazonaws.com/pytdating/p2.jpeg',
+              'https://s3.amazonaws.com/pytdating/p4.jpeg',
+              'https://s3.amazonaws.com/pytdating/p1.jpeg',
+              'https://s3.amazonaws.com/pytdating/p30.jpeg',
+              'https://s3.amazonaws.com/pytdating/p33.jpeg',
+              'https://s3.amazonaws.com/pytdating/p34.jpeg',
+              'https://s3.amazonaws.com/pytdating/p7.jpeg',
+              'https://s3.amazonaws.com/pytdating/p12.jpeg',
+              'https://s3.amazonaws.com/pytdating/p13.jpeg',
+              'https://s3.amazonaws.com/pytdating/p100.jpeg',
+              'https://s3.amazonaws.com/pytdating/p200.jpeg',
+              'https://s3.amazonaws.com/pytdating/p300.jpeg',
+              'https://s3.amazonaws.com/pytdating/p34.jpeg' ]
 
-    user_1 = User.create!( id: 100, provider: "google_oauth2", uid: "12345", auth_name: "Susie", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Susie", l_name:"Smith", email: "email1@email.com", remote_image_url: shots[0] )
-    dater_1 = Dater.create!(id: user_1.id, user_id: user_1.id,f_name: user_1.f_name, l_name: user_1.l_name)
-    backer_1 = Backer.create!(id: user_1.id, user_id: user_1.id, f_name: user_1.f_name, l_name: user_1.l_name)
+    (2..50).each do |n|
+      User.create!( id: n, provider: "google_oauth2", uid: "12345", auth_name: "#{Faker::Cat.name}", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "#{Faker::Cat.name}", l_name:"#{Faker::Dog.name}", email: "email1@email.com", remote_image_url: shots.sample )
+       Dater.create!(id: User.find(n).id, user_id: User.find(n).id,f_name: User.find(n).f_name, l_name: User.find(n).l_name)
+       Backer.create!(id: User.find(n).id, user_id: User.find(n).id, f_name: User.find(n).f_name, l_name: User.find(n).l_name)
+    end
 
-
-    user_2 = User.create!( id: 200, provider: "google_oauth2", uid: "123456", auth_name: "Bobby", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Bobby", l_name:"Johnson", email: "email2@email.com", remote_image_url: shots[1] )
-    dater_2 = Dater.create!(id: user_2.id, user_id: user_2.id,f_name: user_2.f_name, l_name: user_2.l_name)
-    backer_2 = Backer.create!(id: user_2.id, user_id: user_2.id, f_name: user_2.f_name, l_name: user_2.l_name)
-
-
-    user_3 = User.create!( id: 300, provider: "google_oauth2", uid: "123457", auth_name: "Billy", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Billy", l_name:"Hall", email: "email3@email.com", remote_image_url: shots[2] )
-    dater_3 = Dater.create!(id: user_3.id, user_id: user_3.id,f_name: user_3.f_name, l_name: user_3.l_name)
-    backer_3 = Backer.create!(id: user_3.id, user_id: user_3.id, f_name: user_3.f_name, l_name: user_3.l_name)
-
-
-    user_4 = User.create!( id: 400, provider: "google_oauth2", uid: "123458", auth_name: "Molly", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Molly", l_name:"Miller", email: "email4@email.com", remote_image_url: shots[3] )
-    dater_4 = Dater.create!(id: user_4.id, user_id: user_4.id,f_name: user_4.f_name, l_name: user_4.l_name)
-    backer_4 = Backer.create!(id: user_4.id, user_id: user_4.id, f_name: user_4.f_name, l_name: user_4.l_name)
-
-
-    user_5 = User.create!( id: 500, provider: "google_oauth2", uid: "123459", auth_name: "Mr.Match", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Jack", l_name:"Jorgen", email: "email5@email.com", remote_image_url: shots[4] )
-    dater_5 = Dater.create!(id: user_5.id, user_id: user_5.id,f_name: user_5.f_name, l_name: user_5.l_name)
-    backer_5 = Backer.create!(id: user_5.id, user_id: user_5.id, f_name: user_5.f_name, l_name: user_5.l_name)
+    # user_2 = User.create!( id: 200, provider: "google_oauth2", uid: "123456", auth_name: "#{Faker::Cat.name}", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "#{Faker::Cat.name}", l_name:"Johnson", email: "email2@email.com", remote_image_url: shots.sample )
+    # dater_2 = Dater.create!(id: user_2.id, user_id: user_2.id,f_name: user_2.f_name, l_name: user_2.l_name)
+    # backer_2 = Backer.create!(id: user_2.id, user_id: user_2.id, f_name: user_2.f_name, l_name: user_2.l_name)
 
 
-    user_6 = User.create!( id: 600, provider: "google_oauth2", uid: "123439", auth_name: "Mr.Match", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Back", l_name:"Borgen", email: "email6@email.com", remote_image_url: shots[5] )
-    dater_6 = Dater.create!(id: user_6.id, user_id: user_6.id,f_name: user_6.f_name, l_name: user_6.l_name)
-    backer_6 = Backer.create!(id: user_6.id, user_id: user_6.id, f_name: user_6.f_name, l_name: user_6.l_name)
+    # user_3 = User.create!( id: 300, provider: "google_oauth2", uid: "123457", auth_name: "#{Faker::Cat.name}", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "#{Faker::Cat.name}", l_name:"Hall", email: "email3@email.com", remote_image_url: shots.sample )
+    # dater_3 = Dater.create!(id: user_3.id, user_id: user_3.id,f_name: user_3.f_name, l_name: user_3.l_name)
+    # backer_3 = Backer.create!(id: user_3.id, user_id: user_3.id, f_name: user_3.f_name, l_name: user_3.l_name)
 
-    user_7 = User.create!( id: 700, provider: "google_oauth2", uid: "123359", auth_name: "Mr.Match", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Stack", l_name:"Steiner", email: "email7@email.com", remote_image_url: shots[3] )
-    dater_7 = Dater.create!(id: user_7.id, user_id: user_7.id,f_name: user_7.f_name, l_name: user_7.l_name)
-    backer_7 = Backer.create!(id: user_7.id, user_id: user_7.id, f_name: user_7.f_name, l_name: user_7.l_name)
+
+    # user_4 = User.create!( id: 400, provider: "google_oauth2", uid: "123458", auth_name: "#{Faker::Cat.name}", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Molly", l_name:"Miller", email: "email4@email.com", remote_image_url: shots.sample )
+    # dater_4 = Dater.create!(id: user_4.id, user_id: user_4.id,f_name: user_4.f_name, l_name: user_4.l_name)
+    # backer_4 = Backer.create!(id: user_4.id, user_id: user_4.id, f_name: user_4.f_name, l_name: user_4.l_name)
+
+
+    # user_5 = User.create!( id: 500, provider: "google_oauth2", uid: "123459", auth_name: "#{Faker::Cat.name}", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Jack", l_name:"Jorgen", email: "email5@email.com", remote_image_url: shots.sample )
+    # dater_5 = Dater.create!(id: user_5.id, user_id: user_5.id,f_name: user_5.f_name, l_name: user_5.l_name)
+    # backer_5 = Backer.create!(id: user_5.id, user_id: user_5.id, f_name: user_5.f_name, l_name: user_5.l_name)
+
+
+    # user_6 = User.create!( id: 600, provider: "google_oauth2", uid: "123439", auth_name: "#{Faker::Cat.name}", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Back", l_name:"Borgen", email: "email6@email.com", remote_image_url: shots.sample )
+    # dater_6 = Dater.create!(id: user_6.id, user_id: user_6.id,f_name: user_6.f_name, l_name: user_6.l_name)
+    # backer_6 = Backer.create!(id: user_6.id, user_id: user_6.id, f_name: user_6.f_name, l_name: user_6.l_name)
+
+    # user_7 = User.create!( id: 700, provider: "google_oauth2", uid: "123359", auth_name: "#{Faker::Cat.name}", oauth_token: "tokenhere", oauth_expires_at: "2018-04-04 20:19:18", created_at: "2018-04-04 19:19:19", updated_at: "2018-04-04 19:19:19", f_name: "Stack", l_name:"Steiner", email: "email7@email.com", remote_image_url: shots.sample )
+    # dater_7 = Dater.create!(id: user_7.id, user_id: user_7.id,f_name: user_7.f_name, l_name: user_7.l_name)
+    # backer_7 = Backer.create!(id: user_7.id, user_id: user_7.id, f_name: user_7.f_name, l_name: user_7.l_name)
 
 
 
@@ -59,57 +72,65 @@ class Seed
    Question.create(question: "What's their password?")
     
     
-    Personality.create(dater_id:dater_1.id,backer_id:backer_2.id, charitable:2,intelligent:4,shy: 2,spontaneous:1,funny: 4,adaptable:1,logical:4,independent:4,organized:5,relaxed:1,friendly:5,energetic:2,silly:2,patient:4 )
-    Personality.create(dater_id:dater_2.id,backer_id:backer_2.id, charitable:1,intelligent:4,shy: 3,spontaneous:2,funny: 4,adaptable:1,logical:4,independent:3,organized:3,relaxed:4,friendly:5,energetic:2,silly:2,patient:4 )
-    Personality.create(dater_id:dater_3.id,backer_id:backer_2.id, charitable:2,intelligent:3,shy: 2,spontaneous:5,funny: 4,adaptable:1,logical:3,independent:1,organized:2,relaxed:5,friendly:5,energetic:4,silly:2,patient:4 )
-    Personality.create(dater_id:dater_4.id,backer_id:backer_2.id, charitable:3,intelligent:2,shy: 3,spontaneous:6,funny: 4,adaptable:4,logical:2,independent:2,organized:2,relaxed:6,friendly:1,energetic:5,silly:2,patient:4 )
-    Personality.create(dater_id:dater_5.id,backer_id:backer_2.id, charitable:4,intelligent:2,shy: 2,spontaneous:4,funny: 3,adaptable:4,logical:5,independent:2,organized:3,relaxed:3,friendly:1,energetic:6,silly:2,patient:4 )
-    Personality.create(dater_id:dater_6.id,backer_id:backer_2.id, charitable:5,intelligent:4,shy: 2,spontaneous:3,funny: 2,adaptable:4,logical:1,independent:2,organized:5,relaxed:1,friendly:5,energetic:2,silly:2,patient:4 )
-    Personality.create(dater_id:dater_7.id,backer_id:backer_2.id, charitable:3,intelligent:1,shy: 2,spontaneous:2,funny: 1,adaptable:4,logical:3,independent:4,organized:5,relaxed:1,friendly:5,energetic:2,silly:2,patient:4 )
+    # Personality.create(dater_id:Dater.find(2).id,backer_id:Backer.find(2).id, charitable:1,intelligent:4,shy: 3,spontaneous:2,funny: 4,adaptable:1,logical:4,independent:3,organized:3,relaxed:4,friendly:5,energetic:2,silly:2,patient:4 )
+    # Personality.create(dater_id:Dater.find(3).id,backer_id:Backer.find(3).id, charitable:2,intelligent:3,shy: 2,spontaneous:5,funny: 4,adaptable:1,logical:3,independent:1,organized:2,relaxed:5,friendly:5,energetic:4,silly:2,patient:4 )
+    # Personality.create(dater_id:Dater.find(4).id,backer_id:Backer.find().id, charitable:3,intelligent:2,shy: 3,spontaneous:6,funny: 4,adaptable:4,logical:2,independent:2,organized:2,relaxed:6,friendly:1,energetic:5,silly:2,patient:4 )
+    # Personality.create(dater_id:Dater.find(5).id,backer_id:Backer.find().id, charitable:4,intelligent:2,shy: 2,spontaneous:4,funny: 3,adaptable:4,logical:5,independent:2,organized:3,relaxed:3,friendly:1,energetic:6,silly:2,patient:4 )
+    # Personality.create(dater_id:Dater.find(6).id,backer_id:Backer.find().id, charitable:5,intelligent:4,shy: 2,spontaneous:3,funny: 2,adaptable:4,logical:1,independent:2,organized:5,relaxed:1,friendly:5,energetic:2,silly:2,patient:4 )
+    # Personality.create(dater_id:Dater.find(7).id,backer_id:Backer.find().id, charitable:3,intelligent:1,shy: 2,spontaneous:2,funny: 1,adaptable:4,logical:3,independent:4,organized:5,relaxed:1,friendly:5,energetic:2,silly:2,patient:4 )
 
-(1..7).each do |x|
-  (1..6).each do |n|
-    Comment.create!(dater_id: Dater.find(n*100).id, backer_id: Backer.find((n+1)*100).id,question_id: x, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
-  end
+  (2..49).each do |n|
+    Personality.create(dater_id:Dater.find(n).id,backer_id:Backer.find(n+1).id, charitable:(0..5).to_a.sample,intelligent:(0..5).to_a.sample,shy: (0..5).to_a.sample,spontaneous:(0..5).to_a.sample,funny: (0..5).to_a.sample,adaptable:(0..5).to_a.sample,logical:(0..4).to_a.sample,independent:(0..5).to_a.sample,organized:(0..5).to_a.sample,relaxed:(0..5).to_a.sample,friendly:(0..5).to_a.sample,energetic:(0..5).to_a.sample,silly:(0..5).to_a.sample,patient:(0..5).to_a.sample)
+    Comment.create!(dater_id: Dater.find(n).id, backer_id: Backer.find(n+1).id, question_id: (1..6).to_a.sample, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    Comment.create!(dater_id: Dater.find(n).id, backer_id: Backer.find(n+1).id, question_id: (1..6).to_a.sample, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    Comment.create!(dater_id: Dater.find(n).id, backer_id: Backer.find(n+1).id, question_id: (1..6).to_a.sample, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    Comment.create!(dater_id: Dater.find(n).id, backer_id: Backer.find(n+1).id, question_id: (1..6).to_a.sample, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    Comment.create!(dater_id: Dater.find(n).id, backer_id: Backer.find(n+1).id, question_id: (1..6).to_a.sample, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+    Comment.create!(dater_id: Dater.find(n).id, backer_id: Backer.find(n+1).id, question_id: (1..6).to_a.sample, comment:"#{Faker::MostInterestingManInTheWorld.quote}")
+
 end
-    match = user_5
-    match1 = user_1
+    # match = user_5
+    # match1 = user_1
     
 
-    dater_1.backers << backer_2
-    dater_1.backers << backer_3
-    dater_1.backers << backer_4
-    dater_2.backers << backer_3
-    dater_2.backers << backer_4
+    # dater_1.backers << backer_2
+    # dater_1.backers << backer_3
+    # dater_1.backers << backer_4
+    # dater_2.backers << backer_3
+    # dater_2.backers << backer_4
 
 
-    dater_1_traits = Trait.create!(dater_id: dater_1.id, height: 60, smoker: 0, alcohol: 0, ethnicity: 0, education: true, body_type: 0, occupation: 0, zip: 80203, religion: 0, religiosity: 1, political_leaning: 2, politicalness: 3, has_kids: false, wants_kids: false, has_pets: false, orientation: 1, gender: 1, other: "", created_at: 0, updated_at: 0)
-    dater_2_traits = Trait.create!(dater_id: dater_2.id, height: 60, smoker: 0, alcohol: 2, ethnicity: 2, education: true, body_type: 0, occupation: 0, zip: 80203, religion: 2, religiosity: 1, political_leaning: 2, politicalness: 2, has_kids: false, wants_kids: false, has_pets: false, orientation: 2, gender: 2, other: "", created_at: 0, updated_at: 0)
-    dater_3_traits = Trait.create!(dater_id: dater_3.id, height: 60, smoker: 0, alcohol: 2, ethnicity: 2, education: true, body_type: 0, occupation: 0, zip: 80203, religion: 2, religiosity: 1, political_leaning: 4, politicalness: 1, has_kids: false, wants_kids: false, has_pets: false, orientation: 1, gender: 0, other: "", created_at: 0, updated_at: 0)
-    dater_4_traits = Trait.create!(dater_id: dater_4.id, height: 60, smoker: 0, alcohol: 0, ethnicity: 2, education: true, body_type: 0, occupation: 0, zip: 80203, religion: 2, religiosity: 0, political_leaning: 4, politicalness: 0, has_kids: false, wants_kids: false, has_pets: false, orientation: 2, gender: 0, other: "", created_at: 0, updated_at: 0)
-    dater_5_traits = Trait.create!(dater_id: dater_5.id, height: 60, smoker: 0, alcohol: 2, ethnicity: 2, education: true, body_type: 0, occupation: 0, zip: 80203, religion: 2, religiosity: 1, political_leaning: 2, politicalness: 1, has_kids: false, wants_kids: false, has_pets: false, orientation: 2, gender: 2, other: "", created_at: 0, updated_at: 0)
-    dater_6_traits = Trait.create!(dater_id: dater_6.id, height: 60, smoker: 0, alcohol: 1, ethnicity: 0, education: true, body_type: 0, occupation: 0, zip: 80203, religion: 1, religiosity: 1, political_leaning: 4, politicalness: 2, has_kids: false, wants_kids: false, has_pets: false, orientation: 1, gender: 0, other: "", created_at: 0, updated_at: 0)
-    dater_7_traits = Trait.create!(dater_id: dater_7.id, height: 60, smoker: 0, alcohol: 0, ethnicity: 2, education: true, body_type: 0, occupation: 0, zip: 80203, religion: 4, religiosity: 2, political_leaning: 4, politicalness: 0, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, other: "", created_at: 0, updated_at: 0)
+    (2..50).each do |n|
+    Trait.create!(dater_id: Dater.find(n).id, height: 60, smoker: (0..3).to_a.sample, alcohol:(0..3).to_a.sample, ethnicity:(0..3).to_a.sample, education: true, body_type:(0..3).to_a.sample, occupation:(0..3).to_a.sample, zip: 80203, religion:(0..3).to_a.sample, religiosity: (0..2).to_a.sample, political_leaning: (0..3).to_a.sample, politicalness: (0..3).to_a.sample, has_kids: false, wants_kids: false, has_pets: false, orientation: (0..3).to_a.sample, gender: (0..3).to_a.sample, other: "", created_at:(0..3).to_a.sample, updated_at:(0..3).to_a.sample)
+    # dater_2_traits = Trait.create!(dater_id: dater_2.id, height: 60, smoker: 0, alcohol: 2, ethnicity: 2, education: true, body_type: 0, occupation: 0, zip: 80203, religion: 2, religiosity: 1, political_leaning: 2, politicalness: 2, has_kids: false, wants_kids: false, has_pets: false, orientation: 2, gender: 2, other: "", created_at: 0, updated_at: 0)
+    # dater_3_traits = Trait.create!(dater_id: dater_3.id, height: 60, smoker: 0, alcohol: 2, ethnicity: 2, education: true, body_type: 0, occupation: 0, zip: 80203, religion: 2, religiosity: 1, political_leaning: 4, politicalness: 1, has_kids: false, wants_kids: false, has_pets: false, orientation: 1, gender: 0, other: "", created_at: 0, updated_at: 0)
+    # dater_4_traits = Trait.create!(dater_id: dater_4.id, height: 60, smoker: 0, alcohol: 0, ethnicity: 2, education: true, body_type: 0, occupation: 0, zip: 80203, religion: 2, religiosity: 0, political_leaning: 4, politicalness: 0, has_kids: false, wants_kids: false, has_pets: false, orientation: 2, gender: 0, other: "", created_at: 0, updated_at: 0)
+    # dater_5_traits = Trait.create!(dater_id: dater_5.id, height: 60, smoker: 0, alcohol: 2, ethnicity: 2, education: true, body_type: 0, occupation: 0, zip: 80203, religion: 2, religiosity: 1, political_leaning: 2, politicalness: 1, has_kids: false, wants_kids: false, has_pets: false, orientation: 2, gender: 2, other: "", created_at: 0, updated_at: 0)
+    # dater_6_traits = Trait.create!(dater_id: dater_6.id, height: 60, smoker: 0, alcohol: 1, ethnicity: 0, education: true, body_type: 0, occupation: 0, zip: 80203, religion: 1, religiosity: 1, political_leaning: 4, politicalness: 2, has_kids: false, wants_kids: false, has_pets: false, orientation: 1, gender: 0, other: "", created_at: 0, updated_at: 0)
+    # dater_7_traits = Trait.create!(dater_id: dater_7.id, height: 60, smoker: 0, alcohol: 0, ethnicity: 2, education: true, body_type: 0, occupation: 0, zip: 80203, religion: 4, religiosity: 2, political_leaning: 4, politicalness: 0, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, other: "", created_at: 0, updated_at: 0)
+    end
+
+    (2..50).each do |n|
+     MatePreference.create!(dater_id: Dater.find(n).id, min_height: 60, max_height: 70, smoker: (0..3).to_a.sample, alcohol: (0..3).to_a.sample, ethnicity: (0..3).to_a.sample, education: (0..3).to_a.sample, body_type: (0..3).to_a.sample, zip_radius: 4, religion: (0..3).to_a.sample, religiosity: (0..2).to_a.sample, political_leaning: (0..3).to_a.sample, politicalness: (0..3).to_a.sample, has_kids: false, wants_kids: false, has_pets: false, orientation: (0..2).to_a.sample, gender: (0..2).to_a.sample, created_at: (0..3).to_a.sample, updated_at: (0..3).to_a.sample)
+    # dater_2_mate_trait = MatePreference.create!(dater_id: dater_2.id, min_height: 60, max_height: 70, smoker: 0, alcohol: 0, ethnicity: 0, education: 0, body_type: 0, zip_radius: 20, religion: 0, religiosity: 2, political_leaning: 2, politicalness: 3, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, created_at: 0, updated_at: 0)
+    # dater_3_mate_trait = MatePreference.create!(dater_id: dater_3.id, min_height: 60, max_height: 70, smoker: 1, alcohol: 0, ethnicity: 0, education: 0, body_type: 2, zip_radius: 20, religion: 0, religiosity: 2, political_leaning: 2, politicalness: 2, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, created_at: 0, updated_at: 0)
+    # dater_4_mate_trait = MatePreference.create!(dater_id: dater_4.id, min_height: 60, max_height: 70, smoker: 1, alcohol: 2, ethnicity: 0, education: 0, body_type: 2, zip_radius: 10, religion: 0, religiosity: 2, political_leaning: 3, politicalness: 3, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, created_at: 0, updated_at: 0)
+    # dater_5_mate_trait = MatePreference.create!(dater_id: dater_5.id, min_height: 60, max_height: 70, smoker: 1, alcohol: 2, ethnicity: 0, education: 0, body_type: 3, zip_radius: 15, religion: 0, religiosity: 1, political_leaning: 1, politicalness: 2, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, created_at: 0, updated_at: 0)
+    # dater_6_mate_trait = MatePreference.create!(dater_id: dater_6.id, min_height: 60, max_height: 70, smoker: 1, alcohol: 2, ethnicity: 0, education: 0, body_type: 1, zip_radius: 15, religion: 0, religiosity: 0, political_leaning: 2, politicalness: 1, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, created_at: 0, updated_at: 0)
+    # dater_7_mate_trait = MatePreference.create!(dater_id: dater_7.id, min_height: 60, max_height: 70, smoker: 0, alcohol: 0, ethnicity: 0, education: 0, body_type: 0, zip_radius: 5, religion: 0, religiosity: 0, political_leaning: 1, politicalness: 3, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, created_at: 0, updated_at: 0)
+    end
 
 
-    dater_1_mate_trait = MatePreference.create!(dater_id: dater_1.id, min_height: 60, max_height: 70, smoker: 0, alcohol: 0, ethnicity: 0, education: 0, body_type: 0, zip_radius: 4, religion: 0, religiosity: 0, political_leaning: 0, politicalness: 0, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, created_at: 0, updated_at: 0)
-    dater_2_mate_trait = MatePreference.create!(dater_id: dater_2.id, min_height: 60, max_height: 70, smoker: 0, alcohol: 0, ethnicity: 0, education: 0, body_type: 0, zip_radius: 20, religion: 0, religiosity: 2, political_leaning: 2, politicalness: 3, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, created_at: 0, updated_at: 0)
-    dater_3_mate_trait = MatePreference.create!(dater_id: dater_3.id, min_height: 60, max_height: 70, smoker: 1, alcohol: 0, ethnicity: 0, education: 0, body_type: 2, zip_radius: 20, religion: 0, religiosity: 2, political_leaning: 2, politicalness: 2, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, created_at: 0, updated_at: 0)
-    dater_4_mate_trait = MatePreference.create!(dater_id: dater_4.id, min_height: 60, max_height: 70, smoker: 1, alcohol: 2, ethnicity: 0, education: 0, body_type: 2, zip_radius: 10, religion: 0, religiosity: 2, political_leaning: 3, politicalness: 3, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, created_at: 0, updated_at: 0)
-    dater_5_mate_trait = MatePreference.create!(dater_id: dater_5.id, min_height: 60, max_height: 70, smoker: 1, alcohol: 2, ethnicity: 0, education: 0, body_type: 3, zip_radius: 15, religion: 0, religiosity: 1, political_leaning: 1, politicalness: 2, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, created_at: 0, updated_at: 0)
-    dater_6_mate_trait = MatePreference.create!(dater_id: dater_6.id, min_height: 60, max_height: 70, smoker: 1, alcohol: 2, ethnicity: 0, education: 0, body_type: 1, zip_radius: 15, religion: 0, religiosity: 0, political_leaning: 2, politicalness: 1, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, created_at: 0, updated_at: 0)
-    dater_7_mate_trait = MatePreference.create!(dater_id: dater_7.id, min_height: 60, max_height: 70, smoker: 0, alcohol: 0, ethnicity: 0, education: 0, body_type: 0, zip_radius: 5, religion: 0, religiosity: 0, political_leaning: 1, politicalness: 3, has_kids: false, wants_kids: false, has_pets: false, orientation: 0, gender: 0, created_at: 0, updated_at: 0)
 
-
-    Match.create!(dater_id: dater_1.id, match_id: match.id)
-    Match.create!(dater_id: dater_2.id, match_id: match.id)
-    Match.create!(dater_id: dater_3.id, match_id: match.id)
-    Match.create!(dater_id: dater_4.id, match_id: match.id)
-    Match.create!(dater_id: dater_6.id, match_id: match.id)
-    Match.create!(dater_id: dater_2.id, match_id: match1.id)
-    Match.create!(dater_id: dater_3.id, match_id: match1.id)
-    Match.create!(dater_id: dater_4.id, match_id: match1.id)
-    Match.create!(dater_id: dater_6.id, match_id: match1.id)
+    # Match.create!(dater_id: dater_1.id, match_id: match.id)
+    # Match.create!(dater_id: dater_2.id, match_id: match.id)
+    # Match.create!(dater_id: dater_3.id, match_id: match.id)
+    # Match.create!(dater_id: dater_4.id, match_id: match.id)
+    # Match.create!(dater_id: dater_6.id, match_id: match.id)
+    # Match.create!(dater_id: dater_2.id, match_id: match1.id)
+    # Match.create!(dater_id: dater_3.id, match_id: match1.id)
+    # Match.create!(dater_id: dater_4.id, match_id: match1.id)
+    # Match.create!(dater_id: dater_6.id, match_id: match1.id)
     
   end
 

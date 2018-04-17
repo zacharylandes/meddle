@@ -246,8 +246,9 @@ $('#dater-q5-button').click(function(){
       let email = event.target.offsetParent.childNodes[1].value
       $.get(`https://pytdating.herokuapp.com/invites?email=${email}&add_dater=true`, () => {})
       $(".backer-tab-body").append(`
-        <div class="alert alert-success" role="alert" id="dater-invited-alert">
+        <div class="" role="alert" id="dater-invited-alert">
           <h4 class="alert-heading"> Email Sent!</h4>
+         </div>
           `).delay( 1500 )
           
     })
