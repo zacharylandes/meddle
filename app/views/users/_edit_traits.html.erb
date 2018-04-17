@@ -20,15 +20,15 @@
             </tr>
             <tr>
                  <td><%= f.label :smoker %></td>
-                 <td><%= f.select :smoker, Trait.smokers.map { |key, value| [key.humanize, key] }, class: "btn btn-secondary dropdown-toggle", id:"dropdownMenu2", class:" form-control"%></td>
+                 <td><%= f.select :smoker, Trait.smokers.map { |key, value| [key.humanize, key] }, class: "btn btn-secondary dropdown-toggle form-control", id:"dropdownMenu2"%></td>
             </tr>
             <tr>
                  <td><%= f.label :religiosity %></td>
-                 <td><%= f.select :religiosity, Trait.religiosities.map { |key, value| [key.humanize, key] }, class: "btn btn-secondary dropdown-toggle", id:"dropdownMenu2"%></td>
+                 <td><%= f.select :religiosity, Trait.religiosities.map { |key, value| [key.humanize, key] }, {class: "btn-sm form-control"}%></td>
             </tr>
             <tr>
                  <td><%= f.label :religion %></td>
-                 <td><%= f.select :religion, Trait.religions.map { |key, value| [key.humanize, key] }, class: "btn btn-secondary dropdown-toggle", id:"dropdownMenu2"%></td>
+                 <td><%= f.select :religion, Trait.religions.map { |key, value| [key.humanize, key] },  {class: "btn-sm form-control"}, id:"dropdownMenu2"%></td>
             </tr>
             <tr>
                 <td><%= f.label :alcohol %></td>

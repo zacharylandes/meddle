@@ -225,11 +225,9 @@ td{
   color:white;
 }
 #d-q-button,#find-mate-for-backer{
-  
-
   border-radius:8px;
   color:$lightBlue;
-  padding:5%;
+  padding:2%;
   border: 1px solid $lightBlue;
   background-color: transparent;
 }
@@ -646,6 +644,10 @@ color:white;
       rotate(27deg);
   position: absolute;
   /* top: -20px; */
+}
+
+#dater-img-td img{
+  width:60px;
 }
 
 .login, ,#dash-body h6{

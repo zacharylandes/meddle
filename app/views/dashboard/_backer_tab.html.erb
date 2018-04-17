@@ -14,18 +14,16 @@
   <table class="table table-striped">
   <thead>
     <tr class= 'backer-table-striped'>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Percent Complete</th>
-      <th scope="col">Answer Questions about your dater</th>  
-      <th scope="col">Find a mate for them</th>
+      <td scope="col">Dater</td>
+      <td scope="col">Percent Complete</td>
+      <td scope="col">Answer Questions about your dater</td>  
+      <td scope="col">Find a mate for them</td>
     </tr>
   </thead>
   <tbody>
     <% current_backer.daters.each  do |dater|%>
     <tr class='backer-table-row'>
-      <td ><%= dater.f_name %></td>
-      <td><%= dater.l_name %></td>
+      <td > <%= link_to image_tag(dater.user.image.url), users_path(dater), id:'dater-img-td'%></td>
       <td>50%</td>
       <td><%= link_to 'Questions', new_backer_dater_comment_path(current_user, dater), class:'btn-primary btn-sm',id:'d-q-button'%></td>
       <td><%= link_to 'Find their mate', users_path(dater), class:'btn-primary btn-sm',id:'find-mate-for-backer'%></td>
