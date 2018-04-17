@@ -23,7 +23,7 @@
             </div>
             <div class = 'login' id='login'>
                 <% if current_user %>
-                   Signed in as <%= current_user.f_name %>
+                   Hi <%= current_user.f_name %>
                     <%= link_to "Sign out", signout_path %>
                 <% else %>
                     <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", class:'' %>
