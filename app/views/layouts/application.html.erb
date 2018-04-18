@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Meddle</title>
+  <html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Meddle</title>
       <%= favicon_link_tag('https://s3.amazonaws.com/pytdating/favicon-32x32.png')%>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <%= stylesheet_link_tag "application", media: "all"%>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>    
-  </head>
-  <div class = 'layer'></div>
-    <body class='col-md-12'>
-      <%= render '/layouts/nav' %>
-      <% if flash[:notice] %>
-         <div class="notice"><%= flash[:notice] %></div>
-      <% end %>
-      <% if params[:format]%>
-        <%= render 'searching_for'%>
-      <%end%>
-      <div class = 'main col-md-12 ' >
-        <%= yield %>
-      </div>
-      <footer class= 'col-md-12' id="footer ">
-      </footer>
-    </body>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      <%= stylesheet_link_tag "application", media: "all"%>
+      <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>    
+    </head>
+    <div class = 'layer'></div>
+      <body class='col-md-12'>
+        <%= render '/layouts/nav' %>
+        <% if flash[:notice] %>
+          <div class="notice"><%= flash[:notice] %></div>
+        <% end %>
+        <% if params[:format]%>
+          <%= render 'searching_for'%>
+        <%end%>
+        <div class = 'main col-md-12 ' >
+          <%= yield %>
+        </div>
+        <footer class= 'col-md-12' id="footer "></footer>
+      </body>
         <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>  
-
-</html>
+        <%= csrf_meta_tags %>  
+  </html>

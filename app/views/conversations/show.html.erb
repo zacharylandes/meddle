@@ -1,27 +1,20 @@
 
   
 <%= render 'dashboard/dash_side'%>
-  
 <div class ='col-md-offset-1 col-md-10'>
-<div class = 'message-show-container'>
-  
-  <%@conversations.each do |receipt| %>
-    <div class="card" id="message-card">
-      <div class="card-header">
-      <h6 class="card-title"> <%= receipt.message.subject %></h6>
-      </div>
-      <div class="card-body"id="message-card">
+  <div class = 'message-show-container'>
+    <%@conversations.each do |receipt| %>
+    <div class="card col-md-4" id="message-card">
+      <div class="card-header"> <%= receipt.message.subject %></div>
+      <div class="card-body"id="">
           <p class="card-text"> <%= receipt.message.body %></p>
       </div>
-      <p><%= button_to 'Delete', conversation_message_path(params[:id],receipt.id), method: :delete, class:'primary-btn btn', id:'delete-message' %>  </p>
+      <%= button_to 'Delete', conversation_message_path(params[:id],receipt.id), method: :delete, class:'primary-btn btn', id:'delete-message' %>  
     </div>
-  <% end %>
-      
-    </div>
-    <div class="card  col-md-3" id="">
-    <div class="card-header">
-      <h6 class="card-title">  New Message </h6>
-    </div>
+    <% end %>
+  </div>
+  <div class="card col-md-3" id="new-message">
+    <div class="card-header">New Message </div>
     <%= form_tag conversation_messages_path(@conversation) ,method: :post do  %>
       <div class="card-body ">
           <p class="card-text"><%= label_tag :subject %></p>
@@ -29,8 +22,8 @@
           <p><%= label_tag :body %></p>
           <p><%= text_area_tag :body,nil, class:'form-control' %></p>
           <p><%= submit_tag "Send Message", class: "primary-btn btn-md" %></p>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>    
 </div>
   

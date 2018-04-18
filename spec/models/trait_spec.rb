@@ -26,11 +26,7 @@ RSpec.describe Trait, type: :model do
       expect(trait.orientation).to eq("straight")
       expect(trait.gender).to eq("female")
       expect(trait.other).to eq("Some other preference that they really need to say")
-
     end
   end
 
-  # test that I can do user.smoker?
-
-#Sad path? handle wrong datatypes on feature tests?
 end

@@ -1,0 +1,22 @@
+<div class="" id="answer-card">
+    <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q1-button' aria-controls="collapseExample">       
+    <%="#{Question.first.question}"%>
+    </button>
+    <%= render 'dater-answer1-list'%>
+    <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q2-button' aria-controls="collapseExample">       
+    <%="#{Question.second.question}"%>
+    </button>
+    <%= render 'dater-answer2-list'%>
+    <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q3-button' aria-controls="collapseExample">       
+    <%="#{Question.third.question}"%>
+    </button>
+    <%= render 'dater-answer3-list'%>
+    <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q4-button' aria-controls="collapseExample">       
+    <%="#{Question.find(4).question}"%>
+    </button>
+    <%= render 'dater-answer4-list'%>
+    <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q5-button' aria-controls="collapseExample">       
+    <%="#{Question.find(5).question}"%>
+    </button>
+    <%= render 'dater-answer5-list'%>
+</div>

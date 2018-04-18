@@ -19,9 +19,6 @@ before(:each) do
     Trait.create(dater_id:dater4.id, zip:80203)
     Trait.create(dater_id:dater5.id, zip:80203)
     
-    
-
-
 end
 it 'can filter gallery by alcohol ' do
 
@@ -35,6 +32,7 @@ it 'can filter gallery by alcohol ' do
     expect(page).to_not have_content('bob')
     expect(page).to have_content('zach')
   end
+  
   it 'can filter gallery by politicalness' do
     trait1 = create(:trait, dater_id: Dater.first.id, politicalness:3)
 

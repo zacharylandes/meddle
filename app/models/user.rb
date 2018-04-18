@@ -2,7 +2,7 @@ class User < ApplicationRecord
   attr_accessor :image
   mount_uploader :image, ImageUploader,
 
- :mount_on => :image
+  :mount_on => :image
   has_many :daters
   has_many :backers
   has_many :dater_backers, through: :daters
@@ -12,7 +12,6 @@ class User < ApplicationRecord
   acts_as_messageable
 
   def self.from_omniauth(auth)
-     
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider
       user.uid = auth.uid

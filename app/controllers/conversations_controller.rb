@@ -20,7 +20,7 @@ class ConversationsController < ApplicationController
         receiver = current_user.mailbox.conversations.find(params[:id]).receipts.where.not(receiver_id: current_user.id).first.receiver_id 
       @conversations = current_user.mailbox.receipts.select  do |receipt|
           receipt.conversation.receipts.find_by(receiver_id: receiver)
-        end
+      end
     end
     
   

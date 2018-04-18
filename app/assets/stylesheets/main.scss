@@ -101,22 +101,6 @@ $maroon: #75485E;
 
 
 
-
-/*--------------------------- Color variations ----------------------*/
-/* Medium Layout: 1280px */
-/* Tablet Layout: 768px */
-/* Mobile Layout: 320px */
-/* Wide Mobile Layout: 480px */
-/* =================================== */
-/*  Basic Style
-/* =================================== */
-
-
-
-
-
-
-
 .dash{
   height: 200px;
   color:black;
@@ -207,6 +191,10 @@ td{
 
 .dater-table-row,.dater-tab-header h4{
   color:$maroon;
+}
+#dater-table-header{
+  color:$maroon;
+  margin-bottom:10px;
 }
 #pool-button,#list-backer-button{
   color:$maroon;
@@ -319,6 +307,11 @@ body{
 #tab1{
   background-color:$darkBlue;
 }
+.email-sent{
+  background-color: $darkBlue;
+  color:white;
+  padding:10px;
+}
 .dater-card{
   display: flex;
   flex-direction: column;
@@ -335,6 +328,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin-top:20px;
 
 }
 .edit-about-button a {
@@ -554,16 +548,18 @@ color:white;
 }
 #delete-message{
   margin:10px;
+  
 }
 
-#message-card{
-  margin:1%;
+#message-card, #new-message{
+  margin-bottom:1%;
+  border:1px solid $darkBlue;
 
 }
 .message-show-container{
-  margin-top:2%;
+  margin-top:20px;
   display:flex;
-  flex-direction:row;
+  flex-direction:column;
   justify-content:  flex-start;
 }
 
@@ -575,6 +571,7 @@ color:white;
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin-top:20px;
 }
 #about-you{
   display:flex;

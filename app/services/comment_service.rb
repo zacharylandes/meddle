@@ -1,6 +1,7 @@
 class CommentService 
 
     def create_comment(params)
+        
         if params[:val1]
             trait1 = params[:p]
             trait2 = params[:p2]
@@ -17,7 +18,6 @@ class CommentService
                 "#{trait5}": params[:p5_value]
              )
         elsif params[:val2]
-            
             trait6 = params[:p_6]
             trait7 = params[:p7]
             trait8 = params[:p8]
@@ -32,7 +32,6 @@ class CommentService
                 "#{trait10}": params[:p10_value]
             )
         elsif params[:val3]
-            
             trait11 = params[:p_11]
             trait12 = params[:p12]
             trait13 = params[:p13]

@@ -39,7 +39,7 @@
             </tr>
             <tr>
                 <td><%= f.label :alcohol %></td>
-                <td><%= f.select :alcohol, MatePreference.alcohols.map { |key, value| [key.humanize, key] } %></td>
+                <td><%= f.select :alcohol, MatePreference.alcohols.map { |key, value| [key.humanize, key] },{class:" form-control"} %></td>
             </tr>
             <tr>
                 <td> <%= f.label :body_type %></td>

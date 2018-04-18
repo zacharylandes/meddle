@@ -1,5 +1,5 @@
 <%=render 'dashboard/visitor_profile_side'%>
-<div class = 'user-parent'>
+<div class = 'user-parent col-md-6'>
     <div class = 'user-container'>
         <div class="card profile-card">
             <div class="card-header">
@@ -12,61 +12,31 @@
             </div>
         </div>
         <div class="card profile-card">
-            <div class="card-header">
-                About
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">I'm just a good person, I guess</h5>
-                <p class="card-text">Look what people say about me. They won't stop talking about me.</p>
-            </div>
+            <div class="card-header">About</div>
+            <div class="card-body"><%="#{Faker::Hobbit.quote}"%></div>
         </div>
         <div class="card profile-card">
             <div class="card-header">
                 What <%=@dater.f_name%>'s backers say about them
             </div>
-            <div class="" id="answer-card">
-                <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q1-button' aria-controls="collapseExample">       
-                <%="#{Question.first.question}"%>
-            </button>
-                <%= render 'dater-answer1-list'%>
-                <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q2-button' aria-controls="collapseExample">       
-                <%="#{Question.second.question}"%>
-                </button>
-                <%= render 'dater-answer2-list'%>
-                <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q3-button' aria-controls="collapseExample">       
-                <%="#{Question.third.question}"%>
-                </button>
-                <%= render 'dater-answer3-list'%>
-                <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q4-button' aria-controls="collapseExample">       
-                <%="#{Question.find(4).question}"%>
-                </button>
-                <%= render 'dater-answer4-list'%>
-                <button class="dater-answer-button primary-btn" data-toggle="collapse" role="button" aria-expanded="false" id='dater-q5-button' aria-controls="collapseExample">       
-                <%="#{Question.find(5).question}"%>
-                </button>
-                <%= render 'dater-answer5-list'%>
-            </div>
+            <%= render 'list-questions'%>
         </div>
-        </div>
+    </div>
 </div>
-    <div class = 'user-right-side'>
-        <%= link_to 'Send Message', new_conversation_path(recipient: @user), class:"primary-btn btn-md" %>
-       <% if params[:searching_for] %>
+<div class = 'user-right-side'>
+    <%= link_to 'Send Message', new_conversation_path(recipient: @user), class:"primary-btn btn-md" %>
+    <% if params[:searching_for] %>
         <%= link_to "Add to your dater's pool", edit_user_pool_path(@user, searching_for: params[:searching_for]), method: :put, class:"primary-btn btn-md" %>       
-       <% else %>
+    <% else %>
         <%= link_to 'Add to your pool', edit_user_pool_path(@user), method: :put, class:"primary-btn btn-md" %>
-       <% end %>
-        <div class = 'personality-stats-show'>
-            <h5>How <%=@dater.f_name%>'s backers rate them</h5>
-            <% Personality.traits.each do |trait|%>
-            <div class = 'slider-title'>
-                    <%=trait.to_s.capitalize%>
-                </div>
-                <div class = 'parent-slider'>
-                    <div class = 'child-slider' style = 'width:<%= @dater.personality_avg(trait)%>%;background-color:<%= slider_colors.sample%>'>
-                    </div>
-                </div>
-            <% end %>
+    <% end %>
+    <div class = 'personality-stats-show'>
+        <h5>How <%=@dater.f_name%>'s backers rate them</h5>
+        <% Personality.traits.each do |trait|%>
+        <div class = 'slider-title'> <%=trait.to_s.capitalize%></div>
+        <div class = 'parent-slider'>
+            <div class = 'child-slider' style = 'width:<%= @dater.personality_avg(trait)%>%;background-color:<%= slider_colors.sample%>'></div>
         </div>
-    </div>  
-</div>
+        <% end %>
+    </div>
+</div>  
