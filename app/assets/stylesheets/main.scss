@@ -2509,10 +2509,24 @@ body {
 }
 
 #footer{
-  background-color: black;
+  background-color: $darkBlue;
   position:fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color:white;
   bottom:0;
-  height: 100px;
+  height: 40px;
+}
+
+.media img, .media{
+  color:white;
+  width:20px;
+  margin: 10px;
+}
+.media:hover{
+  color:$maroon;
 }
 
 
@@ -2533,6 +2547,8 @@ body {
   width: 100%;
   z-index: 9;
 }
+
+
 
 .menu-bar {
   cursor: pointer;
@@ -3181,26 +3197,8 @@ nav a:hover {
   color: $darkBlue;
 }
 
-footer {
-  bottom:0;
-  background: #222222;
-}
 
-footer .footer-nav {
-  margin-top: -7px;
-}
 
-footer .footer-nav li {
-  margin-top: 8px;
-}
-
-footer .footer-nav li a {
-  color: #fff;
-}
-
-footer .footer-nav li a:hover {
-  color: $darkBlue;
-}
 
 .instafeed {
   margin: -5px;
