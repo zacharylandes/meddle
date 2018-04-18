@@ -12,9 +12,6 @@ class Api::V1::Daters::BackersController < ApplicationController
     redirect_to "/api/v1/backers/#{params[:backer_id]}"
   end
 
-#don't need a show, just make a call to the actual backers endpoint if needed
-
-
   private
 
     def food_params
