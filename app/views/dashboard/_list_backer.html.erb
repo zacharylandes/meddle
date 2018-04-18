@@ -1,14 +1,22 @@
-<div class=" list-backers" >
-  <h6>Your Backers</h6>
-  <ul >
-    <% current_dater.backers.each do |backer| %>
-    <li class="backer-name"><p><%= link_to "#{backer.f_name} #{backer.l_name}", backer_path(backer) %></p>
-      <%end  %>
-    </ul>
-    <br>
-  <div class="list-and-add-backers" >
-    <h6> Add a Backer<h6>
-    <br >
+    <div class = "list-and-add-backers">
+    <table class=" table table-striped">
+    <h5 id="dater-table-header">Your backers</h5>
+    <thead>
+      <tr class= 'dater-table-striped'>
+        <td>Backer</td>
+        <td>Name</td>
+        <td>Contact</td>
+      </tr>
+    </thead>
+    <tbody>
+    <% current_dater.backers.each do |backer|%>
+      <tr>
+       <td><%= link_to image_tag(backer.user.image.url), users_path(backer), id:'dater-img-td'%></td>
+       <td><%= backer.f_name%></td>
+       <td><%=link_to 'Message', new_conversation_path(recipient: backer), class:"", id:'message-backer' %></td>
+      </tr>
+    <% end %>     
+    </tbody>
+  </table>
     <%= render 'add_backer'%>
-  </div>
-</div>
+    </div>

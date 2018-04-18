@@ -191,13 +191,23 @@ td{
 .dater-table-row,.dater-tab-header h4{
   color:$maroon;
 }
+ #add-backer-title{
+   color: $maroon;
+   margin-bottom:20px;
+ }
+#pool-is-empty, #pool-is-empty h4{
+  background-color: $maroon;
+  color:white;
+}
 #dater-table-header{
   color:$maroon;
   margin-bottom:15px;
 }
-#pool-button,#list-backer-button{
+#pool-button, #message-backer, #list-backer-button{
   color:$maroon;
   border:2px solid $maroon;
+  padding:6px;
+  border-radius: 5px;
 }
 #pool-button:hover, #list-backer-button:hover{
   background-color:$maroon;
@@ -268,15 +278,16 @@ td{
   display:none
 }
 
-.list-backers-show,.find-new-backer,.answer1-table-show {
+.find-new-backer,.answer1-table-show {
   margin:2%;
   display: flex;
 }
-.list-and-add-backers {
-
-  margin: 20px;
+.list-backers-show{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin:20px;
 }
-
 
 #main-nav{
   border-bottom: 2px solid $darkBlue;
@@ -421,6 +432,10 @@ body{
   background-color:$darkBlue;
   color:white;
   border:2px solid $darkBlue;
+}
+#new-dater-title{
+  color:$lightBlue;
+  margin-bottom:20px;
 }
 #dater-tab{
   display: flex;
@@ -2520,12 +2535,12 @@ body {
   height: 40px;
 }
 
-.media img, .media{
+#footer .media img, #footer .media{
   color:white;
   width:20px;
   margin: 10px;
 }
-.media:hover{
+#footer .media:hover{
   color:$maroon;
 }
 

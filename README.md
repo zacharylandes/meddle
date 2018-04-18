@@ -1,24 +1,3 @@
-# README
+Welcome to Meddle!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Have you ever wanted to help your friends or family find love? Meddle is a place for anyone, single or not, to look over potential matches for people close to them

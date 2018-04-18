@@ -12,25 +12,11 @@
   <div class = 'dater-tab-header col-md-8'>
     <h4>Welcome to the dater area! Here you can check out your pool and manage your backers</h4>
   </div>
-  <table class="table table-striped">
-    <h5 id="dater-table-header">Your backers</h5>
-    <thead>
-      <tr class= 'dater-table-striped'>
-        <td>Backer</td>
-        <td >Message</td>
-      </tr>
-    </thead>
-    <tbody>
-    <% current_dater.backers.each do |backer|%>
-      <tr>
-        <td><%= backer.f_name %></td>
-        <td><%=link_to 'Message', new_conversation_path(recipient: @user), class:"primary-btn btn-md" %></td>
-      </tr>
-    <% end %>     
-    </tbody>
-  </table>
-  <div class = 'dater-tab-buttons'>
-      <a class ="primary-btn card-button" id="pool-button"> Your pool</a>
-  </div>
-  <%= render 'pool'%>
+
+    <div class = 'dater-tab-buttons'>
+      <a class =" " id="pool-button"> Checkout your pool</a>
+      <a class =" "id="list-backer-button">Check out you backers</a>
+      <%= render 'pool'%>
+      <%= render 'list_backer'%>
+    </div>
 </div>  
